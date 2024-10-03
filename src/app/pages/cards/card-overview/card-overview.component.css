@@ -1,0 +1,160 @@
+thead{
+    display: none;
+}
+
+.relationship-bg{
+    background-color: #F0F0F0; 
+    border-radius: 24px;
+}
+
+.card-title-bg{
+    background-color: #fff; 
+    border-radius: 24px;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    position: relative;
+  }
+  
+  .frame .tabler-icon-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+  }
+  
+  .frame .tabler-icon {
+    position: relative;
+    width: 33.5px;
+    height: 32.75px;
+    margin-bottom: -0.75px;
+    margin-left: -0.75px;
+    margin-right: -0.75px;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  th, td{
+    padding: 0px;
+  }
+
+  .frame-rt {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    position: relative;
+  }
+  
+  .frame-rt .div-rt {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+  }
+  
+  .frame-rt .img-rt {
+    position: relative;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .frame-rt .div-2-rt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+  
+  .frame-rt .text-wrapper-rt {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+  }
+  
+  .frame-rt .div-wrapper-rt {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame-rt .text-wrapper-2-rt {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+  }
+  
+  .frame-rt .text-wrapper-3-rt {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+  }
+
+  .frame-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+  }
+  
+  .frame-more .content-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame-more .img-more {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .frame-more .text-wrapper-more {
+    position: relative;
+    width: fit-content;
+    
+    white-space: nowrap;
+    
+  }
+  
+  .frame-more .tabler-icon-more {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .activatecardBox{
+    border: 1px solid #E1E1E1; border-radius: 10px;
+  }

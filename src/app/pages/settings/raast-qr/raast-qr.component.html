@@ -1,0 +1,114 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()" >Settings
+    
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+        Raast ID management
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+      <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up" data-aos-duration="1000">
+        
+            
+                <form>
+                
+                    <div class="col">
+                        <h4 class="p-0 m-0">Raast ID</h4>
+                    </div>
+        
+                    <div class="row mt-4">
+                        <div class="col-12"> 
+        
+                            <div class="border-only p-3 pb-0 mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <p>Your Raast ID</p>
+                                    <p><b>03208065431</b></p>
+                                </div>
+                            
+                            </div>
+
+                            <h5 class="p-0 m-0 mt-4">Linked accounts</h5>
+
+                            <div class="frame p-3 mt-3">
+                                <img class="wallet" src="/assets/img/logos/alfa-logo.png" />
+                                <div class="div">
+                                <div class="div-2 ps-3">
+                                    <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
+                                    <div class="text-wrapper-2">Savings Account (PKR) | **********1234</div>
+                                </div>
+                                <div>
+                                    <mat-slide-toggle
+                                        class="example-margin"
+                                        [color]="color"
+                                        [checked]="checked"
+                                        [disabled]="disabled"
+                                        formControlName="acceptTerms"
+                                        (click)="unlinkRelation()"
+                                        >
+                                   
+                                    </mat-slide-toggle>
+                                </div>
+                                </div>
+                            </div>
+        
+                    
+
+                            <h5 class="p-0 m-0 mt-4">Available accounts</h5>
+                            <p>The following accounts are available for linking with your Raast ID</p>
+
+                            <div class="frame p-3 mt-3">
+                                <img class="wallet" src="/assets/img/logos/alfa-logo.png" />
+                                <div class="div">
+                                <div class="div-2 ps-3">
+                                    <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
+                                    <div class="text-wrapper-2">Current Account (PKR) | **********1234</div>
+                                </div>
+                                <div>
+                                    <mat-slide-toggle
+                                        class="example-margin"
+                                        [color]="color"
+                                        [checked]="checked2"
+                                        [disabled]="disabled"
+                                        formControlName="acceptTerms"
+                                        (click)="unlinkRelation()"
+                                        >
+                                   
+                                    </mat-slide-toggle>
+                                </div>
+                                </div>
+                            </div>
+        
+                            <div class="frame p-3 mt-3">
+                                <img class="wallet" src="/assets/img/icons/credit-card.svg" />
+                                <div class="div">
+                                <div class="div-2 ps-3">
+                                    <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
+                                    <div class="text-wrapper-2">Visa Credit Card | ***********1234</div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <mat-slide-toggle
+                                        class="example-margin"
+                                        [color]="color"
+                                        [checked]="checked2"
+                                        [disabled]="disabled"
+                                        formControlName="acceptTerms"
+                                        (click)="linkRelation()">
+                                       
+                                    </mat-slide-toggle>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+        
+                            
+                        </div>
+                         
+                    </div>
+
+                </form>
+        
+        </div>
+    </div>
+</div>

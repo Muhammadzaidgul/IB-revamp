@@ -1,0 +1,94 @@
+
+<div class="d-flex" id="page-container">
+    <div class="d-flex justify-content-between" style="max-height: 800px;">
+        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 p-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                   <img src="/assets/img/logos/alfa-logo.png" alt="">
+                </div>
+            </div>
+            <div class="row pt-5 pe-lg-5 me-lg-3 pe-md-0 mt-2 me-md-0 me-lg-5">
+                <ng-container *ngIf="isLogin">
+                    <div class="col-12">
+                        <h2>Login</h2>
+                        <p>Please enter your username and password to login</p>
+                    </div>
+        
+                    <div class="col-12 mt-3">
+                        <label for="">Username</label>
+                        <input type="text" name="" id="" class="form-control" value="aliashraf1213">
+                    </div>
+        
+                    <div class="col-12 mt-4">
+                        <label for="">Password</label>
+                        <input type="password" name="" id="" class="form-control" value="aliashraf1213">
+                        <div class="d-flex justify-content-end">
+                            <span class="text-end primary-font-color p-1" (click)="loginTrouble()">Can’t sign in?</span>
+                        </div>
+                    </div>
+        
+                    <div class="col-12 mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" (click)="authenticate()" >Login <i class="fa fa-arrow-right ps-2"></i></button>
+                    </div>
+    
+                    <div class="col-12 mt-4 text-center primary-font-color" style="cursor: pointer;" (click)="QRLogin()">
+                        <span class="primary-font-color">Login with QR instead <i class="fa fa-qrcode ps-2"></i> </span>
+                    </div>
+        
+                    <div class="separator-body mt-2 mb-2">
+                        <div class="separator"></div>
+                        <div class="separator-break">or</div>
+                        <div class="separator"></div>
+                    </div>
+        
+                    <div class="col-12 mt-3">
+                        <a href="/auth/registration">
+                            <button class="w-100 btn btn-lg btn-outline-gray primary-font-color"  >Don’t have an account? register now <i class="fa fa-arrow-right ps-2"></i></button>
+                        </a>
+                        
+                    </div>
+        
+                </ng-container>
+    
+                <ng-container *ngIf="isLoginTrouble">
+                    <div class="col">
+                        <img src="/assets/img/icons/Box.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <h2>Can’t sign in?</h2>
+                        <p>To reset your username and password, please see the information provided below:</p>
+                    </div>
+    
+                    <div class="col-12">
+                        
+                        <div class="h-75 sequenceBox">
+                            <div class="sequenceChildBox">
+                                <div class="sequenceRedCircle"></div>
+                                <div class="sequenceStep" style="color: #fff;">1</div>
+                            </div>
+                            <p class="mt-3">Reset username and password using Alfa app or visiting nearest Bank Alfalah branch</p>
+                        </div>
+    
+                        <div class="h-25 sequenceBox">
+                            <div class="sequenceChildBox">
+                                <div class="sequenceWhiteCircle"></div>
+                                <div class="sequenceStep primary-font-color">2</div>
+                            </div>
+                            <p class="mt-3">Login to Alfa Web</p>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="col-12 mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" (click)="showLogin()">Login <i class="fa fa-arrow-right"></i></button>
+                    </div>
+                   
+                </ng-container>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-sm-block d-md-block d-xl-block d-none" >
+            <app-login-banner/>
+        </div>
+    </div>
+</div>

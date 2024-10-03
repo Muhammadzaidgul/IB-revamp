@@ -1,0 +1,64 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0"><img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()" >Fee Payee</div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-4 p-md-0 mt-5 " data-aos="fade-up" data-aos-duration="1000">
+
+        <div class="d-flex">
+            <div class="col">
+                <h4 class="p-0 m-0">My payees</h4>
+                <p class="p-0 m-0">Please choose a payee from the list or add a new payee</p>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end justify-item-center">
+                    <button class="btn btn-danger" routerLink="/mobile-topup/new-payee"><img src="/assets/img/icons/plus-icon.svg" alt=""> Add Payee</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mt-3">
+            <mat-chip-listbox aria-label="Satement Selection" >
+                <mat-chip-option color="warn">All</mat-chip-option>
+                <mat-chip-option color="warn">Education</mat-chip-option>
+                <mat-chip-option color="warn">Gym</mat-chip-option>
+                <mat-chip-option color="warn">Subscription</mat-chip-option>
+            </mat-chip-listbox>
+        </div>
+        
+        <div class="d-flex flex-wrap mt-3">
+
+            @for (item of payeeTypes; track $index) {
+                <div style="width: 300px;" class="h-100">
+                    <div class="col h-25 mt-2 me-3 mb-3 payeeBox">
+                        <div class="d-flex p-2"  routerLink="/my-payee/payee-details">
+                            <img src="/assets/img/icons/payee-icon.svg" alt="" class="w-25">
+        
+                            <div class="ps-2">
+                                <p class="p-0 m-0"><b>Ali</b></p>
+                                <p class="p-0 m-0">03211172135</p>
+                            </div>
+        
+                            <div class="col text-end align-self-center align-item-center">
+                                <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                
+                
+            }
+            @empty {
+                Empty list of users
+            }
+            
+
+
+            
+        </div>
+
+      </div>
+    </div>
+</div>

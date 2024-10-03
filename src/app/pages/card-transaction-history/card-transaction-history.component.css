@@ -1,0 +1,68 @@
+
+.frame {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    position: relative;
+  }
+  
+  .frame .div {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+  }
+  
+  .frame .img {
+    position: relative;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .frame .div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+  }
+  
+  .frame .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+  }
+  
+  td{
+    padding: 0px;
+  }
+  th{
+    padding: 0px;
+  }

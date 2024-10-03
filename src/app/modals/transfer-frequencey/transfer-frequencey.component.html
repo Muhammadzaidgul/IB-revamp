@@ -1,0 +1,54 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal" >
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-2 pt-0">
+                    <div class="d-flex justify-content-between align-items-center align-content-center">
+                        <h3>Transfer frequency</h3>
+                        
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                    <div class="d-flex">
+                        <p>Please choose the transfer frequency for your transaction</p>
+                    </div>
+
+                    <div class="d-flex">
+                        <mat-chip-listbox aria-label="Satement Selection" >
+                    
+                            <mat-chip-option selected color="warn">Weekly</mat-chip-option>
+                            <mat-chip-option color="warn">Quarterly</mat-chip-option>
+                            <mat-chip-option color="warn">Monthly</mat-chip-option>
+                            <mat-chip-option color="warn">Yearly</mat-chip-option>
+                            
+                        </mat-chip-listbox>
+                    </div>
+                    
+
+                    <div class="d-block pt-2">
+                        <label for="">Starts on</label>
+                        <input type="text" class="form-control" placeholder="26-10-2023">
+                    </div>
+
+                    <div class="d-block pt-2">
+                        <label for="">Ends on</label>
+                        <input type="text" class="form-control" placeholder="26-10-2023">
+                    </div>
+
+                    <div class="d-flex pt-2">
+                        <input type="checkbox" name="" id="" checked>
+                        <span>Until I checked</span>
+                    </div>
+
+                    <div class="mt-4">
+                   
+                        <button class="w-100 btn btn-lg btn-danger" (click)="closeModal()" >Confirm </button>
+    
+                    </div>
+                </div>
+        
+                
+            </div>
+        </div>
+    </div>
+</div>

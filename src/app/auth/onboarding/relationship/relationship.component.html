@@ -1,0 +1,253 @@
+<div class="col-12">
+    <div class="d-flex justify-content-between">
+        
+        <div class="col-lg-4 col-md-3 col-sm-3 col-xs-4 p-lg-3 p-md-3 p-2">
+            <app-auth-logo/>   
+        </div>
+        
+        <div class="col-lg-4 col-md-6 col-6 col-xs-4 p-lg-3 ps-lg-0 pe-lg-0 p-md-3 p-2 mt-1">
+            <p>{{currentStep }}/10</p>
+            <app-auth-progress-bar [progressValue]="currentProgress" />
+        </div>
+        
+        <div class="col-lg-4 col-md-3 col-sm-3 col-xs-4 p-lg-3 p-md-3 p-2">
+            <div class="d-flex justify-content-end">
+                <app-auth-login-button/> 
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 m-auto p-4 p-md-0">
+ 
+       <mat-stepper [linear]="isLinear" #stepper>
+         <mat-step [stepControl]="firstFormGroup">
+           <form [formGroup]="firstFormGroup">
+ 
+            <div class="row mt-5 pt-5 justify-content-center">
+                 
+                <img src="/assets/img/icons/Rocket.png" alt="" class="w-25 mt-2 mb-2">
+
+                <h2 class="pt-2 text-center">Welcome back!</h2>
+                <p class="text-center">Looks like you have successfully verified your biometric and are ready to dive in. A few more steps and you’ll be ready!</p>
+            </div>
+ 
+            <div class="col-12 mt-4">
+                    
+                <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateProgressBar('n')">Let's Start <i class="fa fa-arrow-right"></i></button>              
+            </div>
+ 
+           </form>
+         </mat-step>
+         
+         <mat-step [stepControl]="secondFormGroup">
+           <form [formGroup]="secondFormGroup">
+ 
+             <div class="row mt-5">   
+                 <i class="fa fa-lg fa-arrow-left primary-font-color" title="Back" (click)="stepper.previous(); updateProgressBar('p');" ></i>
+             </div>
+ 
+             <div class="row mt-4">
+                 
+                 <h2 class="pt-2">Choose relationships</h2>
+                 <p>Here’s a list of relationships we could find against your ID. Please select the relationships you want to be tied to your Alfa account.</p>
+             </div>
+
+             <div class="row">
+                <div class="d-flex align-items-center p-3">
+                    <input type="checkbox" name="" id="" style="width: 20px; height: 20px;" class="pe-2">
+                    <label for="Select All" class="ps-2">Select All</label>
+                </div>
+             </div>
+            
+            <div class="row">
+                <div class="col-12"> 
+
+                    <div class="frame p-3">
+                        <img class="wallet" src="/assets/img/logos/alfa-logo.png" />
+                        <div class="div">
+                        <div class="div-2 ps-3">
+                            <div class="text-wrapper">Muhammad Ali Ashraf</div>
+                            <div class="text-wrapper-2">Wallet Account | **********1234</div>
+                        </div>
+                        <div>
+                            <div>
+                                <input type="checkbox" name="" id="" style="width: 24px; height: 24px;" >
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="frame p-3 mt-2">
+                        <img class="wallet" src="/assets/img/icons/credit-card.png" />
+                        <div class="div">
+                        <div class="div-2 ps-3">
+                            <div class="text-wrapper">Muhammad Ali Ashraf</div>
+                            <div class="text-wrapper-2">Visa Credit Card | **********1234</div>
+                        </div>
+                        <div>
+                            <div>
+                                <input type="checkbox" name="" id="" style="width: 24px; height: 24px;">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+ 
+             <div class="row mt-3">
+ 
+                 
+                 <div class="col-12 mt-4">
+                     <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateProgressBar('n')">Continue <i class="fa fa-arrow-right ps-2"></i></button>
+                 </div>
+             </div>
+           </form>
+         </mat-step>
+ 
+         <mat-step [stepControl]="thirdFormGroup">
+         
+             <form [formGroup]="thirdFormGroup">
+                 <div class="row mt-5">   
+                     <i class="fa fa-lg fa-arrow-left primary-font-color" title="Back" (click)="stepper.previous(); updateProgressBar('p');" ></i>
+                 </div>
+
+                 <div class="row pt-2">
+                 
+                    <img src="/assets/img/icons/Paint.png" alt="" class="w-25 mt-2 mb-2">
+    
+                     <h2 class="pt-2">Choose a theme</h2>
+                     <p>You can customize your Alfa experience however you like it. Please choose a theme from the options below</p>
+                 </div> 
+
+                 <div class="row">
+                    <div class="col-12"> 
+    
+                        <div class="frame p-3">
+                            <img class="wallet" src="/assets/img/logos/alfa-logo.png" />
+                            <div class="div">
+                            <div class="div-2 ps-3">
+                                <div class="text-wrapper">Conventional</div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="radio" name="" id="" style="width: 24px; height: 24px;" >
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+ 
+ 
+                 <div class="col-12 mt-4">
+                     <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateProgressBar('n')">Continue <i class="fa fa-arrow-right"></i></button>
+                 </div>
+             </form>
+           
+           <!-- <div>
+             <button mat-button (click)="stepper.reset()">Reset</button>
+           </div> -->
+         </mat-step>
+ 
+         <mat-step [stepControl]="fourthFormGroup">
+
+            <form [formGroup]="fourthFormGroup">
+                <div class="row mt-5">   
+                    <i class="fa fa-lg fa-arrow-left primary-font-color" title="Back" (click)="stepper.previous(); updateProgressBar('p');" ></i>
+                </div>
+
+                <div class="row mt-4">
+                    <h2 class="pt-2">Set your transaction limits</h2>
+                    <p>Please choose your daily transaction and utility bill payment limits. You can change this later on!</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12"> 
+    
+                        <div class="frame p-3">
+                            <div>
+                                <input type="radio" name="" id="" style="width: 24px; height: 24px;" >
+                            </div>
+                            
+                            <div class="div">
+                                <div class="div-2 ps-3">
+                                    <div class="text-wrapper"><b>PKR 250,000 | 5 utility bills</b></div>
+                                    <div class="text-wrapper-2">Daily</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 p-2">
+                    <div class="col-12" style="background-color: #F8F8F8;border-left: 3px solid #EA5148;">
+                        <p class="pt-2 flex-wrap">
+                            Your current transaction limit is set at <b>15,000 PKR per day</b>. To upgrade your limits, please visit nearest branch for biometric verification.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateProgressBar('n')">Continue <i class="fa fa-arrow-right"></i></button>
+                </div>
+
+                <div class="col-12 mt-1">
+                    <p>By clicking continue, you agree to our <a href="" class="primary-font-color">Terms & conditions</a> </p>
+                </div>
+
+            </form>
+         </mat-step>
+
+         <mat-step [stepControl]="fifthFormGroup">
+            
+            <div class="row mt-5">   
+                <i class="fa fa-lg fa-arrow-left primary-font-color" title="Back" (click)="stepper.previous(); updateProgressBar('p');" ></i>
+            </div>
+
+            <div class="row mt-4">
+                <h2 class="pt-2">Terms and conditions</h2>
+                
+                <div style="height: 370px; overflow-y: scroll;">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4">
+                <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateProgressBar('n')">I Accept <i class="fa fa-arrow-right"></i></button>
+            </div>
+
+         </mat-step>
+
+         <mat-step [stepControl]="sixthFormGroup">
+            <div class="row mt-1 justify-content-center">
+                 
+                <img src="/assets/img/icons/Alarm-clock.png" alt="" class="w-25 mt-2 mb-2">
+
+                <h2 class="pt-2 text-center">Welcome to ALFA!</h2>
+                <p class="text-center">There’s a brief cool-off period for your security. You will have access to the app in:</p>
+
+                <div class="text-center">
+                    <h1>02:00</h1>
+                    <h3>hours</h3>
+                </div>
+
+                <div class="text-center">
+                    <img src="/assets/img/sliders/banner-premo.png" alt="" class="w-75 mt-2 mb-2">
+                </div>
+            </div>
+         </mat-step>
+
+       </mat-stepper>
+    </div>
+ </div>

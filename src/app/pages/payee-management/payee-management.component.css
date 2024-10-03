@@ -1,0 +1,9 @@
+.payeeBox{
+    display: flex;
+    /* width: 150px; */
+    /* height: 150px; */
+    padding: 20px;
+    border: 1px solid #E1E1E1; 
+    border-radius: 5px;
+    text-align: center;
+}

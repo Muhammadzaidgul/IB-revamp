@@ -1,0 +1,162 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--layout-spacing-s-4);
+    padding: var(--layout-spacing-s-5);
+    position: relative;
+    border-radius: 0px 0px 4px 4px;
+    border: 1px solid;
+    border-color: var(--color-aliases-interface-border-border-light);
+  }
+  
+  .frame .div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .frame .content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .img {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .frame .frame-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 128px;
+    align-items: flex-start;
+    gap: var(--layout-spacing-s-4);
+    position: relative;
+  }
+  
+  .frame .div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--body-small-emphasis-font-family);
+    font-weight: var(--body-small-emphasis-font-weight);
+    color: var(--color-aliases-interface-text-text-dark);
+    font-size: var(--body-small-emphasis-font-size);
+    letter-spacing: var(--body-small-emphasis-letter-spacing);
+    line-height: var(--body-small-emphasis-line-height);
+    white-space: nowrap;
+    font-style: var(--body-small-emphasis-font-style);
+  }
+  
+  .frame .div-3 {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .frame .tabler-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--body-micro-regular-font-family);
+    font-weight: var(--body-micro-regular-font-weight);
+    color: var(--color-aliases-interface-text-text-dark);
+    font-size: var(--body-micro-regular-font-size);
+    letter-spacing: var(--body-micro-regular-letter-spacing);
+    line-height: var(--body-micro-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-micro-regular-font-style);
+  }
+  
+  .frame .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--layout-spacing-s-3);
+    padding: var(--layout-spacing-s-2) var(--layout-spacing-s-4) var(--layout-spacing-s-2) var(--layout-spacing-s-4);
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--color-aliases-interface-background-bg-success);
+    border-radius: var(--layout-border-radius-xl);
+    border: 1px solid;
+    border-color: var(--color-aliases-interface-border-border-light);
+  }
+  
+  .frame .chip-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--body-micro-regular-font-family);
+    font-weight: var(--body-micro-regular-font-weight);
+    color: var(--color-aliases-interface-text-text-inverse);
+    font-size: var(--body-micro-regular-font-size);
+    letter-spacing: var(--body-micro-regular-letter-spacing);
+    line-height: var(--body-micro-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-micro-regular-font-style);
+  }
+  
+  .frame .div-4 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .p {
+    position: relative;
+    width: 242px;
+    margin-top: -1px;
+    font-family: var(--body-micro-regular-font-family);
+    font-weight: var(--body-micro-regular-font-weight);
+    color: var(--color-aliases-interface-text-text-dark);
+    font-size: var(--body-micro-regular-font-size);
+    letter-spacing: var(--body-micro-regular-letter-spacing);
+    line-height: var(--body-micro-regular-line-height);
+    font-style: var(--body-micro-regular-font-style);
+  }
+  
+  .frame .text-wrapper-3 {
+    position: relative;
+    width: 242px;
+    font-family: var(--body-micro-regular-font-family);
+    font-weight: var(--body-micro-regular-font-weight);
+    color: var(--color-aliases-interface-text-text-dark);
+    font-size: var(--body-micro-regular-font-size);
+    letter-spacing: var(--body-micro-regular-letter-spacing);
+    line-height: var(--body-micro-regular-line-height);
+    font-style: var(--body-micro-regular-font-style);
+  }
+  

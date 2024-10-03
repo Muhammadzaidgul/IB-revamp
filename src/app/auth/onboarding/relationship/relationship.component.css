@@ -1,0 +1,77 @@
+:host ::ng-deep .mat-horizontal-stepper-header-container {  
+    display: none; 
+}
+
+.frame {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #E1E1E1;
+  }
+  
+  .frame .wallet {
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .frame .div {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-grow: 1;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .frame .div-2 {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    white-space: nowrap;
+  }
+  
+  .frame .checkboxes {
+    display: inline-flex;
+    align-items: center;
+    gap: 4;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .checkbox {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .frame .checkboxes-android {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    border-radius: 2px;
+    border: 1px solid;
+    border-color: var(--color-aliases-interactions-border-border-dark);
+  }
+  

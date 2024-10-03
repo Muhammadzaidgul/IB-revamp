@@ -1,0 +1,87 @@
+
+@if(isQuickTransferEmpty){
+    <app-no-quick-transfer/>
+}@else {
+    <div class="card" style="min-height: 330px;" data-aos="zoom-in"> 
+        <div class="p-4 pb-0 d-flex justify-content-between ">
+            <h4 class="pb-0 mb-0">  <b>Quick Transfer</b></h4>
+            <h6 class="primary-font-color"><a routerLink="/send-money" class="primary-font-color ">+ New Payee</a></h6>
+        </div> 
+        <div class="card-body ps-3 pe-3">
+            <mat-tab-group>
+                <mat-tab label="Bank Transfer"> 
+                    @for (item1 of bankPayees; track item1.id) {
+                        
+                        <div class="col d-inline-flex p-2 ps-4 pe-4  pb-0">
+                            <div class="d-block text-center pt-2" >
+                                <img alt="image" src="{{ item1.img }}" class="rounded-circle" width="50" height="50" data-toggle="title" title="{{ item1.payee }}">
+                                <br>
+                                <p>{{ item1.payee }}</p>
+                            </div>
+                        </div>
+        
+                    }
+                    @empty {
+                        <p>Empty lists of users</p>
+                    }
+                    
+                 
+                    <!-- <div class="col-12 col-md-4 col-lg-4 m-md-auto m-lg-auto">
+                        <div class="buttons d-flex justify-content-center ">
+                            <a href="#" class="btn btn-danger w-100" >More Payee</a>
+                        </div>
+                    </div> -->
+                </mat-tab>
+                <mat-tab label="Raast"> 
+    
+                    @for (item2 of raastPayees; track item2.id) {
+                        
+                        <div class="col d-inline-flex p-2 ps-4 pe-4 pb-0">
+                            <div class="d-block text-center pt-1">
+                                <img alt="image" src="{{ item2.img }}" class="rounded-circle" width="50" height="50" data-toggle="title" title="{{ item2.payee }}">
+                                <br>
+                                <p>{{ item2.payee }}</p>
+                            </div>
+                        </div>
+        
+                    }
+                    @empty {
+                        <p>Empty lists of users</p>
+                    }
+                 
+                    <!-- <div class="col-12 col-md-4 col-lg-4 m-md-auto m-lg-auto">
+                        <div class="buttons d-flex justify-content-center ">
+                            <a href="#" class="btn btn-danger w-100" >More Payee</a>
+                        </div>
+                    </div> -->
+    
+                </mat-tab>
+                <mat-tab label="CNIC"> 
+                    
+                    @for (item3 of cnicPayees; track item3.id) {
+                        
+                        <div class="col d-inline-flex p-2 ps-4 pe-4 pb-0">
+                            <div class="d-block text-center pt-1">
+                                <img alt="image" src="{{ item3.img }}" class="rounded-circle" width="50" height="50" data-toggle="title" title="{{ item3.payee }}">
+                                <br>
+                                <p>{{ item3.payee }}</p>
+                            </div>
+                        </div>
+        
+                    }
+                    @empty {
+                        <p>Empty lists of users</p>
+                    }
+    
+                 
+                    <!-- <div class="col-12 col-md-4 col-lg-4 m-md-auto m-lg-auto">
+                        <div class="buttons d-flex justify-content-center ">
+                            <a href="#" class="btn btn-danger w-100" >More Payee</a>
+                        </div>
+                    </div> -->
+    
+                </mat-tab>
+            </mat-tab-group> 
+        </div>
+    </div>   
+}

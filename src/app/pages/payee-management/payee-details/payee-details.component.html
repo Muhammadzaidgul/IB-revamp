@@ -1,0 +1,130 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0"><img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()" >Payee Details</div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-4 p-md-0 mt-5 " data-aos="fade-up" data-aos-duration="1000">
+
+        <div class="d-flex">
+            <div class="col">
+                <h4 class="p-0 m-0">Payee details</h4>
+                <p class="p-0 mt-2">Below are  the details for your saved payee</p>
+            </div>
+            <div class="col">
+            
+            </div>
+        </div>
+        
+        <div class="d-block mt-3">
+            
+            <div class="card ms-0 m-1 mt-3 pt-2" style="border-top: 8px solid red;">
+                
+                <div class="d-flex justify-content-between">
+                    <p class="ps-3">Nickname</p>
+                    <p class="pe-4" ><b>Ali</b></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="ps-3">School</p>
+                    <p class="pe-4" ><b>Beaconhouse School System</b></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="ps-3">Roll number</p>
+                    <p class="pe-4" ><b>1317</b></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="ps-3">Mobile number</p>
+                    <p class="pe-4" ><b>0345-7471314</b></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="ps-3">Email Address</p>
+                    <p class="pe-4" ><b>ali_1314gmail.com</b></p>
+                </div>
+              
+            </div>
+            
+        </div>
+
+        <div class="d-flex justify-content-around m-3"> 
+            
+            <div class="text-center">
+                <img src="/assets/img/icons/new-payment.svg" alt="">
+                <p>New Payment</p>
+            </div>
+
+            <div class="text-center"  (click)="editPayee()">
+                <img src="/assets/img/icons/edit-payee.svg" alt="">
+                <p>Edit</p>
+            </div>
+
+            <div class="text-center">
+                <img src="/assets/img/icons/delete-payee.svg" alt="">
+                <p>Delete</p>
+            </div>
+            
+        </div>
+
+        <div>
+            <div class="d-flex justify-content-between  ps-3">
+                <h5 class="pb-0 mb-0">  <b>Recent transactions</b></h5>
+                
+                
+                <h6 class="primary-font-color">
+                    <div class="d-flex justify-content-end">
+                        <a routerLink="/account-statement" class="primary-font-color">See all </a>
+                        <img src="/assets/img/icons/caret-right-red.svg" alt="" class="tabler-icon ">
+                    </div>
+                    
+                </h6>
+            </div> 
+            <div class="d-flex ps-3">
+                <p>08 Oct 2024</p>
+            </div>
+            <div class="table-responsive" >
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="box-shadow: none;">
+              
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="transactionType">
+                      <th mat-header-cell *matHeaderCellDef >  </th>
+                      <td mat-cell *matCellDef="let element" class="text-start align-content-center">
+                            <div class="frame">
+                                <div class="div p-2">
+                                    
+                                    <div *ngIf="element.transactionType == 'AC TRANSFER CR'; then thenBlock else elseBlock"></div>
+                                    <ng-template #thenBlock>
+                                        <img src="/assets/img/icons/amount-credit.svg" alt="amount-credit" class="p-1">
+                                    </ng-template>
+                                    <ng-template #elseBlock> 
+                                        <img src="/assets/img/icons/amount-debit.svg" alt="amount-debit" class="p-1">
+                                    </ng-template>
+            
+                                    
+                                    <div class="div-2 p-1">
+                                        <div class="text-wrapper"><b>Payment made</b></div>
+                                        <div class="div-wrapper"><div class="text-wrapper-2">10:50 am</div></div>
+                                    </div>
+                                </div>
+                              
+                          </div>
+                            
+                     </td>
+                    </ng-container>
+    
+            
+                    <ng-container matColumnDef="amount" class="text-wrapper-3">
+                        <th mat-header-cell *matHeaderCellDef>   </th>
+                        <td mat-cell *matCellDef="let element" style="text-align: right;"> 
+                            <b> PKR {{element.amount}}</b>
+                            
+                        </td>
+                    </ng-container>
+            
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="d-none"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+                </table>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</div>

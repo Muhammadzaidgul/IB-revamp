@@ -1,0 +1,153 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0"><img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()" >Change PIN</div>
+</div>
+<div>
+    <!-- stepper -->
+
+    <div class="horizontal-progress mt-3 d-flex flex-wrap">
+        <!-- <div class="progress-bar-item ps-1 pe-1 ">
+          <div class="frame" [style.background-color]="step1"><div class="text-wrapper">1</div></div>
+          <div class="title ps-1">Confirm expiry</div>
+        </div>
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+        <div class="progress-bar-item  ps-1 pe-1 ">
+          <div class="element-wrapper" [style.background-color]="step1" ><div class="element">1</div></div>
+          <div class="div ps-1">Set PIN</div>
+        </div>
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+        <div class="progress-bar-item  ps-1 pe-1 ">
+          <div class="element-wrapper" [style.background-color]="step2" ><div class="element">2</div></div>
+          <div class="div ps-1">Confirm PIN</div>
+        </div>
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+        <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+          <div class="element-wrapper" [style.background-color]="step3" ><div class="element">3</div></div>
+          <div class="div ps-1">Verification</div>
+        </div>
+    </div>
+
+    <!-- stepper -->
+
+    <div class="row">
+        <div class="col-12">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 m-auto p-4 p-md-0 mt-5 " data-aos="fade-up" data-aos-duration="1000">
+
+
+            <mat-stepper [linear]="isLinear" #stepper>
+        
+                <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">              
+                        <h3>
+                            Set your card PIN
+                        </h3>
+                        <p>
+                            Please choose a 4-digit card PIN that is:
+                        </p>
+
+                        <div>
+                            <img src="/assets/img/icons/check-circle-green.svg" alt="" class="me-2"> <span>Unique to you and not easy to guess</span>
+                        </div>
+
+                        <div class="mt-2">
+                            <img src="/assets/img/icons/cross-circle-red.svg" alt="" class="me-2"> <span>Not sequential like 1234 or 5678 etc.</span>
+                        </div>
+
+                        <div class="mt-2">
+                            <img src="/assets/img/icons/cross-circle-red.svg" alt="" class="me-2"> <span>Not repeating numbers like 1111 etc.</span>
+                        </div>
+
+
+                        <div class="col-12 mt-3">
+                            <input type="text" name="" id="" class="form-control" maxlength="4" placeholder="Set PIN">
+                        </div>
+
+
+                        <div class="col-12 mt-3">
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(1)" >Next  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>        
+                        </div>
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <h3>
+                            Confirm your card PIN
+                        </h3>
+                        <p>
+                            Please choose a 4-digit card PIN that is:
+                        </p>
+
+                        <div>
+                            <img src="/assets/img/icons/check-circle-green.svg" alt="" class="me-2"> <span>Unique to you and not easy to guess</span>
+                        </div>
+
+                        <div class="mt-2">
+                            <img src="/assets/img/icons/check-circle-green.svg" alt="" class="me-2"> <span>Not sequential like 1234 or 5678 etc.</span>
+                        </div>
+
+                        <div class="mt-2">
+                            <img src="/assets/img/icons/cross-circle-red.svg" alt="" class="me-2"> <span>Not repeating numbers like 1111 etc.</span>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <input type="text" name="" id="" class="form-control" maxlength="4" placeholder="Confirm PIN">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(2)" >Next  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>        
+                        </div>
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+                    <form [formGroup]="thirdFormGroup">
+                    
+                        <div class="text-center">
+                            <img src="/assets/img/icons/otp-phone.svg" alt="">
+                        </div>
+
+                        <h3>
+                            Verify OTP
+                        </h3>
+                        <p>
+                            Please enter the code we’ve sent to your mobile number *********83 below
+                        </p>
+
+                        <div class="col-12 mt-3">
+                            <label for="">OTP</label>
+                            <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3);">Submit <i class="fa fa-arrow-right"></i></button>
+                        </div>
+
+                        <p style="color: #5D5D5D;" class="text-center mt-2">
+                            Resend OTP in 00:40
+                        </p>
+
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="fourthFormGroup">
+
+                    <div class="row mt-2 justify-content-center">
+                        <img src="/assets/img/icons/Rocket.png" alt="" class="w-25 mb-2">
+                    </div>
+                    
+
+                    <h3 class="mt-4">Card PIN set successfully!</h3>
+                    <p>Your card is now active and ready to use for payments and  withdrawals.</p>
+
+                    <div class="col-12 mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" routerLink="/cards" >Go to cards <i class="fa fa-arrow-right"></i></button>
+                    </div>
+
+                </mat-step>
+            </mat-stepper>
+            
+          </div>
+        </div>
+    </div>
+ 
+</div>

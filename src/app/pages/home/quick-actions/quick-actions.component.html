@@ -1,0 +1,35 @@
+@if(isActionEmpty){
+    <app-no-quick-action/>
+}
+@else {
+    <div class="card" style="min-height: 330px;" data-aos="zoom-in"> 
+        <div class="p-4 pb-0 d-flex justify-content-between ">
+            <h4 class="pb-0 mb-0">  <b>Quick Actions</b></h4>
+            <h6 class="primary-font-color"><a routerLink="/quick-actions" class="primary-font-color ">+ New action</a></h6>
+        </div>      
+    
+        <div class="card-body ps-3 pe-3" >
+            <div class="d-flex flex-wrap">
+                @for (action of actionlist; track action.id) {
+                    
+                    <a [routerLink]="['{{ action.url}}']">
+                        <div class="m-1" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 80px; width: 120px;" route>
+                            <div class="row p-2">
+                                <div>
+                                    <span class="sidebar-icon {{ action.icon }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                </div>
+                                <div class="pt-3">
+                                    <p>{{ action.actionName }}</p>
+                                </div>
+                            </div>  
+                        </div>
+                    </a>
+                    
+                }
+                @empty {
+                    Empty list of users
+                }
+            </div>
+        </div>
+    </div>
+}

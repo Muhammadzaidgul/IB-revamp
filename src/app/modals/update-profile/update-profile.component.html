@@ -1,0 +1,33 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal" >
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="d-flex justify-content-between align-items-center align-content-center">
+                        <h4>Edit details</h4>
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                    <div class="d-block">
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="row p-3">
+
+                    <div class="col-12">
+                        <label for=""><b>{{ label }}</b></label>
+                        <input type="{{ type }}" name="" id="" class="form-control" placeholder="{{ placeHolder }}">
+                    </div>
+
+                    
+                    <div class="col-12 mt-4">
+                        <button class="btn btn-danger w-100" (click)="confirmModal()">Submit  </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

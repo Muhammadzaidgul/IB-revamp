@@ -1,0 +1,31 @@
+<div role="dialog" id="DisablePOS" class="confirm_modal" >
+    <div class="modal-dialog p-3 modal-md" role="document">
+
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="d-flex justify-content-end">
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <img src="/assets/img/icons/unlink-card.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                    <h4>Unlink relationship</h4>
+                    <p>You are about to unlink your Account 0005123852349. This will remove it from Alfa until you link it again.</p>
+                </div>
+
+                <div class="row pt-3 m-3">
+                    <button class="btn btn-lg w-100 btn-danger" routerLink="/settings/relationship-success" (click)="closeModal()" >Unlink</button>
+
+                    <button class="btn btn-lg w-100 btn-outline-dark mt-1" (click)="closeModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

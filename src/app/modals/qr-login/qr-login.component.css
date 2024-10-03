@@ -1,0 +1,16 @@
+.blur {
+    filter: blur(3px); /* Adjust the blur intensity as needed */
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden; /* Allows the image to be moved outside the container */
+  }
+  
+  .floating-img {
+    position: relative;
+    margin-top: -140px; /* Moves the image up */
+    /* Moves the image slightly to the left */
+    z-index: 1; /* Ensures the image appears above other elements */
+  }
+  

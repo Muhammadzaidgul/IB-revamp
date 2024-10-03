@@ -1,0 +1,46 @@
+<div role="dialog" id="QRLogin" class="confirm_modal"></div>
+
+<div class="modal-dialog p-4 modal-md" role="document">
+
+  <div class="modal-content" style="width: 500px;" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="modal-body" style="border: 0px; ">
+      <div class="row p-3 pb-0 pt-0">
+
+        <div class="d-flex justify-content-end">
+            <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 h-25 mt-2 col-sm-12 ">
+          
+          <h2>Login via QR</h2>
+          
+          <p>Scan QR on the Alfa App & login instantly.</p>
+
+
+          <div class="text-center text-md-start text-lg-start">
+            <p>Valid till {{ countdown }} seconds</p>
+          
+            <div id="qrCode">
+                <img src="assets/img/QR/google_QR.png" alt="QR Code" id="qrImage"
+                width="50%" height="50%">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 h-25 mt-2 d-none d-md-block">
+          <div class="image-container">
+            
+               <img src="/assets/img/icons/QR_Modal.png" alt="QR Code" id="qrImage" width="160%" height="160%" class="floating-img">
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</div>

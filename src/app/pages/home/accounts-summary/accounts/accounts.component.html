@@ -1,0 +1,49 @@
+<div class="card" data-aos="zoom-in">
+
+    @if (isAccountEmpty) {
+        <app-no-account/>
+    }
+    @else {
+        <ngx-slick-carousel class="carousel" 
+            #slickModal="slick-carousel" 
+            [config]="accountsConfig">
+
+                <div ngxSlickItem *ngFor="let account of accounts" class="slide">
+                    <div class="dashboardGraphCards">
+                        <div class="card-body p-4">
+                            <div class="row ps-0 ms-0 ">
+                                <div class="d-flex justify-content-between p-0 m-0">
+                                    <h5>Your accounts</h5>
+                                    <h6 class="primary-font-color"><a routerLink="/statement">View all ></a></h6>
+                                    
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="p-0 m-0 black-color">Alfalah Current Account</h5>
+                                    <span>1/3</span>
+                                </div>
+                                
+                            </div>
+                            <div class="row pt-0">
+                                <p class="ps-3 m-0 pt-2">99190101890029</p>
+                            </div>
+                            <div class="row ">
+                                <div class="d-flex justify-content-start">
+                                    <h1 class="ps-0 mt-2 black-color">300,000  </h1>
+                                    <h5 class="p-3 mt-1">PKR</h5>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="d-inline-flex primary-font-color ">
+                                    <i class="fas fa-eye p-1 "></i> <p class="primary-font-color pb-0 mb-0">Show Balance</p>
+                                </div>
+                            </div>                    
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </ngx-slick-carousel>
+    }
+</div>

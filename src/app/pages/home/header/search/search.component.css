@@ -1,0 +1,5 @@
+.input-group-text,
+select.form-control:not([size]):not([multiple]),
+.form-control:not(.form-control-sm):not(.form-control-lg) {
+    border-radius: 20px;
+}

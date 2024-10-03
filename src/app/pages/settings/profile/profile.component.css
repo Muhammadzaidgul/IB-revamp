@@ -1,0 +1,7 @@
+.payeeBox{
+    border: 1px solid #E1E1E1; border-radius: 5px;
+    border-radius: 8px;
+    background: #FFF; 
+    /* Elevation Levels/2 */
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}

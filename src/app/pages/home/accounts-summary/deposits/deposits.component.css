@@ -1,0 +1,17 @@
+/* p{
+    font-size: 1.4rem;
+} */
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.graph-legend{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.dashboardGraphCards{
+    min-height: 250px;
+}

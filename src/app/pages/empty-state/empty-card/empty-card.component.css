@@ -1,0 +1,94 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    width: 460px;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .frame .UX-duotone {
+    position: relative;
+    width: 240px;
+    height: 240px;
+  }
+  
+  .frame .div {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    width: 247px;
+    margin-top: -1px;
+    text-align: center;
+  }
+  
+  .frame .p {
+    position: relative;
+    align-self: stretch;
+    text-align: center;
+  }
+  
+  .frame .div-2 {
+    justify-content: center;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    
+  }
+  
+  .frame .button {
+    display: inline-flex;
+    gap: 3px;
+    padding: 3px 5px 3px 5px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .frame .button-text {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .frame .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 3px 5px 3px 5px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius:5px;
+  }
+  
+  .frame .button-text-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    text-align: center;
+    white-space: nowrap;
+    
+  }
+  

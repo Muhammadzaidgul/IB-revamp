@@ -1,0 +1,72 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h4 p-0">Prepaid top-up</div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 m-auto p-4 p-md-0 mt-5 " data-aos="fade-up" data-aos-duration="1000">
+
+        <div class="d-flex">
+            <div class="col">
+                <h4 class="p-0 m-0">Your payees</h4>
+                <p class="p-0 m-0">Choose a payee from the list or add a new payee</p>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end justify-item-center">
+                    <button class="btn btn-danger" routerLink="/mobile-topup/new-payee"><img src="/assets/img/icons/plus-icon.svg" alt="">  New Top-up</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-block mt-4">
+            <input type="text" class="form-control" style="border-radius: 20px;" placeholder="Search Payees">
+        </div>
+        
+        <div class="d-flex flex-wrap mt-3">
+
+            @for (item of payees; track $index) {
+                <div style="width: 300px;" class="h-100">
+                    <div class="col h-25 m-1 payeeBox">
+                        <div class="d-flex p-2">
+                            <img src="/assets/img/icons/jazz-logo.svg" alt="">
+        
+                            <div class="ps-2">
+                                <p class="p-0 m-0"><b>Ali</b></p>
+                                <p class="p-0 m-0">Jazz | 03211172135</p>
+                            </div>
+        
+                            <div class="col text-end align-self-center align-item-center">
+                                <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                
+            }
+            @empty {
+                Empty list of users
+            }
+            
+
+            <!-- <div class="col h-25 m-1 payeeBox">
+                <div class="d-flex p-2">
+                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
+
+                    <div class="ps-2">
+                        <p class="p-0 m-0"><b>Ali</b></p>
+                        <p class="p-0 m-0">03211172135</p>
+                    </div>
+
+                    <div class="col text-end align-self-center align-item-center">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                    </div>
+                </div>
+
+            </div> -->
+            
+        </div>
+
+      </div>
+    </div>
+</div>

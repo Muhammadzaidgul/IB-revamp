@@ -1,0 +1,4 @@
+.raastAlert{
+    border-left: 3px solid var(--Interface-Background-bg-brand, #EA5148);
+    background: var(--Interface-Background-bg-light, #F8F8F8);
+}

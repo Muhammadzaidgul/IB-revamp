@@ -1,0 +1,41 @@
+
+.frame-summary{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+  }
+
+  .frame-summary .div-summary{
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .frame-summary .div-2-summary{
+    flex-direction: column;
+    width: 70px;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 0px 2px 0px;
+    display: flex;
+    position: relative;
+  }
+
+  .frame-summary .tabler-icon-summary{
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .div-2-summary .text-wrapper h4{
+    color: #008042;
+  }

@@ -1,0 +1,49 @@
+<div class="card" data-aos="zoom-in">
+    <div class="dashboardGraphCards">
+        <div class="card-body p-4" >
+
+    @if (isDepositEmpty) {
+        <app-no-deposits/>
+    }
+    @else {
+
+        <div class="row ps-0 ms-0 ">
+            <div class="d-flex justify-content-between p-0 m-0">
+                <h5>Your investment</h5>
+                <h6 class="primary-font-color"><a routerLink="/statement">View all ></a></h6>
+                
+            </div>
+        </div>
+        <div class="d-md-flex d-sm-block d-xs-block justify-content-between pt-0 ps-2 pb-1" >
+            <div class="col-md-5 col-sm-12 col-xs-12 ps-2">
+                <canvas baseChart
+                    [type]="'doughnut'"
+                    [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="">
+                </canvas>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12 ps-3 pt-1">
+                <div class="row ps-4">
+
+                    <div class="d-lg-block d-md-block d-sm-block d-flex justify-content-between">
+                        <p class="p-0 m-0 graph-legend"> <span class="dot" style="background-color: #DD5182;"></span> Total Deposits</p>
+                        <p ><b>PKR 450,000</b></p>
+                    </div>
+                    
+                    <div class="d-lg-block d-md-block d-sm-block d-flex justify-content-between">
+                        <p class="p-0 m-0 graph-legend"> <span class="dot graph-legend" style="background-color: #FFA600;"></span> TDR</p>
+                        <p ><b>PKR 16,50,000</b></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    }
+    
+        </div>
+    </div>
+</div>

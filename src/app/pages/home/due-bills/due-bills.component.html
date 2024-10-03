@@ -1,0 +1,50 @@
+@if (isBillsEmpty) {
+    <app-no-due-bills/>
+}
+@else {
+    <div class="card" style="min-height: 330px;" data-aos="zoom-in"> 
+        <div class="p-4 pb-0 d-flex justify-content-between ">
+            <h4 class="pb-0 mb-0">  <b>Due Bills</b></h4>
+            <h6 class="primary-font-color"><a routerLink="/statement">View all ></a></h6>
+        </div> 
+        <div class="card-body ps-3 pe-3">
+            <div class="table-responsive">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 " style="box-shadow: none;">
+              
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="transactionType">
+                      <th mat-header-cell *matHeaderCellDef>  </th>
+                      <td mat-cell *matCellDef="let element" style="text-align: left;">
+                        <img src="/assets/img/icons/school-1.png" alt="amount-credit" class="p-1">
+                            {{element.transactionType}}
+                         <br>
+                         <span class="ps-4 ms-3 pt-0 mt-0" style="font-size: small; color: #767676;">{{element.accountNumber}}</span>
+                     </td>
+                    </ng-container>
+                  
+                    <!-- Name Column -->
+                   
+                  
+    
+                    <ng-container matColumnDef="amount">
+                        <th mat-header-cell *matHeaderCellDef>   </th>
+                        <td mat-cell *matCellDef="let element" style="text-align: right;"> 
+                            <b> PKR {{element.amount}}</b>
+                        </td>
+                    </ng-container>
+    
+                    <ng-container matColumnDef="accountNumber">
+                        <th mat-header-cell *matHeaderCellDef>  </th>
+                        <td mat-cell *matCellDef="let element">
+                            <h6 class="primary-font-color"><a routerLink="/statement">Pay ></a></h6>
+                         </td>
+                      </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="d-none"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+                  </table>
+                  
+            </div>
+        </div>
+    </div>
+}

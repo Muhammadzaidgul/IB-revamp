@@ -1,0 +1,99 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal">
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 700px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="d-flex justify-content-between align-items-center align-content-center">
+                        <h3>Insights</h3>
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                    <p>An overview of your net worth, assets and liabilities </p>
+                    
+                    <div class="d-block mt-1 mb-3 pt-1">
+
+                        <div class="col-12">
+                            <mat-chip-listbox aria-label="Satement Selection" (change)="onChange($event)">
+                                <mat-chip-option selected color="warn">1d</mat-chip-option>
+                                <mat-chip-option color="warn">1w</mat-chip-option>
+                                <mat-chip-option color="warn">1m</mat-chip-option>
+                                <mat-chip-option color="warn">12w</mat-chip-option>
+                                <mat-chip-option color="warn">6m</mat-chip-option>
+                                <mat-chip-option color="warn">1y</mat-chip-option>
+                                <mat-chip-option color="warn">3y</mat-chip-option>
+                                <mat-chip-option color="warn">5y</mat-chip-option>
+                            </mat-chip-listbox>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="col-md-5 col-lg-5 col-sm-12">
+
+                        <div class="frame-1 p-2 ">
+                            <p class="pt-2 pb-0 mb-0">Net Worth</p>
+                            <h4>PKR 527,230,000</h4>
+                            <div class="d-flex">
+                                <p class="graph-up">+PKR 344,230</p>
+                                <img src="/assets/img/icons/graph-up.svg" alt="" class="tabler-icon ps-1 pe-1">
+                                <p class="graph-up">20%</p>
+                            </div>    
+                        </div>
+
+                        <div class="frame-1 p-2 mt-2">
+                            <p class="pt-2 pb-0 mb-0">Total Assets</p>
+                            <h4>PKR 527,230,000</h4>
+                            <div class="d-flex">
+                                <p class="graph-up">+PKR 344,230</p>
+                                <img src="/assets/img/icons/graph-up.svg" alt="" class="tabler-icon ps-1 pe-1">
+                                <p class="graph-up">20%</p>
+                            </div>    
+                        </div>
+
+                        <div class="frame-1 p-2 mt-2">
+                            <p class="pt-2 pb-0 mb-0">Total Liabilities</p>
+                            <h4>PKR 527,230,000</h4>
+                            <div class="d-flex">
+                                <p class="graph-up">+PKR 344,230</p>
+                                <img src="/assets/img/icons/graph-up.svg" alt="" class="tabler-icon ps-1 pe-1">
+                                <p class="graph-up">20%</p>
+                            </div>  
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-7 col-lg-7 col-sm-12 mt-2 mt-lg-0 mt-md-0">
+                        <div class="frame-1 pt-3 h-100">
+                            <h6 class="text-center">Total Assets</h6>
+                            <div class="d-flex p-2 justify-content-center m-auto">
+                                
+                                <canvas baseChart
+                                    [type]="'doughnut'"
+                                    [datasets]="pieChartDatasets"
+                                    [labels]="pieChartLabels"
+                                    [options]="pieChartOptions"
+                                    [plugins]="pieChartPlugins"
+                                    [legend]="">
+                                </canvas>
+
+                            </div>
+                            <div class="d-block p-3">
+                                <div class="d-inline" style="word-wrap: break-word;">
+                                    <p class="d-inline p-1 m-0 pb-0 mb-0 graph-legend"> <span class="dot" style="background-color: #FFA600;"></span> Mutual funds</p>
+
+                                    <p class="d-inline p-1 m-0 pb-0 mb-0 graph-legend"> <span class="dot" style="background-color: #DD5182;"></span> Term deposits</p>
+
+                                    <p class="d-inline p-1 m-0 pb-0 mb-0 graph-legend"> <span class="dot" style="background-color: #955196;"></span> Securities</p>
+
+                                    <p class="d-inline p-1 m-0 pb-0 mb-0 graph-legend"> <span class="dot" style="background-color: #003F5C;"></span> Current/saving deposits</p>
+
+                                    <p class="d-inline p-1 m-0 pb-0 mb-0 graph-legend"> <span class="dot" style="background-color: #444E86;"></span> PIBs, T-Bills, NPCs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

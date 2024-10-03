@@ -1,0 +1,48 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal">
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-body p-3" style="border: 0px;">
+                <div class="row">
+                    <div class="d-flex justify-content-between align-items-start align-content-start">
+                        <img src="/assets/img/icons/card-overview.svg" alt="">
+                        <i class="fa fa-close fa-lg" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <h3>Card Overview</h3>
+                    <p>All your cards, now in one place</p>
+                </div>
+
+                <div class="row">
+                    <div class="frame">
+                        <img class="tabler-icon" src="/assets/img/icons/clock.svg" />
+                        <div class="div">
+                          <div class="text-wrapper">Quick access</div>
+                          <p class="p">
+                            Easily activate, block or unblock your card, adjust transaction limits, change your PIN, and add more cards to
+                            your account.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="frame">
+                        <img class="tabler-icon" src="/assets/img/icons/lock-green.svg" />
+                        <div class="div">
+                          <div class="text-wrapper">Stay secure</div>
+                          <p class="p">
+                            Simply block your card if you lose it, and unblock if you find it. You can also enable or disable online payments, ATM withdrawals, and point of sale transactions from the card settings.
+                          </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button class="btn btn-danger" (click)="closeModal()">Let's go!</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

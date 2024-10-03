@@ -1,0 +1,105 @@
+
+<div class="row customerInfo" > 
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <figure class="avatar mr-2 avatar-xl mt-2" style="vertical-align: top;position: absolute;">
+            <img src="assets/img/user/avatar-5.jpg" alt="user-profile-pic" class="rounded-circle author-box-picture" style="box-shadow: 0 4px 8px rgb(0 0 0 / 20%);">
+        </figure>
+        <div class="author-box-details me-3" style="display: inline-block; padding-left: 10px; margin-left: 50px;">
+            <div class="author-box-name mt-3">
+            <h5 class="mb-0" style="line-height: 1.2;"><b> <span class="primary-font-color">Welcome,</span> {{ userName }}</b></h5>
+            <p class="mb-0"  routerLink="/settings/profile">Show Profile</p>
+            </div>     
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <!-- Orbit details  -->
+        
+        <!-- Orbit details  -->
+    </div>
+
+    <div class="col-md-4 col-sm-12 mb-2 mb-lg-0 col-xs-12">
+        <!-- search area -->
+        <app-search/>
+        <!-- search area -->
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <p style="color: #5D5D5D;"><b>Settings</b></p>
+    </div>
+
+    <div class="d-flex flex-wrap">
+        @for (action of settinglist; track action.id) {
+            
+            <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
+                <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
+                    <div class="row d-block text-center p-3">
+                        
+                        <img src="/assets/img/icons/setting/{{ action.icon }}" alt="" class="w-50">
+        
+                        <div class="pt-3">
+                            <p class="text-small">{{ action.actionName }}</p>
+                        </div>
+                    </div>  
+                </div>
+            </a>
+            
+        }
+        @empty {
+            Empty list of users
+        }
+
+        <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;" (click)="raastQR()">
+            <div class="row d-block text-center p-3">
+                
+                <img src="/assets/img/icons/setting/Raast_ID_management.svg" alt="" class="w-50">
+
+                <div class="pt-3">
+                    <p class="text-small">Raast ID management</p>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <p style="color: #5D5D5D;"><b>Support</b></p>
+    </div>
+
+    <div class="d-flex flex-wrap">
+
+        <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;" (click)="contactUs()">
+            <div class="row d-block text-center p-3">
+                
+                <img src="/assets/img/icons/setting/Contact_us.svg" alt="" class="w-50">
+
+                <div class="pt-3">
+                    <p class="text-small">Contact us</p>
+                </div>
+            </div>  
+        </div>
+
+        @for (action of supportList; track action.id) {
+            
+            <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
+                <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
+                    <div class="row d-block text-center p-3">
+                        
+                        <img src="/assets/img/icons/setting/{{ action.icon }}" alt="" class="w-50">
+
+                        <div class="pt-3">
+                            <p class="text-small">{{ action.actionName }}</p>
+                        </div>
+                    </div>  
+                </div>
+            </a>
+            
+        }
+        @empty {
+            Empty list of users
+        }
+    </div>
+</div>

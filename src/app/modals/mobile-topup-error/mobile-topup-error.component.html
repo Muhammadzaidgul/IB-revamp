@@ -1,0 +1,33 @@
+<div role="dialog" id="DisablePOS" class="confirm_modal" >
+    <div class="modal-dialog p-4 modal-md" role="document">
+        <div class="modal-content" style="width: 500px;"  data-aos="zoom-in-up" data-aos-duration="1000">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="d-flex justify-content-end">
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <img src="/assets/img/icons/search-not-found.svg" alt="">
+                    </div>
+                    <div class="col-12 h-25 mt-2">
+                        <h4>
+                            Oops! Could not find the number
+                        </h4>
+                        <p>
+                            We’re sorry, but we couldn’t find the number or network you provided. Please recheck the number and network operator you’ve entered.
+                        </p>
+                    </div>
+
+                </div>
+        
+                <div class="row p-3 mt-2">
+
+                    <div class="col-12">
+                        <button class="btn btn-lg w-100 btn-danger" style="font-size: 16px;"> <img src="/assets/img/icons/try-again.svg" alt=""> Try Again</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+.relationship-bg{
+    background-color: #f8f8f8; 
+    border-radius: 12px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.viewInsight-bg{
+    background-color: #f8f8f8; 
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    position: relative;
+  }
+  
+  .frame .tabler-icon-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+  }
+  
+  .frame .tabler-icon {
+    position: relative;
+    width: 33.5px;
+    height: 32.75px;
+    margin-bottom: -0.75px;
+    margin-left: -0.75px;
+    margin-right: -0.75px;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .card{
+    border-radius: 12px !important;
+  }
+  .card-header{
+    border-top-right-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+  }
+
+  .tabler-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+
+  .frame-summary{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+  }
+
+  .frame-summary .div-summary{
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .frame-summary .div-2-summary{
+    flex-direction: column;
+    width: 70px;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 0px 2px 0px;
+    display: flex;
+    position: relative;
+  }
+
+  .frame-summary .tabler-icon-summary{
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .div-2-summary .text-wrapper h4{
+    color: #008042;
+  }
+/* 
+.frame {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #E1E1E1;
+  }
+  
+  .frame .tabler-icon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+   */
