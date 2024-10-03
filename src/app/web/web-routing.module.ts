@@ -36,6 +36,8 @@ import { ChangePinComponent } from '../pages/cards/change-pin/change-pin.compone
 import { DigitalActivityComponent } from '../pages/settings/digital-activity/digital-activity.component';
 import { NewPaymentComponent } from '../pages/send-money/bank-transfer/new-payment/new-payment.component';
 
+UtilityComponent
+
 const routes: Routes = [
   {
     path:'home',

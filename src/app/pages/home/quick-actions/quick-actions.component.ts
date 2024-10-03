@@ -12,7 +12,7 @@ import { NoQuickActionComponent } from "../../empty-state/no-quick-action/no-qui
 })
 export class QuickActionsComponent {
 
-  isActionEmpty : boolean = true;
+  isActionEmpty : boolean = false;
 
   actionlist = [
     { id: 1, actionName: 'Send Money', icon : 'icon-send-money', url:'send-money'},

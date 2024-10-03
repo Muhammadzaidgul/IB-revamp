@@ -16,7 +16,7 @@ import { NoCreditCardComponent } from "../../empty-state/no-credit-card/no-credi
 export class CreditCardsComponent {
   dynamic = 156000;
   max = 200000;
-  isCardEmpty :  boolean = true;
+  isCardEmpty :  boolean = false;
   cards = [
     { cardPerson: 'Muhammad Zaid Gul', cardNumber:'5342 *** **** *** 7867', img:'assets/img/credit-cards/Card@2x.png', totalAmountDue:'25,000' },
     { cardPerson: 'Sarim Naeem', cardNumber:'4221 *** **** *** 4519', img:'assets/img/credit-cards/Card@2x-2.png',totalAmountDue:'80,000' },

@@ -30,7 +30,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class RecentTransactionsComponent {
 
 
-  isRecentTransactionEmpty :  boolean = true;
+  isRecentTransactionEmpty :  boolean = false;
 
   displayedColumns: string[] = ['transactionType','amount'];
   dataSource = ELEMENT_DATA;
