@@ -1,0 +1,304 @@
+  
+  .main-container {
+    overflow: hidden;
+  }
+  
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 520px;
+    height: 632px;
+    margin: 0 auto;
+  }
+  .frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 520px;
+    margin: 51px 0 0 0;
+    z-index: 1;
+  }
+  .frame-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 16px;
+    position: relative;
+    width: 350px;
+    padding: 32px 24px 32px 24px;
+    z-index: 2;
+  }
+  .frame-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 24px;
+    position: relative;
+    min-width: 0;
+    z-index: 3;
+  }
+  .frame-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 8px;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    background: #18b368;
+    z-index: 4;
+    border-radius: 64px;
+  }
+  .tabler-icon {
+    flex-shrink: 0;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    /* background: url(./assets/img/icons/check-circle-green.png)
+      no-repeat center; */
+    background-size: cover;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .frame-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 8px;
+    position: relative;
+    z-index: 6;
+  }
+  .transaction-successful {
+    align-self: stretch;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 24px;
+    color: #5d5d5d;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+    z-index: 7;
+  }
+  .transaction-date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    width: 295px;
+    height: 20px;
+    color: #757575;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 8;
+  }
+  .transaction-amount {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 40px;
+    color: #2e2e2e;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+    z-index: 9;
+  }
+  .frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 32px;
+    position: relative;
+    width: 350px;
+    padding: 32px 24px 32px 24px;
+    z-index: 10;
+  }
+  .frame-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 12px;
+    position: relative;
+    width: 302px;
+    z-index: 11;
+  }
+  .frame-7 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: 302px;
+    height: 24px;
+    z-index: 12;
+  }
+  .to {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 24px;
+    color: #2e2e2e;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 13;
+  }
+  .phone-number {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 20px;
+    color: #5d5d5d;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 14;
+  }
+  .frame-8 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: 302px;
+    height: 24px;
+    z-index: 15;
+  }
+  .from {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 24px;
+    color: #2e2e2e;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 16;
+  }
+  .transaction-id {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 20px;
+    color: #757575;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 17;
+  }
+  .frame-9 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: 302px;
+    height: 24px;
+    z-index: 18;
+  }
+  .transaction-type {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 24px;
+    color: #2e2e2e;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 19;
+  }
+  .postpaid-top-up {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 20px;
+    color: #5d5d5d;
+    font-family: IBM Plex Sans, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: -0.25px;
+    z-index: 20;
+  }
+  .frame-a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: stretch;
+  }
+
+
+  .paid-stamp {
+    position: absolute;
+    top: 20px;  /* Adjust the vertical position */
+    right: 20px; /* Adjust the horizontal position */
+    z-index: 2; /* Ensure it's on top of other elements */
+    opacity: 0.7; /* Optional: Make the stamp slightly transparent */
+  }

@@ -3,11 +3,18 @@ import {MatStepper, MatStepperModule, MatStepperNext} from '@angular/material/st
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl} from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
+import { RouterModule } from '@angular/router';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
+import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
+import { AccountSelectComponent } from '../../../modals/account-select/account-select.component';
+import { AlertComponent } from "../../../shared/alert/alert.component";
 
 @Component({
   selector: 'app-utility',
   standalone: true,
-  imports: [MatStepperModule, FormsModule, ReactiveFormsModule,MatChipsModule],
+  imports: [MatStepperModule, FormsModule, ReactiveFormsModule,MatChipsModule, RouterModule,MatSlideToggleModule, AlertComponent],
   templateUrl: './utility.component.html',
   styleUrl: './utility.component.css'
 })
@@ -15,6 +22,7 @@ export class UtilityComponent {
 
   componentName = 'Utilities and bills';
 
+  isSplitPayment : boolean = false;
 
 
   step1 : string = '#EA5148';
@@ -25,7 +33,6 @@ export class UtilityComponent {
   inputText1 : boolean = false;
   inputText2 : boolean = false;
   isLinear = false;
-  isSplitPayment : boolean = false;
   isAlertActive : boolean = false;
   
   // Alert
@@ -62,8 +69,20 @@ export class UtilityComponent {
     sixthCtrl: ['', Validators.required],
   })
 
-  constructor(private _formBuilder: FormBuilder){
+  constructor(private _formBuilder: FormBuilder, public matDialog: MatDialog){
 
+  }
+
+  showInput(event:any,index){
+    if(event.target.checked && index == 1){
+      this.inputText1 = true;
+    }else if(event.target.checked && index == 2){
+      this.inputText2 = true;
+    }else{
+      this.inputText1 = false;
+      this.inputText2 = false;
+    }
+   
   }
 
   
@@ -93,6 +112,28 @@ export class UtilityComponent {
 
   nextStep(stepper:MatStepper){
     stepper.next();
+  }
+
+  receiptModal(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(PaymentReceiptPaidComponent, dialogConfig);
+  }
+
+  AccountModal(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(AccountSelectComponent, dialogConfig);
+  }
+
+
+  frequencyModal(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(TransferFrequenceyComponent, dialogConfig);
   }
 
 }

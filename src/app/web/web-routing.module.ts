@@ -35,6 +35,7 @@ import { CreditCardFacilityComponent } from '../pages/cards/credit-card-facility
 import { ChangePinComponent } from '../pages/cards/change-pin/change-pin.component';
 import { DigitalActivityComponent } from '../pages/settings/digital-activity/digital-activity.component';
 import { NewPaymentComponent } from '../pages/send-money/bank-transfer/new-payment/new-payment.component';
+import { NewUtilityPaymentComponent } from '../pages/payments/utility/new-utility-payment/new-utility-payment.component';
 
 UtilityComponent
 
@@ -106,6 +107,10 @@ const routes: Routes = [
   {
     path:'payments/utility',
     component:UtilityComponent
+  },
+  {
+    path:'payments/utility/new-payment',
+    component:NewUtilityPaymentComponent
   },
   {
     path:'send-money/bank-transfer',
