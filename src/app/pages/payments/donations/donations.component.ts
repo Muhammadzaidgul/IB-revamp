@@ -6,25 +6,52 @@ import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
+import { AlertComponent } from '../../../shared/alert/alert.component';
 import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
-import { AccountSelectComponent } from '../../../modals/account-select/account-select.component';
-import { AlertComponent } from "../../../shared/alert/alert.component";
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
+interface Pokemon {
+  value: string;
+  viewValue: string;
+}
+
+interface PokemonGroup {
+  disabled?: boolean;
+  name: string;
+  pokemon: Pokemon[];
+}
 @Component({
-  selector: 'app-utility',
+  selector: 'app-donations',
   standalone: true,
-  imports: [MatStepperModule, FormsModule, ReactiveFormsModule,MatChipsModule, RouterModule,MatSlideToggleModule, AlertComponent],
-  templateUrl: './utility.component.html',
-  styleUrl: './utility.component.css'
+  imports: [MatStepperModule,MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule,MatChipsModule, RouterModule,MatSlideToggleModule, AlertComponent],
+  templateUrl: './donations.component.html',
+  styleUrl: './donations.component.css'
 })
-export class UtilityComponent {
-
-  componentName = 'Utilities and bills';
-
-  isSplitPayment : boolean = true;
+export class DonationsComponent {
+  componentName = 'Donations';
 
 
+  isFCYAccount = true;
+
+  pokemonControl = new FormControl('');
+  pokemonGroups: PokemonGroup[] = [
+    {
+      name: 'Account',
+      pokemon: [
+        {value: '57431231663731', viewValue: '57431231663731'},
+        {value: '57131231663731', viewValue: '57401231663731'},
+      ],
+    },
+    {
+      name: 'Wallet',
+      pokemon: [
+        {value: 'wallet-1', viewValue: 'wallet-1'},
+        {value: 'wallet-2', viewValue: 'wallet-2'}
+      ],
+    }
+  ];
+  
   step1 : string = '#EA5148';
   step2 : string = '';
   step3 : string = '';
@@ -121,14 +148,5 @@ export class UtilityComponent {
     const modalDialog = this.matDialog.open(PaymentReceiptPaidComponent, dialogConfig);
   }
 
-
-
-
-  frequencyModal(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.id = "ConfirmModal";
-    dialogConfig.panelClass = 'custom-dialog-container';
-    const modalDialog = this.matDialog.open(TransferFrequenceyComponent, dialogConfig);
-  }
 
 }
