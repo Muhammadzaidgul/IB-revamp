@@ -17,7 +17,7 @@ export class LiabilitiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isLiabilityEmpty : boolean = true;
+  isLiabilityEmpty : boolean = false;
     // Pie
     public pieChartOptions: ChartOptions<'doughnut'> = {
       responsive: true,

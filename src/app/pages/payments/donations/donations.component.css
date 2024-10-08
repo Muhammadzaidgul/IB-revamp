@@ -91,6 +91,9 @@
     white-space: nowrap;
 }
 
+
+
+
 .sub-text{
     color: #5D5D5D;
 }
@@ -106,108 +109,3 @@
     margin-top: 10px;
 }
 
-.tag-paid{
-    border-radius: 30px;
-    background-color: #18B368;
-    padding: 10px;
-    color: white;
-    width: max-content;
-
-}
-
-.tag-unpaid{
-    border-radius: 30px;
-    background-color: #CC0000;
-    padding: 10px;
-    color: white;
-    width: max-content;
-
-}
-
-.bill-header{
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-        background: linear-gradient(135deg, #DB3127 0%, #F47871 100%);
-        color: #FFFFFF;
-        padding: 20px;
- 
-}
-
-.bill-body{
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    padding: 20px;
-    border: 1px solid #C3C3C3;
-
-
-}
-
-.sub-heading{
-    color: #767676;
-}
-
-.p16{
-    font-size: p16;
-}
-
-.white-text{
-    color: #FFFFFF;
-}
-
-
-.frame{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #e1e1e1;
-}
-
-.frame .content{
-    display: inline-flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.frame .tabler-icon{
-    position: relative;
-    width: 24px;
-    height: 24px;
-}
-
-.frame .div{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    display: inline-flex;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.frame .text-wrapper{
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    white-space: nowrap;
-}
-
-.frame .text-wrapper-2{
-    position: relative;
-    width: fit-content;
-    white-space: nowrap;
-}
-
-.frame .div-2{
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    display: inline-flex;
-    position: relative;
-    flex: 0 0 auto;
-}

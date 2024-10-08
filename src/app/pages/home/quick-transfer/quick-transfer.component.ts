@@ -12,7 +12,7 @@ import { NoQuickTransferComponent } from "../../empty-state/no-quick-transfer/no
 })
 export class QuickTransferComponent {
 
-  isQuickTransferEmpty : boolean = true;
+  isQuickTransferEmpty : boolean = false;
 
   bankPayees =[
     { id: 1, payee: 'Zaid Gul', img: 'assets/img/user/Avatar.png' },

@@ -17,7 +17,7 @@ export class DepositsComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  isDepositEmpty : boolean = true;
+  isDepositEmpty : boolean = false;
   // Pie
   public pieChartOptions: ChartOptions<'doughnut'> = {
     responsive: true,

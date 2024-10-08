@@ -5,7 +5,6 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup, Fo
 import { RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ThemePalette } from '@angular/material/core';
-import { setsEqual } from 'chart.js/dist/helpers/helpers.core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment-receipt.component';

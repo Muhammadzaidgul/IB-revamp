@@ -1,0 +1,927 @@
+<div class="row customerInfo p-3 ps-1">
+  <div class="h4 p-0">{{ componentName}}</div>
+</div>
+
+
+<!-- stepper -->
+
+<div class="horizontal-progress mt-3 d-flex flex-wrap">
+  <div class="progress-bar-item ps-1 pe-1 ">
+    <div class="frame" [style.background-color]="step1">
+      <div class="text-wrapper">1</div>
+    </div>
+    <div class="title ps-1">Recipient</div>
+  </div>
+  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+  <div class="progress-bar-item  ps-1 pe-1 ">
+    <div class="element-wrapper" [style.background-color]="step2">
+      <div class="element">2</div>
+    </div>
+    <div class="div ps-1">Payment type</div>
+  </div>
+  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+  <div class="progress-bar-item  ps-1 pe-1 ">
+    <div class="element-wrapper" [style.background-color]="step3">
+      <div class="element">3</div>
+    </div>
+    <div class="div ps-1">Confirm details</div>
+  </div>
+
+</div>
+
+
+
+<!-- stepper -->
+
+<div class="row">
+  <div class="col-12">
+    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+      data-aos-duration="1000">
+
+      <mat-stepper [linear]="isLinear" #stepper>
+
+        <mat-step [stepControl]="firstFormGroup">
+
+
+          <form [formGroup]="firstFormGroup">
+
+            <div class="row">
+
+              <div class="col-8">
+                <h5>Your payers</h5>
+                <p class="sub-text">Choose a payer from the list or add a new payment</p>
+              </div>
+
+              <div class="col-4 d-flex align-item-center justify-content-end h-25">
+                <button class="btn btn-danger" (click)="newPayment(); nextStep(stepper);"><img
+                    src="/assets/img/icons/plus-icon.svg" alt="">New payment</button>
+              </div>
+
+            </div>
+
+
+
+            <mat-chip-listbox aria-label="Satement Selection">
+              <div style="justify-content: space-between;">
+                <mat-chip-option selected color="warn">All</mat-chip-option>
+                <mat-chip-option color="warn">Bank Alfalah cards</mat-chip-option>
+                <mat-chip-option color="warn">Other bank cards</mat-chip-option>
+              </div>
+            </mat-chip-listbox>
+
+
+            <div class="row">
+              <div class="col-lg-6 col-md-12 ">
+                <div style="min-width: 300px;" class="h-100 mt-4">
+                  <div class="col  m-1 payeeBox">
+                    <div class="d-flex p-2">
+                      <img src="/assets/img/icons/alfalah.svg" alt="">
+
+                      <div class="ps-2">
+                        <p class="p-0 m-0"><b>Your card</b></p>
+                        <p class="p-0 m-0 sub-text">Alfalah | 123456789012345</p>
+                      </div>
+
+                      <div class="col text-end align-self-center align-item-center"
+                        (click)="nextStep(stepper); updateStepper(1)">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div style="min-width: 300px;" class="h-100 mt-4">
+                  <div class="col  m-1 payeeBox">
+                    <div class="d-flex p-2">
+                      <img src="/assets/img/icons/bop.svg" alt="">
+
+                      <div class="ps-2">
+                        <p class="p-0 m-0"><b>Jane’s card</b></p>
+                        <p class="p-0 m-0 sub-text">BOP | 123456789012345</p>
+                      </div>
+
+                      <div class="col text-end align-self-center align-item-center"
+                        (click)="nextStep(stepper); updateStepper(1)">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div style="min-width: 300px;" class="h-100 mt-4">
+                  <div class="col  m-1 payeeBox">
+                    <div class="d-flex p-2">
+                      <img src="/assets/img/icons/scb.svg" alt="">
+
+                      <div class="ps-2">
+                        <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
+                        <p class="p-0 m-0 sub-text">SCB | 123456789012345</p>
+                      </div>
+
+                      <div class="col text-end align-self-center align-item-center"
+                        (click)="nextStep(stepper); updateStepper(1)">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div style="min-width: 300px;" class="h-100 mt-4">
+                  <div class="col  m-1 payeeBox">
+                    <div class="d-flex p-2">
+                      <img src="/assets/img/icons/scb.svg" alt="">
+
+                      <div class="ps-2">
+                        <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
+                        <p class="p-0 m-0 sub-text">SCB | 123456789012345</p>
+                      </div>
+
+                      <div class="col text-end align-self-center align-item-center"
+                        (click)="nextStep(stepper); updateStepper(1); ">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+
+          <form [formGroup]="secondFormGroup">
+
+            @if(new_payment){
+
+
+
+            <div>
+              <h5>Choose company</h5>
+              <p class="sub-text">Please choose which company you'd like to pay</p>
+              <div class="input-icons mt-4">
+                <i class="fa fa-search icon"></i>
+                <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
+              </div>
+            </div>
+
+
+
+            <div class="mt-4">
+              <h5>Recently payed</h5>
+            </div>
+
+            <div>
+              <div class="row">
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/alfalah.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Bank Alfalah (BAFL)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper); ">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/alfalah.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Bank Alfalah (BAFL)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper); ">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/scb.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper); ">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/scb.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper); ">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h5>All companies</h5>
+            </div>
+
+            <div>
+              <div class="row">
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/alfalah.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Bank Alfalah (BAFL)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/alfalah.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Bank Alfalah (BAFL)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/scb.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                  <div class="h-100">
+                    <div class="col  m-1 payeeBox" style="padding: 12px;">
+                      <div class="d-flex p-2">
+                        <img src="/assets/img/icons/scb.svg" alt="">
+
+                        <div class="ps-3">
+                          <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+                        </div>
+
+                        <div class="col text-end align-self-center align-item-center">
+                          <img src="/assets/img/icons/caret-right.svg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            }
+            @if(new_payment==false){
+
+            <div class="d-flex">
+              <div class="col">
+                <h4 class="p-0 m-0">Pay credit card bill</h4>
+                <p class="p-0 m-0 sub-text">Please select an option for paying your credit card bill</p>
+              </div>
+
+            </div>
+
+            <div class="d-block mt-4">
+              <label for="Send to"><b>Pay from</b></label>
+              <div class="h-100 w-100 payeeBox mt-1"
+                style="border-top-right-radius: 8px; border-top-left-radius: 8px; ">
+                <div class="col h-25 m-1 p-2">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/alfa-logo.svg" alt="">
+
+                    <div class="ps-2">
+                      <p class="p-0 m-0">Account</p>
+                      <p class="p-0 m-0 sub-text">57431231663731</p>
+
+                    </div>
+
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-down.svg" alt="">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <label for="Send to"><b>Select payment</b></label>
+
+              @if(alfalah){
+
+
+
+
+              <!-- First Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+                  <div>
+                    <div><b>Pay statement balance</b></div>
+                    <div>Amount due to be paid by 05 October</div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 400,000</div>
+
+                </div>
+              </div>
+
+              <!-- Second Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay outstanding balance</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 13,500</div>
+
+                </div>
+              </div>
+
+
+              <!-- Third Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay minimum balance</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 5,490</div>
+
+                </div>
+              </div>
+
+
+              }
+
+
+
+              <!-- Fourth Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="showInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay custom amount</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+
+                  @if(inputText1==false){
+                  <div class="d-flex align-items-center sub-text">PKR</div>
+                  }
+
+
+                </div>
+
+
+                @if(inputText1){
+
+                <div class="d-flex justify-content-end  mt-2 ">
+                  <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                  <input type="text" name="" id="" class="form-control w-50">
+                </div>
+                }
+
+              </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="mt-4">
+              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(2)">Continue <img
+                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+            </div>
+            }
+
+
+
+
+
+
+          </form>
+
+
+
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+
+          <form [formGroup]="thirdFormGroup">
+
+            <form [formGroup]="fourthFormGroup">
+
+              @if(new_payment){
+              <h3>
+                Enter card number
+              </h3>
+              <p class="sub-text">
+                Please choose which company you'd like to pay
+              </p>
+
+              <div class="col-12 mt-3">
+                <label for=""><b>Credit card number</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                    <img src="/assets/img/icons/scb.svg" alt="">
+
+                    <div class="ps-2 align-self-center align-item-center">
+                      <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+
+                    </div>
+
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/edit-red.svg" alt="">
+                      <span class="primary-font-color p-1"><b>Edit</b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                    <img src="/assets/img/icons/user-icon.svg" alt="">
+
+                    <div class="ps-2 align-self-center align-item-center">
+                      <p class="p-0 m-0"><b>Add as payee</b></p>
+
+                    </div>
+
+                    <div class="col text-end align-self-center align-item-center">
+                      <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
+                        formControlName="acceptTerms" data-toggle="modal">
+
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-12 mt-3">
+                <label for=""><b>Payee name</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="Ali">
+              </div>
+
+              <div class="col-12 mt-3">
+                <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(2)">Continue <img
+                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                <!-- Error Mobile Network modal -->
+                <!-- <button class="w-100 btn btn-lg btn-danger" data-toggle="modal" (click)="networkErrorModal()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button> -->
+              </div>
+
+              }
+              @if(new_payment==false){
+
+              <h3>
+                Confirm details
+              </h3>
+
+              <p class="sub-text">
+                Please confirm the bill payment details below before you pay
+              </p>
+
+              <div class="col-12 generalBox p-3">
+                <p class="p-0 m-0">From</p>
+                <div class="d-flex justify-content-between">
+                  <p class="p-0 m-0"><b>Account</b></p>
+                  <p class="p-0 m-0">57431231663731</p>
+                </div>
+              </div>
+
+              <div class="col-12 generalBox p-3 mt-2">
+                <div class="d-flex justify-content-between">
+                  <p class="p-0 m-0">From</p> <img src="/assets/img/icons/edit-red.svg" alt="">
+                </div>
+                <div class="d-flex p-1">
+                  <p class="pe-1"><b>Account</b></p>
+                  <p>57431231663731</p>
+                </div>
+
+              </div>
+
+              <div class="col-12 generalBox p-3 mt-2">
+                <div class="d-flex justify-content-between">
+                  <p class="p-0 m-0">Amount</p> <img src="/assets/img/icons/edit-red.svg" alt="">
+                </div>
+
+                <div class="d-flex">
+                  <h3>400,000</h3>
+                  <p class="p-0 m-0 d-flex align-items-center">PKR</p>
+                </div>
+              </div>
+
+              <div class="mt-2">
+                <div class="col h-25 mt-3 generalBox">
+                  <div class="h-100 w-100 payeeBox mt-2">
+
+                    <div class="d-flex bd-highlight p-2 pb-0">
+                      <div class="p-1 bd-highlight"><img src="/assets/img/icons/clock-black.svg" alt=""></div>
+                      <div class="p-1 bd-highlight">
+                        <p><b>Payment frequency</b></p>
+                      </div>
+                      <div class="ms-auto p-1 bd-highlight cursor-pointer" style="cursor: pointer;"
+                        (click)="frequencyModal()">
+                        <p>Just now</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="mt-3">
+                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal()">Continue <img
+                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+
+              </div>
+              }
+
+
+
+
+
+
+
+
+            </form>
+          </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="fourthFormGroup">
+
+
+          <form [formGroup]="fourthFormGroup">
+
+
+            @if(new_payment){
+
+            <div class="d-flex">
+              <div class="col">
+                <h4 class="p-0 m-0">Pay credit card bill</h4>
+                <p class="p-0 m-0 sub-text">Please select an option for paying your credit card bill</p>
+              </div>
+
+            </div>
+
+            <div class="d-block mt-4">
+              <label for="Send to"><b>Pay from</b></label>
+              <div class="h-100 w-100 payeeBox mt-1"
+                style="border-top-right-radius: 8px; border-top-left-radius: 8px; ">
+                <div class="col h-25 m-1 p-2">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/alfa-logo.svg" alt="">
+
+                    <div class="ps-2">
+                      <p class="p-0 m-0">Account</p>
+                      <p class="p-0 m-0 sub-text">57431231663731</p>
+
+                    </div>
+
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-down.svg" alt="">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <label for="Send to"><b>Select payment</b></label>
+
+              @if(alfalah){
+
+
+
+
+              <!-- First Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+                  <div>
+                    <div><b>Pay statement balance</b></div>
+                    <div>Amount due to be paid by 05 October</div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 400,000</div>
+
+                </div>
+              </div>
+
+              <!-- Second Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay outstanding balance</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 13,500</div>
+
+                </div>
+              </div>
+
+
+              <!-- Third Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="hideInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay minimum balance</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="d-flex align-items-center sub-text">PKR 5,490</div>
+
+                </div>
+              </div>
+
+
+              }
+
+
+
+              <!-- Fourth Account -->
+              <div class="frame mt-3 p-3">
+                <div class="content d-flex align-items-center">
+
+                  <div class="ps-2 d-flex align-items-center">
+
+                    <input type='radio' (change)="showInput($event,1)" name='account'
+                      style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div>
+                    <div><b>Pay custom amount</b></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+
+                  @if(inputText1==false){
+                  <div class="d-flex align-items-center sub-text">PKR</div>
+                  }
+
+
+                </div>
+
+
+                @if(inputText1){
+
+                <div class="d-flex justify-content-end  mt-2 ">
+                  <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                  <input type="text" name="" id="" class="form-control w-50">
+                </div>
+                }
+
+              </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="mt-4">
+              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3)">Continue <img
+                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+            </div>
+            }
+
+          </form>
+
+
+
+        </mat-step>
+
+        <mat-step [stepControl]="fifthFormGroup">
+
+          <form [formGroup]="fifthFormGroup">
+
+
+            @if(new_payment){
+
+            <h3>
+              Confirm details
+            </h3>
+
+            <p class="sub-text">
+              Please confirm the bill payment details below before you pay
+            </p>
+
+            <div class="col-12 generalBox p-3">
+              <p class="p-0 m-0">From</p>
+              <div class="d-flex justify-content-between">
+                <p class="p-0 m-0"><b>Account</b></p>
+                <p class="p-0 m-0">57431231663731</p>
+              </div>
+            </div>
+
+            <div class="col-12 generalBox p-3 mt-2">
+              <div class="d-flex justify-content-between">
+                <p class="p-0 m-0">From</p> <img src="/assets/img/icons/edit-red.svg" alt="">
+              </div>
+              <div class="d-flex p-1">
+                <p class="pe-1"><b>Account</b></p>
+                <p>57431231663731</p>
+              </div>
+
+            </div>
+
+            <div class="col-12 generalBox p-3 mt-2">
+              <div class="d-flex justify-content-between">
+                <p class="p-0 m-0">Amount</p> <img src="/assets/img/icons/edit-red.svg" alt="">
+              </div>
+
+              <div class="d-flex">
+                <h3>400,000</h3>
+                <p class="p-0 m-0 d-flex align-items-center">PKR</p>
+              </div>
+            </div>
+
+            <div class="mt-2">
+              <div class="col h-25 mt-3 generalBox">
+                <div class="h-100 w-100 payeeBox mt-2">
+
+                  <div class="d-flex bd-highlight p-2 pb-0">
+                    <div class="p-1 bd-highlight"><img src="/assets/img/icons/clock-black.svg" alt=""></div>
+                    <div class="p-1 bd-highlight">
+                      <p><b>Payment frequency</b></p>
+                    </div>
+                    <div class="ms-auto p-1 bd-highlight cursor-pointer" style="cursor: pointer;"
+                      (click)="frequencyModal()">
+                      <p>Just now</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="mt-3">
+              <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal()">Continue <img
+                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+
+            </div>
+            }
+
+          </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="sixthFormGroup">
+
+        </mat-step>
+
+      </mat-stepper>
+    </div>
+  </div>
+</div>

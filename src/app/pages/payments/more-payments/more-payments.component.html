@@ -1,0 +1,45 @@
+<div class="row customerInfo p-3 ps-1">
+  <div class="h4 p-0">{{ componentName}}</div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+      data-aos-duration="1000">
+      <div class="row mt-4">
+        <h5>More payments</h5>
+        <p class="sub-text">Please choose which payment would you like to make</p>
+        <div class="input-icons">
+            <i class="fa fa-search icon"></i>
+        <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
+        
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap">
+        @for (action of settinglist; track action.id) {
+
+        <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
+          <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
+            <div class="row d-block text-center p-3">
+
+              <img src="/assets/img/icons/{{ action.icon }}" alt="" class="w-50">
+
+              <div class="pt-3">
+                <p class="text-small">{{ action.actionName }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        }
+        @empty {
+        Empty list of users
+        }
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -35,6 +35,12 @@ import { CreditCardFacilityComponent } from '../pages/cards/credit-card-facility
 import { ChangePinComponent } from '../pages/cards/change-pin/change-pin.component';
 import { DigitalActivityComponent } from '../pages/settings/digital-activity/digital-activity.component';
 import { NewPaymentComponent } from '../pages/send-money/bank-transfer/new-payment/new-payment.component';
+import { NewUtilityPaymentComponent } from '../pages/payments/utility/new-utility-payment/new-utility-payment.component';
+import { DonationsComponent } from '../pages/payments/donations/donations.component';
+import { MorePaymentsComponent } from '../pages/payments/more-payments/more-payments.component';
+import { CreditCardPaymentsComponent } from '../pages/payments/credit-card-payments/credit-card-payments.component';
+
+UtilityComponent
 
 const routes: Routes = [
   {
@@ -104,6 +110,22 @@ const routes: Routes = [
   {
     path:'payments/utility',
     component:UtilityComponent
+  },
+  {
+    path:'payments/donations',
+    component:DonationsComponent
+  },
+  {
+    path:'payments/credit-cards',
+    component:CreditCardPaymentsComponent
+  },
+  {
+    path:'payments/utility/new-payment',
+    component:NewUtilityPaymentComponent 
+  },
+  {
+    path:'payments/more-payments',
+    component:MorePaymentsComponent
   },
   {
     path:'send-money/bank-transfer',

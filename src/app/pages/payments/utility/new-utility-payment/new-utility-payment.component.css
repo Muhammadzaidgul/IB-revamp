@@ -1,0 +1,13 @@
+.sub-text{
+    color: #5D5D5D;
+}
+
+
+.payeeBox{
+    border: 1px solid #E1E1E1; 
+    border-radius: 5px;
+}
+
+:host ::ng-deep .mat-horizontal-stepper-header-container {  
+    display: none; 
+}

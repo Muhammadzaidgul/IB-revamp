@@ -25,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class DueBillsComponent {
 
-  isBillsEmpty : boolean = true;
+  isBillsEmpty : boolean = false;
   displayedColumns: string[] = ['transactionType','amount','accountNumber'];
   dataSource = ELEMENT_DATA;
 

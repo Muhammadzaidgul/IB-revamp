@@ -1,0 +1,306 @@
+<div class="row customerInfo p-3 ps-1">
+  <div class="h4 p-0">{{ componentName}}</div>
+</div>
+
+
+
+
+
+
+  <mat-stepper [linear]="isLinear" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+
+      <form [formGroup]="firstFormGroup">
+
+        
+
+        <div class="row">
+            <div class="col-12">
+              <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+                data-aos-duration="1000">
+          
+                <div>
+                  <h5>Choose company</h5>
+                  <p class="sub-text">Please choose which company you'd like to pay</p>
+                  <div class="input-icons mt-4">
+                    <i class="fa fa-search icon"></i>
+                    <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
+                  </div>
+                </div>
+          
+                <div class="mt-4">
+                  <mat-chip-listbox aria-label="Satement Selection">
+                    <div style="justify-content: space-between;">
+                      <mat-chip-option selected color="warn">All</mat-chip-option>
+                      <mat-chip-option color="warn">Electricity</mat-chip-option>
+                      <mat-chip-option color="warn">Gas</mat-chip-option>
+                      <mat-chip-option color="warn">Internet</mat-chip-option>
+                      <mat-chip-option color="warn">Landline</mat-chip-option>
+                      <mat-chip-option color="warn">Water and sanitation</mat-chip-option>
+                    </div>
+                  </mat-chip-listbox>
+                </div>
+          
+                <div class="mt-4">
+                  <h5>Recently payed</h5>
+                </div>
+          
+                <div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="mt-4">
+                  <h5>All companies</h5>
+                </div>
+          
+                <div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                      <div class="h-100">
+                        <div class="col  m-1 payeeBox" style="padding: 12px;">
+                          <div class="d-flex p-2">
+                            <img src="/assets/img/icons/lesco.svg" alt="">
+          
+                            <div class="ps-3">
+                              <p class="p-0 m-0"><b>LESCO</b></p>
+                            </div>
+          
+                            <div class="col text-end align-self-center align-item-center">
+                              <img src="/assets/img/icons/caret-right.svg" alt="">
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+
+      </form>
+
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+
+        <div class="row">
+            <div class="col-12">
+              <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+                data-aos-duration="1000">
+          
+          <div>
+              <h5>Enter consumer number</h5>
+              <p class="sub-text">Please enter your consumer number to continue</p>
+          </div>
+          
+          <div class="mt-2">
+              <h6>Bank</h6>
+          </div>
+          
+          <div class="mt-2">
+              <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                      <img src="/assets/img/icons/transworld.svg" alt="">
+          
+                      <div class="ps-2 align-self-center align-item-center">
+                          <p class="p-0 m-0"><b>Transworld</b></p>
+                         
+                      </div>
+          
+                      <div class="col text-end align-self-center align-item-center">
+                          <img src="/assets/img/icons/edit-red.svg" alt="">
+                          <span class="primary-font-color p-1"  ><b>Edit</b></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="mt-3">
+              <h6>Consumer number</h6>
+          </div>
+          <div class="mt-2">
+              
+              <input type="text" name="" id="" class="form-control mt-1" placeholder="37214222653212">
+          </div>
+          
+          <div class="mt-3">
+              <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                      <img src="/assets/img/icons/user-icon.svg" alt="">
+          
+                      <div class="ps-2 align-self-center align-item-center">
+                          <p class="p-0 m-0"><b>Add as payee</b></p>
+                         
+                      </div>
+          
+                      <div class="col text-end align-self-center align-item-center">
+                          <mat-slide-toggle
+                              class="example-margin"
+                              [color]="color"
+                              [checked]="checked"
+                              [disabled]="disabled"
+                              formControlName="acceptTerms"
+                              
+                              data-toggle="modal">
+                          
+                          </mat-slide-toggle>
+                      </div>
+                  </div>
+          
+              </div>
+          </div>
+          
+          <div class="mt-3">
+              <label for=""><b>Payee nickname (optional)</b></label>
+              <input type="text" name="" id="" class="form-control mt-1" placeholder="Please enter a payee nickname">
+          </div>
+          
+          <div class="mt-4">
+              <button class="w-100 btn btn-lg btn-danger" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+          </div>
+          
+              </div>
+            </div>
+          </div>
+      </form>
+    </mat-step>
+
+
+
+  </mat-stepper>
+  
+
+
