@@ -33,10 +33,15 @@ export class RegistrationComponent {
 
     showStepper : boolean = false;
     currentStep : number = 1;
-    currentProgress : number = 10;
+    currentProgress : number = 11;
     working = false;
     strongPassword = false;
     submitted = false;
+
+    
+  constructor(private _formBuilder: FormBuilder,public matDialog: MatDialog){
+
+  }
 
 
     signupForm = new FormGroup({
@@ -73,8 +78,7 @@ export class RegistrationComponent {
       
       isLinear = false;
 
-      constructor(private _formBuilder: FormBuilder,public matDialog: MatDialog) {}
-
+  
       referralModal(){
         const dialogConfig = new MatDialogConfig();
         dialogConfig.id = "ConfirmModal";
@@ -85,10 +89,10 @@ export class RegistrationComponent {
       updateProgressBar(value){
         if(value == 'n'){
             this.currentStep =  this.currentStep + 1;
-            this.currentProgress =  this.currentProgress + 10;
+            this.currentProgress =  this.currentProgress + 11;
         }else{
             this.currentStep =  this.currentStep - 1;
-            this.currentProgress =  this.currentProgress - 10;
+            this.currentProgress =  this.currentProgress - 11;
         }
       }
       

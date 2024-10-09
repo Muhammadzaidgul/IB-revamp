@@ -39,6 +39,7 @@ import { NewUtilityPaymentComponent } from '../pages/payments/utility/new-utilit
 import { DonationsComponent } from '../pages/payments/donations/donations.component';
 import { MorePaymentsComponent } from '../pages/payments/more-payments/more-payments.component';
 import { CreditCardPaymentsComponent } from '../pages/payments/credit-card-payments/credit-card-payments.component';
+import { PostPaidComponent } from '../pages/mobile-top-up/post-paid/post-paid.component';
 
 UtilityComponent
 
@@ -89,7 +90,11 @@ const routes: Routes = [
   },
   {
     path:'mobile-topup',
-    component:MobileTopUpComponent
+    component:MobileTopUpComponent 
+  },
+  {
+    path:'mobile-topup/post-paid',
+    component:PostPaidComponent 
   },
   {
     path:'mobile-topup/new-payee',
