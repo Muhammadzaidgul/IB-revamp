@@ -40,7 +40,7 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+    <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
       data-aos-duration="1000">
 
       <mat-stepper [linear]="isLinear" #stepper>
@@ -77,115 +77,88 @@
             </mat-chip-listbox>
 
 
-            <div class="row">
-              <div class="col-lg-6 col-md-12 ">
-                <div style="width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/transworld.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ali Ashraf</b></p>
-                        <p class="p-0 m-0 sub-text">Transworld | 0031450619867</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
 
 
+
+            <div class="d-flex flex-wrap mt-3">
+            
+             
+                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+                                <img src="/assets/img/icons/transworld.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Ali Ashraf</b></p>
+                                    <p class="p-0 m-0 sub-text">Transworld | 00314...</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
                     </div>
-                    <div class="hr"></div>
-
-                    <div class="d-flex justify-content-between p-2">
-                      <div class="tag-paid">Paid</div>
-                      <div class="d-flex align-items-center">Paid On: Sep 20th, 2023</div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/lesco.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
-                        <p class="p-0 m-0 sub-text">LESCO | 0031450619867</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
-
-
-                    </div>
-                    <div class="hr"></div>
-
-                    <div class="d-flex justify-content-between p-2">
-                      <div class="tag-unpaid">Unpaid</div>
-                      <div class="d-flex align-items-center">Paid On: Sep 20th, 2023</div>
+                    
+      
+                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+                                <img src="/assets/img/icons/lesco.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
+                                    <p class="p-0 m-0">Lesco | 43243...</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
                     </div>
 
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/transworld.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ali Ashraf</b></p>
-                        <p class="p-0 m-0 sub-text">Transworld | 0031450619867</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
-
-
+                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+                                <img src="/assets/img/icons/lesco.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
+                                    <p class="p-0 m-0">Lesco | 43243...</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
                     </div>
-                    <div class="hr"></div>
-
-                    <div class="d-flex justify-content-between p-2">
-                      <div class="tag-paid">Paid</div>
-                      <div class="d-flex align-items-center">Paid On: Sep 20th, 2023</div>
+    
+                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+                                <img src="/assets/img/icons/transworld.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Ali Ashraf</b></p>
+                                    <p class="p-0 m-0 sub-text">Transworld | 00314...</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
                     </div>
+                    
+      
 
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/lesco.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
-                        <p class="p-0 m-0 sub-text">LESCO | 0031450619867</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
-
-
-                    </div>
-                    <div class="hr"></div>
-
-                    <div class="d-flex justify-content-between p-2">
-                      <div class="tag-unpaid">Unpaid</div>
-                      <div class="d-flex align-items-center">Paid On: Sep 20th, 2023</div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
 
@@ -362,7 +335,10 @@
                         <div class="content">
                             
                             @if(isSplitPayment){
-                                <input type='checkbox' (change)="showInput($event,1)" name='' id='' style='width: 20px; height: 20px;' >
+                                <div class="d-flex align-items-center">
+                                <input type='radio' (change)="showInput($event,1)" name='account'
+                                style='width: 20px; height: 20px; margin-right: 10px;'>
+                            </div>
                             }
                             
                             <div class="div">
@@ -389,6 +365,14 @@
 
                     <div class="frame mt-3">
                         <div class="content">
+
+                            @if(isSplitPayment){
+                                <div class="d-flex align-items-center">
+                                <input type='radio' (change)="showInput($event,1)" name='account'
+                                style='width: 20px; height: 20px; margin-right: 10px;'>
+                            </div>
+                            }
+                            
                             
                             <div class="div">
                                 <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
@@ -405,6 +389,14 @@
 
                     <div class="frame mt-3">
                         <div class="content">
+
+                            @if(isSplitPayment){
+                                <div class="d-flex align-items-center">
+                                <input type='radio' (change)="showInput($event,1)" name='account'
+                                style='width: 20px; height: 20px; margin-right: 10px;'>
+                            </div>
+                            }
+                            
                             
                             <div class="div">
                                 <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
@@ -612,7 +604,7 @@
               </div>
     
               <div class="col-12 mt-4">
-                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal();">Pay PKR 2350/- <img
+                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal();">Pay PKR 2,350/- <img
                     src="/assets/img/icons/check-small.svg" alt=""></button>
               </div>
     
@@ -623,18 +615,7 @@
         </mat-step>
 
         <mat-step [stepControl]="sixthFormGroup">
-          <div class="row mt-2 justify-content-center">
-            <img src="/assets/img/icons/Rocket.png" alt="" class="w-25 mb-2">
-          </div>
 
-
-          <h3 class="mt-4">Card PIN set successfully!</h3>
-          <p>Your card is now active and ready to use for payments and withdrawals.</p>
-
-          <div class="col-12 mt-4">
-            <button class="w-100 btn btn-lg btn-danger" routerLink="/cards">Go to cards <i
-                class="fa fa-arrow-right"></i></button>
-          </div>
         </mat-step>
 
       </mat-stepper>

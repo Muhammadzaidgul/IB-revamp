@@ -6,7 +6,7 @@
         </div>
         
         <div class="col-lg-4 col-md-6 col-6 col-xs-4 p-lg-3 ps-lg-0 pe-lg-0 p-md-3 p-2 mt-1">
-            <p>{{currentStep }}/10</p>
+            <p>{{currentStep }}/11</p>
             <app-auth-progress-bar [progressValue]="currentProgress" />
         </div>
         
@@ -154,6 +154,11 @@
                     <input type="password" name="" id="" class="form-control" placeholder="******">
                     <span>Strength: strong</span>
                     <p class="instruction-text">Minimum 10 characters with a mix of letters, numbers and special characters</p>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for=""><b>Confirm Password</b></label>
+                    <input type="password" name="" id="" class="form-control" placeholder="******">
                 </div>
 
                 <div class="col-12 mt-4">

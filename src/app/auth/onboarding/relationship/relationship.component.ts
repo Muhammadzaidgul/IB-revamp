@@ -51,6 +51,9 @@ export class RelationshipComponent {
     sixthFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required],
     });
+    seventhFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+    });
 
     isLinear = false;
 
@@ -59,10 +62,10 @@ export class RelationshipComponent {
     updateProgressBar(value){
       if(value == 'n'){
           this.currentStep =  this.currentStep + 1;
-          this.currentProgress =  this.currentProgress + 10;
+          this.currentProgress =  this.currentProgress + 11;
       }else{
           this.currentStep =  this.currentStep - 1;
-          this.currentProgress =  this.currentProgress - 10;
+          this.currentProgress =  this.currentProgress - 11;
       }
     }
 
