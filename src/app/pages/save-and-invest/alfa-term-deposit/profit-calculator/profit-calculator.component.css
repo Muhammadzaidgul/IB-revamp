@@ -14,3 +14,11 @@
     border-color: #e1e1e1;
     min-width: 226px;
 }
+
+
+
+.box{
+    border-radius: 4px;
+    border: 1px solid #E1E1E1;
+    gap: 24px;
+}
