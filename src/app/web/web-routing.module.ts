@@ -55,6 +55,7 @@ import { NetAssetValueComponent } from '../pages/save-and-invest/net-asset-value
 import { StockMarketComponent } from '../pages/save-and-invest/stock-market/stock-market.component';
 import { SummaryComponent } from '../pages/save-and-invest/summary/summary.component';
 import { TopPerformingFundsComponent } from '../pages/save-and-invest/top-performing-funds/top-performing-funds.component';
+import { ProfitCalculatorComponent } from '../pages/save-and-invest/alfa-term-deposit/profit-calculator/profit-calculator.component';
 
 UtilityComponent
 
@@ -169,7 +170,11 @@ const routes: Routes = [
   },
   {
     path:'save-and-invest/alfa-term-deposit',
-    component: AlfaTermDepositComponent
+    component: AlfaTermDepositComponent 
+  },
+  {
+    path:'save-and-invest/alfa-term-deposit/profit-calculator',
+    component: ProfitCalculatorComponent 
   },
   {
     path:'save-and-invest/ips',

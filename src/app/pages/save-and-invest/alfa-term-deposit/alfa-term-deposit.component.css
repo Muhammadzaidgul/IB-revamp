@@ -1,0 +1,28 @@
+.sub-text{
+    color: #5D5D5D;
+}
+
+
+.red-box{
+    display: flex;
+    padding: 16px; /* Adjust padding as needed */
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px; /* Adjust border-radius as needed */
+    border: 1px solid #E1E1E1; /* Adjust border color as needed */
+    background: #DB3127; /* Adjust background color as needed */
+    color: #fff;
+}
+
+.white-box{
+    display: flex;
+    padding: 16px; /* Adjust padding as needed */
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px; /* Adjust border-radius as needed */
+    border: 1px solid #E1E1E1; /* Adjust border color as needed */
+    background: #fff; /* Adjust background color as needed */
+  
+}
