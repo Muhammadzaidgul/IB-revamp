@@ -54,9 +54,19 @@
             </ul>
         </li>
 
-        <li >
-            <a class="nav-link" routerLink="/home" >
-                <i class="sidebar-icon icon-menu-save-invest" ></i> <span>Save and Invest</span></a>   
+
+        <li class="dropdown" >
+            <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-save-invest" ></i><span>Save and Invest</span></a>
+            <ul class="dropdown-menu">
+                <li > <a class="nav-link"  routerLink="/save-and-invest/summary" (click)="summaryModal()">Summary</a></li>
+                <li ><a class="nav-link"   routerLink="/save-and-invest/top-performing-funds">Top performing funds</a></li>
+                <li ><a class="nav-link"   routerLink="/save-and-invest/net-asset-value">Net Asset Value (NAV)</a></li>
+                <li ><a class="nav-link"   routerLink="/save-and-invest/ips">IPS</a></li>
+                <li ><a class="nav-link"   routerLink="/save-and-invest/stock-market">Stock market</a></li>
+                <li ><a class="nav-link"   routerLink="/save-and-invest/alfa-term-deposit">Alfa term deposit</a></li>
+                
+                
+            </ul>
         </li>
 
         <li class="dropdown" >

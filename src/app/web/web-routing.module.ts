@@ -48,6 +48,13 @@ import { ComplaintsComponent } from '../pages/settings/complaints/complaints.com
 import { NewComplaintComponent } from '../pages/settings/complaints/new-complaint/new-complaint.component';
 import { ComplaintSuccessComponent } from '../pages/settings/complaints/complaint-success/complaint-success.component';
 import { RateExperienceComponent } from '../pages/settings/complaints/rate-experience/rate-experience.component';
+import { SaveAndInvestComponent } from '../pages/save-and-invest/save-and-invest.component';
+import { AlfaTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/alfa-term-deposit.component';
+import { IpsComponent } from '../pages/save-and-invest/ips/ips.component';
+import { NetAssetValueComponent } from '../pages/save-and-invest/net-asset-value/net-asset-value.component';
+import { StockMarketComponent } from '../pages/save-and-invest/stock-market/stock-market.component';
+import { SummaryComponent } from '../pages/save-and-invest/summary/summary.component';
+import { TopPerformingFundsComponent } from '../pages/save-and-invest/top-performing-funds/top-performing-funds.component';
 
 UtilityComponent
 
@@ -154,7 +161,35 @@ const routes: Routes = [
   },
   {
     path:'settings',
-    component: SettingsComponent
+    component: SettingsComponent 
+  },
+  {
+    path:'save-and-invest',
+    component: SaveAndInvestComponent
+  },
+  {
+    path:'save-and-invest/alfa-term-deposit',
+    component: AlfaTermDepositComponent
+  },
+  {
+    path:'save-and-invest/ips',
+    component: IpsComponent
+  },
+  {
+    path:'save-and-invest/net-asset-value',
+    component: NetAssetValueComponent
+  },
+  {
+    path:'save-and-invest/stock-market',
+    component: StockMarketComponent
+  },
+  {
+    path:'save-and-invest/summary',
+    component: SummaryComponent
+  },
+  {
+    path:'save-and-invest/top-performing-funds',
+    component: TopPerformingFundsComponent
   },
   {
     path:'settings/scheduled-payments',

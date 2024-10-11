@@ -28,6 +28,8 @@ export class CreditCardPaymentsComponent {
   isLinear = false;
   isAlertActive: boolean = false;
 
+  alfalahCard: boolean = false;
+
   // Alert properties
   warning = 'warning';
   msg = 'PKR 350/500 entered';
@@ -84,6 +86,11 @@ export class CreditCardPaymentsComponent {
 
   // Move to the next step in the stepper
   nextStep(stepper: MatStepper) {
+    stepper.next();
+  }
+
+  skipStep(stepper: MatStepper) {
+    stepper.selectedIndex=stepper.selectedIndex+1;
     stepper.next();
   }
 

@@ -53,7 +53,7 @@
               </div>
 
               <div class="col-4 d-flex align-item-center justify-content-end h-25">
-                <button class="btn btn-danger" (click)="newPayment(); nextStep(stepper);"><img
+                <button class="btn btn-danger" (click)="newPayment(); skipStep(stepper);"><img
                     src="/assets/img/icons/plus-icon.svg" alt="">New payment</button>
               </div>
 
@@ -82,7 +82,7 @@
 
                     <div class="ps-2">
                       <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
-                      <p class="p-0 m-0 sub-text">SCB |  {{ formattedNumbers[0]}}.</p>
+                      <p class="p-0 m-0 sub-text">SCB | {{ formattedNumbers[0]}}.</p>
                     </div>
 
                     <div class="col text-end align-self-center align-item-center">
@@ -101,7 +101,7 @@
 
                     <div class="ps-2">
                       <p class="p-0 m-0"><b>Jane’s card</b></p>
-                      <p class="p-0 m-0">BOP |  {{ formattedNumbers[1]}}</p>
+                      <p class="p-0 m-0">BOP | {{ formattedNumbers[1]}}</p>
                     </div>
 
                     <div class="col text-end align-self-center align-item-center">
@@ -119,7 +119,7 @@
 
                     <div class="ps-2">
                       <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
-                      <p class="p-0 m-0 sub-text">SCB |  {{ formattedNumbers[2]}}</p>
+                      <p class="p-0 m-0 sub-text">SCB | {{ formattedNumbers[2]}}</p>
                     </div>
 
                     <div class="col text-end align-self-center align-item-center">
@@ -138,7 +138,7 @@
 
                     <div class="ps-2">
                       <p class="p-0 m-0"><b>Jane’s card</b></p>
-                      <p class="p-0 m-0">BOP |  {{ formattedNumbers[3]}}</p>
+                      <p class="p-0 m-0">BOP | {{ formattedNumbers[3]}}</p>
                     </div>
 
                     <div class="col text-end align-self-center align-item-center">
@@ -170,7 +170,7 @@
 
 
 
-            <div>
+            <!-- <div>
               <h5>Choose company</h5>
               <p class="sub-text">Please choose which company you'd like to pay</p>
               <div class="input-icons mt-4">
@@ -341,7 +341,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
 
@@ -520,24 +520,21 @@
 
               @if(new_payment){
               <h3>
-                Enter card number
+                Enter credit card number
               </h3>
               <p class="sub-text">
-                Please choose which company you'd like to pay
+                Please enter credit card number to pay the bill
               </p>
 
-              <div class="col-12 mt-3">
-                <label for=""><b>Credit card number</b></label>
-                <input type="text" name="" id="" class="form-control mt-1" placeholder="">
-              </div>
+
 
               <div class="col-12">
                 <div class="col h-25 mt-3 payeeBox">
                   <div class="d-flex p-3">
-                    <img src="/assets/img/icons/scb.svg" alt="">
+                    <img src="/assets/img/icons/alfalah.svg" alt="">
 
                     <div class="ps-2 align-self-center align-item-center">
-                      <p class="p-0 m-0"><b>Standard Chartered Bank (SCB)</b></p>
+                      <p class="p-0 m-0"><b>Bank Alfalah (BAFL)</b></p>
 
                     </div>
 
@@ -548,6 +545,22 @@
                   </div>
                 </div>
               </div>
+
+
+              <div class="col-12 mt-3">
+                <label for=""><b>Credit card number</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="">
+              </div>
+
+
+              @if(alfalahCard){
+
+              <div class="col-12 mt-3">
+                <label for=""><b>CNIC number</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="Please enter CNIC number">
+              </div>
+
+              }
 
               <div class="col-12">
                 <div class="col h-25 mt-3 payeeBox">
