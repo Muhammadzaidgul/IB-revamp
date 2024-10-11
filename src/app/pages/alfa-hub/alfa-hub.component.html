@@ -1,0 +1,88 @@
+
+
+<div class="row customerInfo" > 
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        
+        <div class="author-box-details me-3" style="display: inline-block; padding-left: 10px; margin-left: 32px;">
+            <div class="author-box-name mt-3">
+            <h4>Alfa Hub</h4>
+            <p>Explore a list of our offerings and features</p>
+            </div>     
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <!-- Orbit details  -->
+        
+        <!-- Orbit details  -->
+    </div>
+
+    <div class="col-md-4 col-sm-12 mb-2 mb-lg-0 col-xs-12 d-flex align-items-center justify-content-end">
+        <!-- search area -->
+        <app-search/>
+        <!-- search area -->
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <p style="color: #5D5D5D;"><b>Services</b></p>
+    </div>
+
+    <div class="d-flex flex-wrap">
+        @for (action of serviceslist; track action.id) {
+            
+            <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
+                <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
+                    <div class="row d-block text-center p-3">
+                        
+                        <img src="/assets/img/icons/lifestyle/{{ action.icon }}" alt="" class="w-50">
+        
+                        <div class="pt-3">
+                            <p class="text-small">{{ action.actionName }}</p>
+                        </div>
+                    </div>  
+                </div>
+            </a>
+            
+        }
+        @empty {
+            Empty list of users
+        }
+
+
+    </div>
+
+    <div class="row mt-4">
+        <p style="color: #5D5D5D;"><b>Lifestyle</b></p>
+    </div>
+
+    <div class="d-flex flex-wrap">
+
+
+
+        @for (action of lifestyleList; track action.id) {
+            
+            <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
+                <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
+                    <div class="row d-block text-center p-3">
+                        
+                        <img src="/assets/img/icons/lifestyle/{{ action.icon }}" alt="" class="w-50">
+
+                        <div class="pt-3">
+                            <p class="text-small">{{ action.actionName }}</p>
+                        </div>
+                    </div>  
+                </div>
+            </a>
+            
+        }
+        @empty {
+            Empty list of users
+        }
+
+
+    </div>
+</div>

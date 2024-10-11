@@ -1,0 +1,169 @@
+ <div class="row customerInfo p-3 ps-1">
+   <div class="h5 p-0">
+     <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Support
+
+     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+     Complaints and feedback
+   </div>
+ </div>
+
+ @if (isComplaintsEmpty) {
+
+
+
+
+ <div class="row">
+   <div class="col-12">
+     <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+       data-aos-duration="1000">
+       <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
+         <img src="/assets/img/icons/nothing-here.svg" alt="" width="130px" height="130px">
+
+       </div>
+       <h4 style="text-align: center;">Nothing to show</h4>
+       <p class="sub-text" style="text-align: center;">Looks like you haven’t filed any complaints we can show here</p>
+
+       <div class="d-flex justify-content-center justify-item-center mt-2">
+         <button class="btn btn-danger" routerLink="/settings/complaints/new-complaint"><img
+             src="/assets/img/icons/plus-icon.svg" alt=""> File new complaint</button>
+       </div>
+       <div class="d-flex justify-content-center justify-item-center mt-2">
+         <button class="btn btn-danger" routerLink="/settings/complaints/new-complaint"
+           style="color: #DB3127; background-color: inherit; border: none; vertical-align: middle;"><img
+             src="/assets/img/icons/star.svg" alt=""> Rate your experience</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ }
+ @else {
+ <div class="row">
+   <div class="col-12">
+     <div class="col-lg-8 col-md-11 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
+       data-aos-duration="1000">
+
+       <div class="col">
+
+         <div class="row" style="display: flex; flex-direction: inline; justify-content: space-between;">
+
+           <div class="col-12 col-md-5">
+             <h4>Complaints and feedback</h4>
+           </div>
+
+           <div class="col-12 col-md-7 mt-2  justify-content-between justify-content-md-end" style="display: flex; flex-direction: inline; ">
+
+             <div class="pe-3">
+               <div class="d-flex justify-content-end justify-item-center">
+                 <button class="btn btn-danger" routerLink="/settings/complaints/new-complaint"><img
+                     src="/assets/img/icons/plus-icon.svg" alt=""> File new complaint</button>
+               </div>
+             </div>
+
+             <div>
+               <div class="d-flex justify-content-end justify-item-center">
+                 <button class="btn btn-danger" routerLink="/settings/complaints/rate-experience"
+                   style="color: #DB3127; background-color: inherit; border: none; vertical-align: middle;"><img
+                     src="/assets/img/icons/star.svg" alt=""> Rate your experience</button>
+               </div>
+
+             </div>
+
+           </div>
+         </div>
+
+       </div>
+
+       <div class="col" style="padding-top: 24px;">
+         <mat-chip-listbox aria-label="Satement Selection">
+           <mat-chip-option selected color="warn">All</mat-chip-option>
+           <mat-chip-option color="warn">Open</mat-chip-option>
+           <mat-chip-option color="warn">Resolved</mat-chip-option>
+
+         </mat-chip-listbox>
+       </div>
+
+       <div class="col" style="padding-top: 24px;">
+         <div class="row justify-content-center justify-content-md-start">
+           <div class="col-7 col-md-4">
+             <div class="card">
+               <h6>Debit card</h6>
+
+               <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+                 <div>
+                   <p>Sept 26th, 2023</p>
+                 </div>
+                 <div style="padding-left: 10px;">
+                   <p>11:00 AM</p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+           <div class="col-7 col-md-4">
+             <div class="card">
+               <h6>Credit card</h6>
+
+               <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+                 <div>
+                   <p>Sept 26th, 2023</p>
+                 </div>
+                 <div style="padding-left: 10px;">
+                   <p>11:00 AM</p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+           <div class="col-7 col-md-4">
+             <div class="card">
+               <h6>Auto Loan</h6>
+
+               <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+                 <div>
+                   <p>Sept 26th, 2023</p>
+                 </div>
+                 <div style="padding-left: 10px;">
+                   <p>11:00 AM</p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+           <div class="col-7 col-md-4">
+             <div class="card">
+               <h6>Auto Loan</h6>
+
+               <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+                 <div>
+                   <p>Sept 26th, 2023</p>
+                 </div>
+                 <div style="padding-left: 10px;">
+                   <p>11:00 AM</p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+           <div class="col-7 col-md-4">
+             <div class="card">
+               <h6>Home Loan</h6>
+
+               <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+                 <div>
+                   <p>Sept 26th, 2023</p>
+                 </div>
+                 <div style="padding-left: 10px;">
+                   <p>11:00 AM</p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </div>
+ }

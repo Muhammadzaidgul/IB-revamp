@@ -13,24 +13,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MobileNetworkComponent } from '../../../modals/mobile-network/mobile-network.component';
 import { AlertComponent } from "../../../shared/alert/alert.component";
 import { ConfirmDetailsComponent } from '../confirm-details/confirm-details.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
-  selector: 'app-post-paid',
+  selector: 'app-packages',
   standalone: true,
-  imports: [MatStepperModule, MatFormFieldModule, MatSelectModule, ConfirmDetailsComponent, AlertComponent, FormsModule, ReactiveFormsModule, NewPayeeComponent, MatSlideToggleModule],
-  templateUrl: './post-paid.component.html',
-  styleUrl: './post-paid.component.css'
+  imports: [MatStepperModule, MatFormFieldModule, MatChipsModule, MatSelectModule, ConfirmDetailsComponent, AlertComponent, FormsModule, ReactiveFormsModule, NewPayeeComponent, MatSlideToggleModule],
+  templateUrl: './packages.component.html',
+  styleUrls: ['./packages.component.css']
 })
-export class PostPaidComponent {
-
-
-
-
-
-
-  constructor(private _formBuilder: FormBuilder, public matDialog: MatDialog) {
-
-  }
+export class PackagesComponent {
+  constructor(private _formBuilder: FormBuilder, public matDialog: MatDialog) {}
 
   step1: string = '#EA5148';
   step2: string = '';
@@ -44,6 +37,7 @@ export class PostPaidComponent {
   isSplitPayment: boolean = false;
   new_payment: boolean = false;
   isAlertActive: boolean = false;
+
   // Alert
   warning = 'warning';
   msg = 'PKR 350/500 entered';
@@ -51,10 +45,10 @@ export class PostPaidComponent {
 
   success = 'success';
 
-
   color: ThemePalette = 'warn';
   checked = false;
   disabled = false;
+
   formGroup = this._formBuilder.group({
     acceptTerms: ['', Validators.requiredTrue],
   });
@@ -76,32 +70,25 @@ export class PostPaidComponent {
   });
   sixthFormGroup = this._formBuilder.group({
     sixthCtrl: ['', Validators.required],
-  })
-
-
-
+  });
+  seventhFormGroup = this._formBuilder.group({
+    sixthCtrl: ['', Validators.required],
+  });
 
   updateStepper(step) {
     if (step == 1) {
       this.step1 = '#18B368';
       this.step2 = '#EA5148';
-
-    }
-    else if (step == 2) {
+    } else if (step == 2) {
       this.step3 = this.step2;
       this.step2 = this.step1;
-
-    }
-    else if (step == 3) {
+    } else if (step == 3) {
       this.step4 = this.step3;
       this.step3 = this.step2;
-
-    }
-    else if (step == 4) {
+    } else if (step == 4) {
       this.step4 = this.step2;
       this.step3 = this.step2;
       this.step5 = this.step2;
-
     }
   }
 
@@ -110,6 +97,10 @@ export class PostPaidComponent {
   }
 
 
+  skipToStep(stepper: MatStepper) {
+    stepper.selectedIndex = stepper.selectedIndex +1; 
+    stepper.next();
+  }
 
   receiptModal() {
     const dialogConfig = new MatDialogConfig();
@@ -127,7 +118,6 @@ export class PostPaidComponent {
       this.inputText1 = false;
       this.inputText2 = false;
     }
-
   }
 
   frequencyModal() {
@@ -136,7 +126,6 @@ export class PostPaidComponent {
     dialogConfig.panelClass = 'custom-dialog-container';
     const modalDialog = this.matDialog.open(TransferFrequenceyComponent, dialogConfig);
   }
-
 
   networkErrorModal() {
     const dialogConfig = new MatDialogConfig();
@@ -150,19 +139,11 @@ export class PostPaidComponent {
     dialogConfig.id = "ConfirmModal";
     dialogConfig.panelClass = 'custom-dialog-container';
     const modalDialog = this.matDialog.open(MobileNetworkComponent, dialogConfig);
-
   }
-
-
- 
 
   newPayment() {
     this.new_payment = true;
   }
 
   alfalah: boolean = false;
-
-
-
-
 }

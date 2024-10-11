@@ -57,6 +57,12 @@ export class DonationsComponent {
   step3 : string = '';
   step4 : string = '';
   step5 : string = '';
+
+
+  red : string = '#EA5148';
+  green : string = '#18B368';
+
+
   inputText1 : boolean = false;
   inputText2 : boolean = false;
   isLinear = false;
@@ -115,26 +121,39 @@ export class DonationsComponent {
   
   updateStepper(step){
     if(step == 1){
-      this.step1 = '#18B368';
-      this.step2 = '#EA5148';
+      this.step1 = this.green;
+      this.step2 = this.red;
       
     }
     else if(step == 2){
-      this.step3 = this.step2;
-      this.step2 = this.step1;
+      this.step3 = this.red;
+      this.step2 = this.green;
+      this.step1 = this.green;
       
     }
     else if(step == 3){
-      this.step4 = this.step3;
-      this.step3 = this.step2;
+      this.step4 = this.red;
+      this.step3 = this.green;
+      this.step2 = this.green;
+      this.step1 = this.green;
       
     }
     else if(step == 4){
-      this.step4 = this.step2;
-      this.step3 = this.step2;
-      this.step5 = this.step2;
+      this.step5 = this.red;
+      this.step4 = this.green;
+      this.step3 = this.green;
+      this.step2 = this.green;
+      this.step1 = this.green;
+
       
     }
+    else if (step == 5) {
+      this.step5 = this.green;
+      this.step4 = this.green;
+      this.step3 = this.green;
+      this.step2 = this.green;
+      this.step1 = this.green;
+  }
   }
 
   nextStep(stepper:MatStepper){

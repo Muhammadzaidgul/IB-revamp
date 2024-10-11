@@ -1,5 +1,5 @@
 <div class="row customerInfo p-3 ps-1">
-  <div class="h4 p-0">Postpaid top-up</div>
+  <div class="h4 p-0">Packages</div>
 </div>
 
 
@@ -11,14 +11,14 @@
     <div class="frame" [style.background-color]="step1">
       <div class="text-wrapper">1</div>
     </div>
-    <div class="title ps-1">Recipient</div>
+    <div class="title ps-1">Select package</div>
   </div>
   <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
   <div class="progress-bar-item  ps-1 pe-1 ">
     <div class="element-wrapper" [style.background-color]="step2">
       <div class="element">2</div>
     </div>
-    <div class="div ps-1">Bill details</div>
+    <div class="div ps-1">Recipient</div>
   </div>
   <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
   <div class="progress-bar-item  ps-1 pe-1 ">
@@ -47,12 +47,377 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
+    <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
       data-aos-duration="1000">
 
       <mat-stepper [linear]="isLinear" #stepper>
 
         <mat-step [stepControl]="firstFormGroup">
+            
+
+          <div class="d-flex">
+            <div class="col">
+              <h4 class="p-0 m-0">Mobile packages</h4>
+            </div>
+          </div>
+
+
+          <div class="d-flex flex-wrap  mt-3 justify-content-start">
+
+
+
+              <!-- First Card -->
+              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)=" nextStep(stepper)">
+                <div class="col m-1 payeeBox">
+                  <div class="d-flex p-2" style="min-height: 59px;">
+                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
+                    <div class="ps-2 d-flex align-items-center">
+                      <p class="p-0 m-0"><b>Jazz</b></p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Second Card -->
+              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
+                <div class="col m-1 payeeBox">
+                  <div class="d-flex p-2" style="min-height: 59px;">
+                    <img src="/assets/img/icons/zong-logo.svg" alt="">
+                    <div class="ps-2 d-flex align-items-center">
+                      <p class="p-0 m-0"><b>Zong</b></p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Third Card -->
+              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
+                <div class="col m-1 payeeBox">
+                  <div class="d-flex p-2" style="min-height: 59px;">
+                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
+                    <div class="ps-2 d-flex align-items-center">
+                      <p class="p-0 m-0"><b>Jazz</b></p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fourth Card -->
+              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
+                <div class="col m-1 payeeBox">
+                  <div class="d-flex p-2 " style="min-height: 59px;">
+                    <img src="/assets/img/icons/zong-logo.svg" alt="">
+                    <div class="ps-2 d-flex align-items-center">
+                      <p class="p-0 m-0"><b>Zong</b></p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+          </div>
+
+          <div class="mt-3">
+            <mat-chip-listbox aria-label="Satement Selection">
+              <div style="justify-content: space-between;">
+                <mat-chip-option selected color="warn">All</mat-chip-option>
+                <mat-chip-option color="warn">Data</mat-chip-option>
+                <mat-chip-option color="warn">SMS</mat-chip-option>
+                <mat-chip-option color="warn">Calls</mat-chip-option>
+                <mat-chip-option color="warn">Easy card</mat-chip-option>
+                <mat-chip-option color="warn">Hybrid</mat-chip-option>
+              </div>
+            </mat-chip-listbox>
+          </div>
+
+
+          <div class="d-block mt-3">
+            <div class="input-icons mt-4">
+              <i class="fa fa-search icon"></i>
+              <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap mt-3 justify-content-start">
+
+
+
+            <div class="card-container">
+                <div class="header_mobile"></div>
+                <div class="body_mobile m-0">
+                    <div class="header m-0" >
+                        <div class="title">Social Plus Offer</div>
+                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
+                      </div>
+      
+                      <div class="details pt-2 pb-2">
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                            
+                          </div>
+                          <div class="detail-info ">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">on-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">100</div>
+                            <div class="detail-label">off-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/chat.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">all-net SMS</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/data.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">15</div>
+                            <div class="detail-label">GBs data</div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="divider"></div>
+      
+                      <div class="footer pt-2">
+                        <div class="price-info">
+                          <div class="price">PKR 299</div>
+                          <div class="validity">Validity: 30 days</div>
+                        </div>
+                        <button class="subscribe-button" (click)="updateStepper(1); nextStep(stepper)">Subscribe</button>
+                      </div>
+      
+                </div>
+              
+              </div>
+
+              <div class="card-container">
+                <div class="header_mobile"></div>
+                <div class="body_mobile m-0">
+                    <div class="header m-0" >
+                        <div class="title">Social Plus Offer</div>
+                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
+                      </div>
+      
+                      <div class="details pt-2 pb-2">
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                            
+                          </div>
+                          <div class="detail-info ">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">on-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">100</div>
+                            <div class="detail-label">off-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/chat.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">all-net SMS</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/data.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">15</div>
+                            <div class="detail-label">GBs data</div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="divider"></div>
+      
+                      <div class="footer pt-2">
+                        <div class="price-info">
+                          <div class="price">PKR 299</div>
+                          <div class="validity">Validity: 30 days</div>
+                        </div>
+                        <button class="subscribe-button" (click)="updateStepper(1); nextStep(stepper)">Subscribe</button>
+                      </div>
+      
+                </div>
+              
+              </div>
+
+              <div class="card-container">
+                <div class="header_mobile"></div>
+                <div class="body_mobile m-0">
+                    <div class="header m-0" >
+                        <div class="title">Social Plus Offer</div>
+                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
+                      </div>
+      
+                      <div class="details pt-2 pb-2">
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                            
+                          </div>
+                          <div class="detail-info ">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">on-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">100</div>
+                            <div class="detail-label">off-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/chat.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">all-net SMS</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/data.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">15</div>
+                            <div class="detail-label">GBs data</div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="divider"></div>
+      
+                      <div class="footer pt-2">
+                        <div class="price-info">
+                          <div class="price">PKR 299</div>
+                          <div class="validity">Validity: 30 days</div>
+                        </div>
+                        <button class="subscribe-button">Subscribe</button>
+                      </div>
+      
+                </div>
+              
+              </div>
+
+              <div class="card-container">
+                <div class="header_mobile"></div>
+                <div class="body_mobile m-0">
+                    <div class="header m-0" >
+                        <div class="title">Social Plus Offer</div>
+                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
+                      </div>
+      
+                      <div class="details pt-2 pb-2">
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                            
+                          </div>
+                          <div class="detail-info ">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">on-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/phone.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">100</div>
+                            <div class="detail-label">off-net minutes</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/chat.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">500</div>
+                            <div class="detail-label">all-net SMS</div>
+                          </div>
+                        </div>
+                        <div class="detail-item">
+                          <div class="icon-container">
+                              <img src="/assets/img/icons/data.svg" alt="">
+                          </div>
+                          <div class="detail-info">
+                            <div class="detail-value">15</div>
+                            <div class="detail-label">GBs data</div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="divider"></div>
+      
+                      <div class="footer pt-2">
+                        <div class="price-info">
+                          <div class="price">PKR 299</div>
+                          <div class="validity">Validity: 30 days</div>
+                        </div>
+                        <button class="subscribe-button">Subscribe</button>
+                      </div>
+      
+                </div>
+              
+              </div>
+              
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
 
           <form [formGroup]="firstFormGroup">
 
@@ -63,7 +428,7 @@
               </div>
               <div class="col">
                 <div class="d-flex justify-content-end justify-item-center">
-                  <button class="btn btn-danger"  (click)="newPayment(); nextStep(stepper)"><img
+                  <button class="btn btn-danger" (click)="newPayment(); nextStep(stepper)"><img
                       src="/assets/img/icons/plus-icon.svg" alt="">New payment</button>
                 </div>
               </div>
@@ -87,7 +452,7 @@
             <div class="d-flex flex-wrap mt-3">
 
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(1);nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/jazz-logo.svg" alt="">
@@ -105,7 +470,7 @@
                 </div>
               </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/zong-logo.svg" alt="">
@@ -123,7 +488,7 @@
                 </div>
               </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/jazz-logo.svg" alt="">
@@ -141,7 +506,7 @@
                 </div>
               </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/zong-logo.svg" alt="">
@@ -159,7 +524,7 @@
                 </div>
               </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)=" updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/jazz-logo.svg" alt="">
@@ -177,7 +542,7 @@
                 </div>
               </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+              <div style="min-width: 200px;" class="h-100 w-50" (click)=" updateStepper(2); nextStep(stepper)">
                 <div class="col h-25 m-1 payeeBox">
                   <div class="d-flex p-2">
                     <img src="/assets/img/icons/zong-logo.svg" alt="">
@@ -204,7 +569,7 @@
 
         </mat-step>
 
-        <mat-step [stepControl]="secondFormGroup">
+        <mat-step [stepControl]="thirdFormGroup">
 
           <form [formGroup]="secondFormGroup">
 
@@ -273,7 +638,7 @@
             </div>
 
             <div class="col-12 mt-3">
-              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(1)">Continue <img
+              <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(2); skipToStep(stepper);">Continue <img
                   src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
 
               <!-- Error Mobile Network modal -->
@@ -281,287 +646,6 @@
             </div>
 
 
-
-            }
-
-            @else{
-
-            <h3>
-              Bill details
-            </h3>
-            <p class="sub-text">Please review the amount payable for the consumer number 0031450619867</p>
-            <div class="bill-header d-flex justify-content-between">
-              <div>
-                <h5 class="white-text">Amount</h5>
-              </div>
-              <div class="d-flex">
-                <div class="d-flex align-items-end me-2">
-                  <h6 class="white-text" style="vertical-align: bottom;">PKR</h6>
-                </div>
-
-                <div class="d-flex align-items-center ">
-
-                  <h4 class="white-text">2,350</h4>
-                </div>
-              </div>
-            </div>
-            <div class="bill-body">
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Company</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>Transworld Enterprise</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Consumer name</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>Muhammad Ali Ashraf</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Due date</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>11th Oct, 2023</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Amount after due date</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>2,700 PKR</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Billing month</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>October</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center" style="vertical-align: middle;">
-                  <p class="sub-heading"><b>Status</b></p>
-                </div>
-                <div>
-                  <div class="tag-unpaid"><b>Unpaid</b></div>
-                </div>
-              </div>
-
-
-
-            </div>
-
-            <div class="mt-4">
-              <h3>
-                Last Payment
-              </h3>
-              <div class="bill-header d-flex justify-content-between"></div>
-              <div class="bill-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <p class="sub-heading"><b>Amount</b></p>
-                  </div>
-                  <div>
-                    <p class="p16"><b>PKR 2,350</b></p>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <p class="sub-heading"><b>Date</b></p>
-                  </div>
-                  <div>
-                    <p class="p16"><b>20th Sep, 2023</b></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <div class="col h-25 mt-3 generalBox">
-                <div class="d-flex p-3">
-                  <img src="/assets/img/icons/split-icon.svg" alt="">
-
-                  <div class="ps-2 align-self-center align-item-center">
-                    <p class="p-0 m-0"><b>Split PKR 500</b></p>
-
-                  </div>
-
-                  <div class="col text-end align-self-center align-item-center">
-                    <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
-                      formControlName="acceptTerms" data-toggle="modal">
-
-                    </mat-slide-toggle>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(2); nextStep(stepper)">Continue <img
-                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-            </div>
-
-
-            }
-
-
-          </form>
-
-        </mat-step>
-
-        <mat-step [stepControl]="thirdFormGroup">
-
-          <form [formGroup]="thirdFormGroup">
-
-            @if(new_payment){
-            <h3>
-              Bill details
-            </h3>
-            <p class="sub-text">Please review the amount payable for the consumer number 0031450619867</p>
-            <div class="bill-header d-flex justify-content-between">
-              <div>
-                <h5 class="white-text">Amount</h5>
-              </div>
-              <div class="d-flex">
-                <div class="d-flex align-items-end me-2">
-                  <h6 class="white-text" style="vertical-align: bottom;">PKR</h6>
-                </div>
-
-                <div class="d-flex align-items-center ">
-
-                  <h4 class="white-text">2,350</h4>
-                </div>
-              </div>
-            </div>
-            <div class="bill-body">
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Company</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>Transworld Enterprise</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Consumer name</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>Muhammad Ali Ashraf</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Due date</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>11th Oct, 2023</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Amount after due date</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>2,700 PKR</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="sub-heading"><b>Billing month</b></p>
-                </div>
-                <div>
-                  <p class="p16"><b>October</b></p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center" style="vertical-align: middle;">
-                  <p class="sub-heading"><b>Status</b></p>
-                </div>
-                <div>
-                  <div class="tag-unpaid"><b>Unpaid</b></div>
-                </div>
-              </div>
-
-
-
-            </div>
-
-            <div class="mt-4">
-              <h3>
-                Last Payment
-              </h3>
-              <div class="bill-header d-flex justify-content-between"></div>
-              <div class="bill-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <p class="sub-heading"><b>Amount</b></p>
-                  </div>
-                  <div>
-                    <p class="p16"><b>PKR 2,350</b></p>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <p class="sub-heading"><b>Date</b></p>
-                  </div>
-                  <div>
-                    <p class="p16"><b>20th Sep, 2023</b></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <div class="col h-25 mt-3 generalBox">
-                <div class="d-flex p-3">
-                  <img src="/assets/img/icons/split-icon.svg" alt="">
-
-                  <div class="ps-2 align-self-center align-item-center">
-                    <p class="p-0 m-0"><b>Split PKR 500</b></p>
-
-                  </div>
-
-                  <div class="col text-end align-self-center align-item-center">
-                    <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
-                      formControlName="acceptTerms" data-toggle="modal">
-
-                    </mat-slide-toggle>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(2); nextStep(stepper)">Continue <img
-                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-            </div>
 
             }
 
@@ -747,11 +831,38 @@
       
                     <div class="mt-4">
       
-                      <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3)">Continue <img
+                      <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(3);  nextStep(stepper);">Continue <img
                           src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
                     </div>
                   </form>
 
+            }
+
+
+          </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="fourthFormGroup">
+
+          <form [formGroup]="thirdFormGroup">
+
+            @if(new_payment){
+
+
+           
+
+            }
+
+            @else{
+
+                <app-confirm-details />
+
+                <div class="mt-4">
+    
+                  <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
+                      src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                </div>
 
             }
 
@@ -759,7 +870,7 @@
 
         </mat-step>
 
-        <mat-step [stepControl]="fourthFormGroup">
+        <mat-step [stepControl]="fifthFormGroup">
           <form [formGroup]="fourthFormGroup">
 
 
@@ -954,38 +1065,6 @@
 
             @else{
 
-                <app-confirm-details />
-
-                <div class="mt-4">
-    
-                  <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
-                      src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-                </div>
-
-
-            }
-
-
-          </form>
-        </mat-step>
-
-        <mat-step [stepControl]="fifthFormGroup">
-          <form [formGroup]="fourthFormGroup">
-
-            @if(new_payment){
-
-            <app-confirm-details />
-
-            <div class="mt-4">
-
-              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
-                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-            </div>
-            }
-
-            @else{
-
-
 
                 <div class="text-center">
                     <img src="/assets/img/icons/otp-phone.svg" alt="">
@@ -1012,43 +1091,93 @@
                     Resend OTP in 00:40
                   </p>
 
+
             }
+
 
           </form>
         </mat-step>
 
         <mat-step [stepControl]="sixthFormGroup">
+          <form [formGroup]="fourthFormGroup">
+
+            @if(new_payment){
+
+            <app-confirm-details />
+
+            <div class="mt-4">
+
+              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
+                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+            </div>
+            }
+
+            @else{
+
+
+
+            <div class="text-center">
+              <img src="/assets/img/icons/otp-phone.svg" alt="">
+            </div>
+
+            <h3>
+              Verify OTP
+            </h3>
+            <p>
+              Please enter the code we’ve sent to your mobile number *********83 below
+            </p>
+
+            <div class="col-12 mt-3">
+              <label for="">OTP</label>
+              <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
+            </div>
+
+            <div class="col-12 mt-4">
+              <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/-
+                <img src="/assets/img/icons/check-small.svg" alt=""></button>
+            </div>
+
+            <p style="color: #5D5D5D;" class="text-center mt-2">
+              Resend OTP in 00:40
+            </p>
+
+            }
+
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="seventhFormGroup">
 
 
           @if(new_payment){
-         
 
-                <div class="text-center">
-                  <img src="/assets/img/icons/otp-phone.svg" alt="">
-                </div>
-    
-                <h3>
-                  Verify OTP
-                </h3>
-                <p>
-                  Please enter the code we’ve sent to your mobile number *********83 below
-                </p>
-    
-                <div class="col-12 mt-3">
-                  <label for="">OTP</label>
-                  <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
-                </div>
-    
-                <div class="col-12 mt-4">
-                  <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/-
-                    <img src="/assets/img/icons/check-small.svg" alt=""></button>
-                </div>
-    
-                <p style="color: #5D5D5D;" class="text-center mt-2">
-                  Resend OTP in 00:40
-                </p>
-    
-            
+
+          <div class="text-center">
+            <img src="/assets/img/icons/otp-phone.svg" alt="">
+          </div>
+
+          <h3>
+            Verify OTP
+          </h3>
+          <p>
+            Please enter the code we’ve sent to your mobile number *********83 below
+          </p>
+
+          <div class="col-12 mt-3">
+            <label for="">OTP</label>
+            <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
+          </div>
+
+          <div class="col-12 mt-4">
+            <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/-
+              <img src="/assets/img/icons/check-small.svg" alt=""></button>
+          </div>
+
+          <p style="color: #5D5D5D;" class="text-center mt-2">
+            Resend OTP in 00:40
+          </p>
+
+
           }
 
           @else{

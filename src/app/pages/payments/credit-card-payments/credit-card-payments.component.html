@@ -70,100 +70,90 @@
             </mat-chip-listbox>
 
 
-            <div class="row">
-              <div class="col-lg-6 col-md-12 ">
-                <div style="min-width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/alfalah.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Your card</b></p>
-                        <p class="p-0 m-0 sub-text">Alfalah | 123456789012345</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center"
-                        (click)="nextStep(stepper); updateStepper(1)">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
 
 
+            <div class="d-flex flex-wrap mt-3">
+
+
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                <div class="col h-25 m-1 payeeBox">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/scb.svg" alt="">
+
+                    <div class="ps-2">
+                      <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
+                      <p class="p-0 m-0 sub-text">SCB |  {{ formattedNumbers[0]}}.</p>
                     </div>
 
-
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-right.svg" alt="">
+                    </div>
                   </div>
+
                 </div>
               </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="min-width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/bop.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Jane’s card</b></p>
-                        <p class="p-0 m-0 sub-text">BOP | 123456789012345</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center"
-                        (click)="nextStep(stepper); updateStepper(1)">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
 
 
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                <div class="col h-25 m-1 payeeBox">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/bop.svg" alt="">
+
+                    <div class="ps-2">
+                      <p class="p-0 m-0"><b>Jane’s card</b></p>
+                      <p class="p-0 m-0">BOP |  {{ formattedNumbers[1]}}</p>
                     </div>
 
-
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-right.svg" alt="">
+                    </div>
                   </div>
+
                 </div>
               </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="min-width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/scb.svg" alt="">
 
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
-                        <p class="p-0 m-0 sub-text">SCB | 123456789012345</p>
-                      </div>
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                <div class="col h-25 m-1 payeeBox">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/scb.svg" alt="">
 
-                      <div class="col text-end align-self-center align-item-center"
-                        (click)="nextStep(stepper); updateStepper(1)">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
-
-
+                    <div class="ps-2">
+                      <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
+                      <p class="p-0 m-0 sub-text">SCB |  {{ formattedNumbers[2]}}</p>
                     </div>
 
-
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-right.svg" alt="">
+                    </div>
                   </div>
+
                 </div>
               </div>
-              <div class="col-lg-6 col-md-12">
-                <div style="min-width: 300px;" class="h-100 mt-4">
-                  <div class="col  m-1 payeeBox">
-                    <div class="d-flex p-2">
-                      <img src="/assets/img/icons/scb.svg" alt="">
-
-                      <div class="ps-2">
-                        <p class="p-0 m-0"><b>Ibrahim’s card</b></p>
-                        <p class="p-0 m-0 sub-text">SCB | 123456789012345</p>
-                      </div>
-
-                      <div class="col text-end align-self-center align-item-center"
-                        (click)="nextStep(stepper); updateStepper(1); ">
-                        <img src="/assets/img/icons/caret-right.svg" alt="">
-                      </div>
 
 
+              <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                <div class="col h-25 m-1 payeeBox">
+                  <div class="d-flex p-2">
+                    <img src="/assets/img/icons/bop.svg" alt="">
+
+                    <div class="ps-2">
+                      <p class="p-0 m-0"><b>Jane’s card</b></p>
+                      <p class="p-0 m-0">BOP |  {{ formattedNumbers[3]}}</p>
                     </div>
 
-
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/caret-right.svg" alt="">
+                    </div>
                   </div>
+
                 </div>
               </div>
+
+
+
+
             </div>
+
 
 
 
@@ -586,7 +576,7 @@
               </div>
 
               <div class="col-12 mt-3">
-                <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(2)">Continue <img
+                <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(1)">Continue <img
                     src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
 
                 <!-- Error Mobile Network modal -->
@@ -655,7 +645,7 @@
 
 
               <div class="mt-3">
-                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal()">Continue <img
+                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal(); updateStepper(3)">Continue <img
                     src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
 
 
@@ -829,7 +819,7 @@
 
 
             <div class="mt-4">
-              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3)">Continue <img
+              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(2)">Continue <img
                   src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
             </div>
             }
@@ -906,7 +896,7 @@
 
 
             <div class="mt-3">
-              <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal()">Continue <img
+              <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal(); updateStepper(3); ">Continue <img
                   src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
 
 
