@@ -1,0 +1,154 @@
+<div class="row customerInfo p-3 ps-1">
+  <div class="h5 p-0">
+    <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Support
+
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    FAQ
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+    <div class="col-lg-10 col-md-8 col-sm-12 col-xs-12  p-0 p-md-0 mt-5" data-aos="fade-up" data-aos-duration="1000">
+
+
+      <div class="col">
+        <h4 class="p-0 m-0">FAQ</h4>
+      </div>
+
+      <div class="col">
+        <div class="col">
+          <div class="search-element mt-4">
+
+            <div class="">
+              <div class="input-icons">
+                <i class="fa fa-search icon"></i>
+                <input type="text" class="form-control ps-5" placeholder="Search Questions"
+                  style="border-radius: 22px;">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="col" style="margin-top: 24px;">
+        <div class="col">
+          <mat-chip-listbox aria-label="Satement Selection">
+            <mat-chip-option selected color="warn">All</mat-chip-option>
+            <mat-chip-option color="warn">Account management</mat-chip-option>
+            <mat-chip-option color="warn">Transactions</mat-chip-option>
+            <mat-chip-option color="warn">Card services</mat-chip-option>
+
+          </mat-chip-listbox>
+        </div>
+      </div>
+
+
+      <div class="col" style="margin-top: 24px;">
+        <h6 class="p-0 m-0" style="color: #5D5D5D;">Account management</h6>
+      </div>
+
+      <div class="col" style="margin-top: 24px;">
+
+        <cdk-accordion class="example-accordion">
+            @for (item of items_account; track item; let index = $index) {
+              <cdk-accordion-item
+          
+                #accordionItem="cdkAccordionItem"
+                class="example-accordion-item"
+                role="button"
+                tabindex="0"
+                [attr.id]="'accordion-header-' + index"
+                [attr.aria-expanded]="accordionItem.expanded"
+                [attr.aria-controls]="'accordion-body-' + index">
+                <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                 <strong> {{ item }} </strong>
+                  <span class="example-accordion-item-description">
+                   
+                        <img 
+                            [src]="accordionItem.expanded ? 'assets/img/icons/caret-up.svg' : 'assets/img/icons/caret-down.svg'" 
+                            alt="{{ accordionItem.expanded ? 'Close' : 'Open' }}" 
+                            style="width: 20px; height: 20px;" 
+                        />
+            
+                  </span>
+                </div>
+                <div
+                  class="example-accordion-item-body"
+                  role="region"
+                  [style.display]="accordionItem.expanded ? '' : 'none'"
+                  [attr.id]="'accordion-body-' + index"
+                  [attr.aria-labelledby]="'accordion-header-' + index">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+                  excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+                  veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+                </div>
+              </cdk-accordion-item>
+            }
+          </cdk-accordion>
+          
+          
+
+
+      </div>
+
+      <div class="col" style="margin-top: 24px;">
+        <h6 class="p-0 m-0" style="color: #5D5D5D;">Transactions</h6>
+      </div>
+
+      <div class="col" style="margin-top: 24px;">
+
+        <cdk-accordion class="example-accordion">
+            @for (item of items_transactions; track item; let index = $index) {
+              <cdk-accordion-item
+          
+                #accordionItem="cdkAccordionItem"
+                class="example-accordion-item"
+                role="button"
+                tabindex="0"
+                [attr.id]="'accordion-header-' + index"
+                [attr.aria-expanded]="accordionItem.expanded"
+                [attr.aria-controls]="'accordion-body-' + index">
+                <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                 <strong> {{ item }} </strong>
+                  <span class="example-accordion-item-description">
+                   
+                        <img 
+                            [src]="accordionItem.expanded ? 'assets/img/icons/caret-up.svg' : 'assets/img/icons/caret-down.svg'" 
+                            alt="{{ accordionItem.expanded ? 'Close' : 'Open' }}" 
+                            style="width: 20px; height: 20px;" 
+                        />
+            
+                  </span>
+                </div>
+                <div
+                  class="example-accordion-item-body"
+                  role="region"
+                  [style.display]="accordionItem.expanded ? '' : 'none'"
+                  [attr.id]="'accordion-body-' + index"
+                  [attr.aria-labelledby]="'accordion-header-' + index">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+                  excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+                  veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+                </div>
+              </cdk-accordion-item>
+            }
+          </cdk-accordion>
+          
+          
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>

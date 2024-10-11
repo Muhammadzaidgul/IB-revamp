@@ -30,8 +30,8 @@ export class SettingsComponent {
 
   supportList = [
    
-    { id: 1, actionName: 'FAQs', icon : 'FAQs.svg', url:'send-money'},
-    { id: 2, actionName: 'Complaints and feedback', icon : 'Complaints_and_feedback.svg', url:'send-money'},
+    { id: 1, actionName: 'FAQs', icon : 'FAQs.svg', url:'/settings/faq'},
+    { id: 2, actionName: 'Complaints and feedback', icon : 'Complaints_and_feedback.svg', url:'/settings/complaints'},
     { id: 3, actionName: 'Terms and conditions', icon : 'Terms_and_conditions.svg', url:'send-money'},
     { id: 4, actionName: 'Schedule of charges', icon : 'Schedule_of_charges.svg', url:'send-money'},
     { id: 5, actionName: 'About us', icon : 'About_us.svg', url:'/settings/about-us'}
