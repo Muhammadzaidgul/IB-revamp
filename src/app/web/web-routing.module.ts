@@ -40,6 +40,14 @@ import { DonationsComponent } from '../pages/payments/donations/donations.compon
 import { MorePaymentsComponent } from '../pages/payments/more-payments/more-payments.component';
 import { CreditCardPaymentsComponent } from '../pages/payments/credit-card-payments/credit-card-payments.component';
 import { PostPaidComponent } from '../pages/mobile-top-up/post-paid/post-paid.component';
+import { PackagesComponent } from '../pages/mobile-top-up/packages/packages.component';
+import { AlfaHubComponent } from '../pages/alfa-hub/alfa-hub.component';
+import { ShophiveComponent } from '../pages/alfa-hub/shophive/shophive.component';
+import { FaqComponent } from '../pages/settings/faq/faq.component';
+import { ComplaintsComponent } from '../pages/settings/complaints/complaints.component';
+import { NewComplaintComponent } from '../pages/settings/complaints/new-complaint/new-complaint.component';
+import { ComplaintSuccessComponent } from '../pages/settings/complaints/complaint-success/complaint-success.component';
+import { RateExperienceComponent } from '../pages/settings/complaints/rate-experience/rate-experience.component';
 
 UtilityComponent
 
@@ -97,7 +105,11 @@ const routes: Routes = [
     component:PostPaidComponent 
   },
   {
-    path:'mobile-topup/new-payee',
+    path:'mobile-topup/packages',
+    component:PackagesComponent  
+  },
+  {
+    path:'mobile-topup/new-payee/:new_payment',
     component:NewPayeeComponent
   },
   {
@@ -178,7 +190,27 @@ const routes: Routes = [
   },
   {
     path:'settings/limit-managment',
-    component: LimitManagementComponent
+    component: LimitManagementComponent 
+  },
+  {
+    path:'settings/faq',
+    component: FaqComponent  
+  },
+  {
+    path:'settings/complaints',
+    component: ComplaintsComponent  
+  },  
+  {
+    path:'settings/complaints/new-complaint',
+    component: NewComplaintComponent   
+  },
+  {
+    path:'settings/complaints/complaint-success',
+    component: ComplaintSuccessComponent  
+  },
+  {
+    path:'settings/complaints/rate-experience',
+    component: RateExperienceComponent  
   },
   {
     path:'cool-off',
@@ -199,7 +231,18 @@ const routes: Routes = [
   {
     path:'settings/digital-activity',
     component:DigitalActivityComponent
+  },
+  {
+    path:'alfa-hub/digital-activity',
+    component:AlfaHubComponent
+  },
+  {
+    path:'alfa-hub/shophive',
+    component:ShophiveComponent
   }
+
+
+
 ];
 
 @NgModule({

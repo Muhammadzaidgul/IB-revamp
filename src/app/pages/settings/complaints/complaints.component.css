@@ -1,0 +1,8 @@
+.card {
+    display: flex;
+    padding: var(--Spacing-s-4, 12px) var(--Spacing-s-5, 16px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--Spacing-s-4, 12px);
+}

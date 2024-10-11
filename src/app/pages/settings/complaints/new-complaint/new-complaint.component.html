@@ -1,0 +1,204 @@
+<div class="row customerInfo p-3 ps-1">
+  <div class="h5 p-0">
+    <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Support
+
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    Complaints and feedback
+  </div>
+</div>
+
+
+<!-- stepper -->
+
+<div class="horizontal-progress mt-3 d-flex flex-wrap">
+  <div class="progress-bar-item ps-1 pe-1 ">
+    <div class="frame" [style.background-color]="step1">
+      <div class="text-wrapper">1</div>
+    </div>
+    <div class="title ps-1">Choose product or service</div>
+  </div>
+  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+  <div class="progress-bar-item  ps-1 pe-1 ">
+    <div class="element-wrapper" [style.background-color]="step2">
+      <div class="element">2</div>
+    </div>
+    <div class="div ps-1">Describe the issue</div>
+  </div>
+
+</div>
+
+<!-- stepper -->
+
+<div class="row">
+  <div class="col-12">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+      data-aos-duration="1000">
+
+      <mat-stepper [linear]="isLinear" #stepper>
+
+        <mat-step [stepControl]="firstFormGroup">
+
+          <form [formGroup]="firstFormGroup">
+            <h5>Choose your product or service</h5>
+            <p class="sub-text">Please choose a product or a service that you want to file a complaint for</p>
+
+            <div class="col h-25 mt-2 payeeBox box" (click)="nextStep(stepper)">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Bank account</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="col h-25 mt-2 payeeBox box">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Debit card</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="col h-25 mt-2 payeeBox box">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Credit card</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+
+            <div class="col h-25 mt-2 payeeBox box">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Mutual funds</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+
+            <div class="col h-25 mt-2 payeeBox box">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Auto loan</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="col h-25 mt-2 payeeBox box">
+              <div class="d-flex p-2 pb-1">
+
+
+                <div class="ps-2">
+                  <p class="p-0 m-0">Other</p>
+
+                </div>
+
+                <div class="col text-end align-self-center align-item-center">
+                  <img src="/assets/img/icons/caret-right.svg" alt="">
+                </div>
+              </div>
+
+
+            </div>
+
+          </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <h5>Describe the issue</h5>
+            <p class="sub-text">Please describe what went wrong so that we can improve our products and services</p>
+            <br>
+            <div style="display: flex; flex-direction: inline; justify-content: space-between;">
+              <div>
+                <h6>Let us know what went wrong</h6>
+              </div>
+              <div>
+                <p class="sub-text">0/250</p>
+              </div>
+            </div>
+            <div class="description">
+              <p>Card is not working on POS payments, please fix it</p>
+            </div>
+            <div class="mt-3">
+              <button class="w-100 btn btn-lg btn-danger" routerLink="/settings/complaints/complaint-success" >Update <img src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+            </div>
+
+
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+
+           
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="fourthFormGroup">
+          <form [formGroup]="fourthFormGroup">
+
+            <p>4</p>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="fifthFormGroup">
+
+          
+
+        </mat-step>
+
+        <mat-step [stepControl]="sixthFormGroup">
+          
+        </mat-step>
+
+      </mat-stepper>
+    </div>
+  </div>
+</div>

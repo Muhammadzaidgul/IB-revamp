@@ -1,0 +1,178 @@
+
+<div class="row customerInfo p-3 ps-1">
+  <div class="h5 p-0">
+    <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Lifestyle
+
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    Shophive
+  </div>
+</div>
+
+  <!-- stepper -->
+
+  <div class="horizontal-progress mt-3 d-flex flex-wrap">
+    <div class="progress-bar-item ps-1 pe-1 ">
+      <div class="frame" [style.background-color]="step1"><div class="text-wrapper">1</div></div>
+      <div class="title ps-1">Payment details</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 ">
+      <div class="element-wrapper" [style.background-color]="step2" ><div class="element">2</div></div>
+      <div class="div ps-1">Verification</div>
+    </div>
+
+</div>
+
+
+<mat-stepper [linear]="isLinear" #stepper>
+            
+    <mat-step [stepControl]="firstFormGroup">
+    
+        <form [formGroup]="firstFormGroup">
+
+
+
+            <div class="row p-3 ps-1">
+
+
+                <div class="col-lg-6 col-md-6 col-sm-12 justify-content-center" style="margin: auto;">
+              
+                  <h4 style="margin-bottom: 32px; margin-top: 32px;">Shophive</h4>
+                  <div class="col-12 mt-3">
+                    <label for=""><b>Order ID</b></label>
+                    <input type="text" name="" id="" class="form-control mt-1" placeholder="Enter order id">
+                  </div>
+              
+              
+                  <div class="col-12 mt-3">
+                    <label for=""><b>Order amount</b></label>
+                    <input type="text" name="" id="" class="form-control mt-1" placeholder="Enter order amount">
+                    <p style="color: #5D5D5D;" class="text-start mt-2">
+                      Please enter the amount in PKR
+                    </p>
+                  </div>
+              
+                  <div style="border: 1px solid #E1E1E1; border-radius: 4px;" class="h-100">
+                    <div class="col h-25 m-1 payeeBox">
+                      <div class="d-flex p-2 ">
+                        <div style="display: flex; align-items: center; padding-right: 15px; ">
+                          <img src="/assets/img/logos/alfa-logo.png" alt="" width="24px" height="24px">
+                        </div>
+                        <div class="ps-2">
+                          <p class="p-0 m-0" style="font: 32px;"><b>Account</b></p>
+                          <p class="p-0 m-0" style="font: 32px; color: #767676;">57431231663731</p>
+                        </div>
+              
+                        <div class="col text-end align-self-center align-item-center">
+                          <img src="/assets/img/icons/caret-down.svg" alt="">
+                        </div>
+                      </div>
+              
+                    </div>
+                  </div>
+              
+                  <div style="border: 1px solid #E1E1E1; border-radius: 4px;" class="h-100 mt-3">
+                    <div class="col h-25 m-1 payeeBox">
+                      <div class="d-flex p-2 ">
+                        <div style="display: flex; align-items: center;">
+                          <img src="assets/img/icons/lifestyle/Shophive.svg" alt="" width="24px" height="24px">
+                        </div>
+                        <div class="ps-2">
+                          <p class="p-0 m-0" style="font: 32px;"><b>Shophive</b></p>
+                        </div>
+              
+              
+                      </div>
+              
+                    </div>
+                    <div class="col h-25 m-1 payeeBox">
+                      <div class="d-flex p-2 ">
+                        <p>Shophive is an e-commerce website that provides premium services and products to customers. </p>
+                      </div>
+                    </div>
+                    <div class="col h-25 m-1 payeeBox">
+                      <div class="d-flex p-2 ">
+                        <h6 style="color: #B40C02;">www.shophive.com</h6>
+                        <div class="col text-end align-self-center align-item-center">
+                          <img src="assets/img/icons/lifestyle/go-to.svg" alt="">
+                        </div>
+                      </div>
+                    </div>
+              
+              
+                    </div>
+              
+                    <div class="col h-25 payeeBox">
+                      <div class="d-flex ">
+                        <div class="col-12 mt-4">
+                          <button class="w-100 btn btn-lg btn-danger"    (click)="nextStep(stepper)" (click)="updateStepper(1)">Pay PKR 2350/- <img
+                              src="/assets/img/icons/check-small.svg" alt=""></button>
+                        </div>
+              
+                      </div>
+              
+              
+              
+                  </div>
+              
+                </div>
+              
+              </div>
+
+
+
+
+
+         
+        </form>
+
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+
+        <form [formGroup]="secondFormGroup">
+
+            
+            <div class="row p-3 ps-1">
+
+
+                <div class="col-lg-6 col-md-6 col-sm-12 justify-content-center" style="margin: auto;">
+            
+            <div class="text-center">
+                <img src="/assets/img/icons/otp-phone.svg" alt="">
+            </div>
+
+            <h3>
+                Verify OTP
+            </h3>
+            <p>
+                Please enter the code we’ve sent to your mobile number *********83 below
+            </p>
+
+            <div class="col-12 mt-3">
+                <label for="">OTP</label>
+                <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+            </div>
+
+            <div class="col-12 mt-4">
+                <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(2); receiptModal();">Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+            </div>
+
+            <p style="color: #5D5D5D;" class="text-center mt-2">
+                Resend OTP in 00:40
+            </p> 
+        </div>
+              
+    </div>
+
+        </form>
+
+    </mat-step>
+
+
+
+</mat-stepper>
+
+
+
+

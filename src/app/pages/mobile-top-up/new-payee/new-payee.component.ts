@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {MatStepper, MatStepperModule, MatStepperNext} from '@angular/material/stepper';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl} from '@angular/forms';
@@ -13,6 +13,8 @@ import { AlertComponent } from "../../../shared/alert/alert.component";
 import { ConfirmDetailsComponent } from "../confirm-details/confirm-details.component";
 import { validateVerticalPosition } from '@angular/cdk/overlay';
 import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment-receipt.component';
+import { DataService } from '../../../web/services/data.service';
+
 
 @Component({
     selector: 'app-new-payee',
@@ -22,6 +24,23 @@ import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment
     imports: [MatStepperModule, FormsModule, ReactiveFormsModule, RouterModule, MatSlideToggleModule, MatChipsModule, AlertComponent, ConfirmDetailsComponent]
 })
 export class NewPayeeComponent {
+
+
+  @Input() dataFromComp1!: boolean;
+  
+  skipToStep(stepper: MatStepper) {
+    stepper.selectedIndex = stepper.selectedIndex +1; 
+    stepper.next();
+    
+  }
+
+
+
+
+
+  
+
+
 
   step1 : string = '#EA5148';
   step2 : string = '';
@@ -68,9 +87,13 @@ export class NewPayeeComponent {
     sixthCtrl: ['', Validators.required],
   })
 
-  constructor(private _formBuilder: FormBuilder,private location: Location,public matDialog: MatDialog){
+  constructor(private dataService: DataService, private _formBuilder: FormBuilder,private location: Location,public matDialog: MatDialog){
 
   }
+
+
+ 
+
 
   back():void{
     this.location.back();
