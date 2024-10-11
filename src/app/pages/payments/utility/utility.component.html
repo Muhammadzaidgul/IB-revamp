@@ -2,8 +2,6 @@
   <div class="h4 p-0">{{ componentName}}</div>
 </div>
 
-
-
 <!-- stepper -->
 
 <div class="horizontal-progress mt-3 d-flex flex-wrap">
@@ -40,7 +38,7 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+    <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
       data-aos-duration="1000">
 
       <mat-stepper [linear]="isLinear" #stepper>
@@ -65,7 +63,7 @@
 
 
 
-            <mat-chip-listbox aria-label="Satement Selection">
+            <mat-chip-listbox aria-label="Satement Selection" (change)="onChange($event)">
               <div style="justify-content: space-between;">
                 <mat-chip-option selected color="warn">All</mat-chip-option>
                 <mat-chip-option color="warn">Electricity</mat-chip-option>
@@ -82,88 +80,31 @@
 
             <div class="d-flex flex-wrap mt-3">
             
+                @for (item of myPayees; track $index) {
+                    <div  class="utilityBox h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+                                <img src="/assets/img/icons/{{ item.logo }}" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>{{ item.payeeName }}</b></p>
+                                    <p class="p-0 m-0 sub-text">{{ item.companyType }} | {{ item.accountNo }} </p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                }
+                @empty {
+                    Empty list of users
+                }
              
-                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
-                        <div class="col h-25 m-1 payeeBox">
-                            <div class="d-flex p-2">
-                                <img src="/assets/img/icons/transworld.svg" alt="">
-            
-                                <div class="ps-2">
-                                    <p class="p-0 m-0"><b>Ali Ashraf</b></p>
-                                    <p class="p-0 m-0 sub-text">Transworld | 00314...</p>
-                                </div>
-            
-                                <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/caret-right.svg" alt="">
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                    
-      
-                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
-                        <div class="col h-25 m-1 payeeBox">
-                            <div class="d-flex p-2">
-                                <img src="/assets/img/icons/lesco.svg" alt="">
-            
-                                <div class="ps-2">
-                                    <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
-                                    <p class="p-0 m-0">Lesco | 43243...</p>
-                                </div>
-            
-                                <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/caret-right.svg" alt="">
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-
-                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
-                        <div class="col h-25 m-1 payeeBox">
-                            <div class="d-flex p-2">
-                                <img src="/assets/img/icons/lesco.svg" alt="">
-            
-                                <div class="ps-2">
-                                    <p class="p-0 m-0"><b>Ibrahim Khan</b></p>
-                                    <p class="p-0 m-0">Lesco | 43243...</p>
-                                </div>
-            
-                                <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/caret-right.svg" alt="">
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-    
-                    <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper); updateStepper(1)">
-                        <div class="col h-25 m-1 payeeBox">
-                            <div class="d-flex p-2">
-                                <img src="/assets/img/icons/transworld.svg" alt="">
-            
-                                <div class="ps-2">
-                                    <p class="p-0 m-0"><b>Ali Ashraf</b></p>
-                                    <p class="p-0 m-0 sub-text">Transworld | 00314...</p>
-                                </div>
-            
-                                <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/caret-right.svg" alt="">
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                    
-      
-
               
             </div>
-
-
-
-
           </form>
 
         </mat-step>

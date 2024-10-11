@@ -211,3 +211,8 @@
     position: relative;
     flex: 0 0 auto;
 }
+
+.utilityBox{
+    min-width: 200px;
+    cursor: pointer;
+}
