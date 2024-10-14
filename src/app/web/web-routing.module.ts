@@ -56,6 +56,8 @@ import { StockMarketComponent } from '../pages/save-and-invest/stock-market/stoc
 import { SummaryComponent } from '../pages/save-and-invest/summary/summary.component';
 import { TopPerformingFundsComponent } from '../pages/save-and-invest/top-performing-funds/top-performing-funds.component';
 import { ProfitCalculatorComponent } from '../pages/save-and-invest/alfa-term-deposit/profit-calculator/profit-calculator.component';
+import { BookATermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/book-a-term-deposit/book-a-term-deposit.component';
+import { YourTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/your-term-deposit/your-term-deposit.component';
 
 UtilityComponent
 
@@ -174,7 +176,15 @@ const routes: Routes = [
   },
   {
     path:'save-and-invest/alfa-term-deposit/profit-calculator',
-    component: ProfitCalculatorComponent 
+    component: ProfitCalculatorComponent  
+  },
+  {
+    path:'save-and-invest/alfa-term-deposit/book-a-term-deposit',
+    component: BookATermDepositComponent   
+  },
+  {
+    path:'save-and-invest/alfa-term-deposit/your-term-deposit',
+    component: YourTermDepositComponent   
   },
   {
     path:'save-and-invest/ips',
