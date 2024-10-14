@@ -11,20 +11,20 @@ import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-pai
 import { AccountSelectComponent } from '../../../modals/account-select/account-select.component';
 import { AlertComponent } from "../../../shared/alert/alert.component";
 
-interface Payees{
-  id:number,
-  logo:string,
-  payeeName:string,
-  accountNo:string,
-  companyType:string,
+interface Payees {
+  id: number,
+  logo: string,
+  payeeName: string,
+  accountNo: string,
+  companyType: string,
 }
 
-const payeesList : Payees[] = [
-  { id:1, logo: 'lesco.svg', payeeName: 'Home KE', accountNo: '0101789...', companyType:'Electricity'},
-  { id:2, logo: 'bop.svg', payeeName: 'Office Gas', accountNo: '0101789...', companyType:'Gas'},
-  { id:3, logo: 'alfalah.svg', payeeName: 'Office Net', accountNo: '0101789...', companyType:'Internet'},
-  { id:4, logo: 'lesco.svg', payeeName: '216E Electric', accountNo: '0101789...', companyType:'Electricity'},
-  { id:5, logo: 'lesco.svg', payeeName: 'Abdullah KE', accountNo: '0101789...', companyType:'Electricity'}
+const payeesList: Payees[] = [
+  { id: 1, logo: 'lesco.svg', payeeName: 'Home KE', accountNo: '0101789...', companyType: 'Electricity' },
+  { id: 2, logo: 'bop.svg', payeeName: 'Office Gas', accountNo: '0101789...', companyType: 'Gas' },
+  { id: 3, logo: 'alfalah.svg', payeeName: 'Office Net', accountNo: '0101789...', companyType: 'Internet' },
+  { id: 4, logo: 'lesco.svg', payeeName: '216E Electric', accountNo: '0101789...', companyType: 'Electricity' },
+  { id: 5, logo: 'lesco.svg', payeeName: 'Abdullah KE', accountNo: '0101789...', companyType: 'Electricity' }
 ];
 
 @Component({
@@ -47,9 +47,9 @@ export class UtilityComponent {
   inputText1: boolean = false;
   inputText2: boolean = false;
   isLinear = false;
-  isAlertActive : boolean = false;
+  isAlertActive: boolean = false;
   myPayees = [...payeesList];
-  
+
   // Alert
   warning = 'warning';
   msg = 'PKR 350/500 entered';
@@ -83,7 +83,7 @@ export class UtilityComponent {
     sixthCtrl: ['', Validators.required],
   });
 
-  constructor(private _formBuilder: FormBuilder, public matDialog: MatDialog) {}
+  constructor(private _formBuilder: FormBuilder, public matDialog: MatDialog) { }
 
   // Show or hide input based on checkbox status
   showInput(event: any, index: number) {
@@ -131,21 +131,21 @@ export class UtilityComponent {
 
   onChange($event: any) {
 
-    if($event.value == 'Electricity'){
-      
+    if ($event.value == 'Electricity') {
+
       this.myPayees = [...payeesList.filter((payee) => payee.companyType == "Electricity")];
 
-    }else if($event.value == 'Internet'){
-      
+    } else if ($event.value == 'Internet') {
+
       this.myPayees = [...payeesList.filter((payee) => payee.companyType == "Internet")];
 
-    }else{
+    } else {
       this.myPayees = [...payeesList];
     }
   }
 
 
-  frequencyModal(){
+  frequencyModal() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = "ConfirmModal";
     dialogConfig.panelClass = 'custom-dialog-container';
