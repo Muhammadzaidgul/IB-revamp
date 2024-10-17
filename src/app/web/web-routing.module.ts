@@ -48,6 +48,7 @@ import { ComplaintsComponent } from '../pages/settings/complaints/complaints.com
 import { NewComplaintComponent } from '../pages/settings/complaints/new-complaint/new-complaint.component';
 import { ComplaintSuccessComponent } from '../pages/settings/complaints/complaint-success/complaint-success.component';
 import { RateExperienceComponent } from '../pages/settings/complaints/rate-experience/rate-experience.component';
+import { RaastComponent } from '../pages/send-money/raast/raast.component';
 
 UtilityComponent
 
@@ -147,6 +148,10 @@ const routes: Routes = [
   {
     path:'send-money/bank-transfer',
     component: BankTransferComponent
+  },
+  {
+    path:'send-money/raast',
+    component: RaastComponent
   },
   {
     path:'send-money/bank-transfer/new-payment',

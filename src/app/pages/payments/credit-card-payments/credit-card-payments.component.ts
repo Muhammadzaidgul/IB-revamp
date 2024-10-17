@@ -7,11 +7,31 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
 import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
+import { CommonModule } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
+interface Payees{
+  id:number,
+  logo:string,
+  payeeName:string,
+  accountNo:string,
+  bankType:string,
+  bankName: string,
+}
+
+
+const payeesList : Payees[] = [
+  { id:1, logo: 'scb.svg', payeeName: 'Ibrahim Card', accountNo: '0101789...', bankType:'Other', bankName:'SCB'},
+  { id:2, logo: 'bop.svg', payeeName: 'Jane Card', accountNo: '0101789...', bankType:'Other', bankName:'BOP'},
+  { id:3, logo: 'alfalah.svg', payeeName: 'Mahek Card', accountNo: '0101789...', bankType:'BAFL', bankName:'BAFL'}
+];
+
 
 @Component({
   selector: 'app-credit-card-payments',
   standalone: true,
-  imports: [MatStepperModule, FormsModule, ReactiveFormsModule, MatChipsModule, MatSlideToggleModule],
+  imports: [MatStepperModule,MatFormFieldModule, MatSelectModule,  CommonModule, FormsModule, ReactiveFormsModule, MatChipsModule, MatSlideToggleModule],
   templateUrl: './credit-card-payments.component.html',
   styleUrls: ['./credit-card-payments.component.css'] // Corrected from 'styleUrl' to 'styleUrls'
 })
@@ -27,13 +47,19 @@ export class CreditCardPaymentsComponent {
   inputText2: boolean = false;
   isLinear = false;
   isAlertActive: boolean = false;
-
+  myPayees = [...payeesList];
+  isBAFLCard: boolean = false;
+  isNewPayment: boolean = false;
+  cardLabel: string;
+  isBAFL :boolean =  true;
+  placeHolderText: string;
+  payeeInput : boolean = false;
+  
   // Alert properties
   warning = 'warning';
   msg = 'PKR 350/500 entered';
   icon = 'alert-icon.svg';
   success = 'success';
-
   color: ThemePalette = 'warn';
   checked = false;
   disabled = false;
@@ -87,6 +113,21 @@ export class CreditCardPaymentsComponent {
     stepper.next();
   }
 
+  onChange($event: any) {
+
+    if($event.value == 'Bank Alfalah cards'){
+      
+      this.myPayees = [...payeesList.filter((payee) => payee.bankType == "BAFL")];
+
+    }else if($event.value == 'Other bank cards'){
+      
+      this.myPayees = [...payeesList.filter((payee) => payee.bankType == "Other")];
+
+    }else{
+      this.myPayees = [...payeesList];
+    }
+  }
+
   // Show or hide input based on checkbox status
   showInput(event: any, index: number) {
     if (event.target.checked && index == 1) {
@@ -119,13 +160,49 @@ export class CreditCardPaymentsComponent {
     this.matDialog.open(TransferFrequenceyComponent, dialogConfig);
   }
 
-  new_payment: boolean = false;
-
   newPayment() {
-    this.new_payment = true;
+    this.isNewPayment = true;
   }
 
-  alfalah: boolean = false;
+  previousStep(stepper: MatStepper){
+    stepper.previous();
+  }
+
+  onToggleChange(event) {
+    if(event.checked){
+
+      // this.isChecked = event.checked;
+      this.payeeInput = true;
+
+    }else{
+      this.payeeInput = false;
+    }
+    
+  }
+
+  checkIDType(event:any,index){
+    if(event.target.checked && index == 2){
+ 
+      this.isBAFL = false;
+      //  this.placeHolderText = "Enter Card Number";
+      //  this.cardLabel = "Card Numberr"
+ 
+     }else if(event.target.checked && index == 1){
+      
+       this.isBAFL = true;
+      //  this.placeHolderText = "Please enter the CNIC";
+      //  this.cardLabel = "CNIC"
+     }
+    
+   }
+
+  checkBankType(type:string){
+    if(type == 'BAFL'){
+      this.isBAFLCard = true; 
+    }else{
+      this.isBAFLCard = false; 
+    }
+  }
 
   // Function to format consumer numbers with error handling
   formatConsumerNumbers(consumerNumbers: string[]): string[] {
@@ -144,7 +221,7 @@ export class CreditCardPaymentsComponent {
       // Check the length of the consumer number
       if (number.length > 5) {
         // If more than 5 digits, format it as '12345...'
-        return number.slice(0, 5) + '...';
+        return number.slice(0, 7) + '...';
       } else {
         // Otherwise, return the full number
         return number;

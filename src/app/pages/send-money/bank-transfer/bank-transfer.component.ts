@@ -11,6 +11,7 @@ import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment
 import { MatDialogConfig,MatDialog } from '@angular/material/dialog';
 import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
 import { CommonModule } from '@angular/common';
+import { AccountSelectionComponent } from '../../../modals/account-selection/account-selection.component';
 
 interface Pokemon {
   value: string;
@@ -102,6 +103,9 @@ export class BankTransferComponent {
     }
   }
 
+  previousStep(stepper:MatStepper){
+    stepper.previous();
+  }
 
   updateStepper(step){
     if(step == 1){
@@ -149,6 +153,13 @@ export class BankTransferComponent {
       ],
     }
   ];
+
+  selectAccount(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(AccountSelectionComponent, dialogConfig);
+  }
 
   receiptModal(){
     const dialogConfig = new MatDialogConfig();

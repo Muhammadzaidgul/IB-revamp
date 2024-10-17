@@ -76,7 +76,7 @@
                     <div class="d-flex flex-wrap mt-3">
             
                         @for (item of myPayees; track $index) {
-                            <div style="min-width: 200px;" class="h-100 w-50" (click)="nextStep(stepper)">
+                            <div style="min-width: 200px;cursor: pointer;" class="h-100 w-50" (click)="nextStep(stepper)">
                                 <div class="col h-25 m-1 payeeBox">
                                     <div class="d-flex p-2">
                                         <img src="/assets/img/icons/{{ item.logo }}.svg" alt="">
@@ -176,38 +176,14 @@
 
                     <div class="d-block mt-4">
                         <label for="Send to"><b>Send from</b></label>
-                        <!-- <div  class="h-100 w-100" (click)="nextStep(stepper)">
-                            <div class="col h-25 m-1 ms-0 me-0 payeeBox">
-                                <div class="d-flex p-2">
-                                    <img src="/assets/img/icons/alfa-logo.svg" alt="">
-                
-                                    <div class="ps-2">
-                                        <p class="p-0 m-0"><b>Account</b></p>
-                                        <p class="p-0 m-0">57431231663731</p>
-                                    </div>
-                
-                                    <div class="col text-end align-self-center align-item-center">
-                                        <img src="/assets/img/icons/caret-down.svg" alt="">
-                                    </div>
-                                </div>
-                
-                            </div>
-                        </div> -->
+                        
                         <div class="h-100 w-100">
                             <mat-form-field class="w-100">
-                                <mat-label>Account</mat-label>
-                                <mat-select [formControl]="pokemonControl">
-                                  <mat-option>-- None --</mat-option>
-                                  @for (group of pokemonGroups; track group) {
-                                    <mat-optgroup [label]="group.name"
-                                                  [disabled]="group.disabled">
-                                      @for (pokemon of group.pokemon; track pokemon) {
-                                        <mat-option [value]="pokemon.value">
-                                            <!-- <img src="/assets/img/icons/alfa-logo.svg" alt="">  -->
-                                            {{pokemon.viewValue}}</mat-option>
-                                      }
-                                    </mat-optgroup>
-                                  }
+                                <mat-label>Select Account</mat-label>
+                                <mat-select >
+                                  <mat-option value="option1">Account 57431231663731</mat-option>
+                                  <mat-option value="option2">Account 57431231663731</mat-option>
+                                  <mat-option value="option3">Wallet 57431231663731</mat-option>
                                 </mat-select>
                               </mat-form-field>
                         </div>
@@ -233,7 +209,7 @@
                             <p  style="color: #5D5D5D;">PKR 250,000</p>
                         </div>
 
-                        <h6 class="primary-font-color pt-2" routerLink="/settings/limit-managment" >Modify transfer limits</h6>
+                        <h6 class="primary-font-color pt-2" style="cursor: pointer;" routerLink="/settings/limit-managment" >Modify transfer limits</h6>
                     </div>
 
                     <div class="mt-4">
@@ -265,7 +241,7 @@
                                 </div>
             
                                 <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/edit-red.svg" alt="">
+                                    <img src="/assets/img/icons/edit-red.svg" style="cursor: pointer;" alt="" (click)="selectAccount()">
                                 </div>
                             </div>
             
@@ -285,7 +261,7 @@
                                 </div>
             
                                 <div class="col text-end align-self-center align-item-center">
-                                    <img src="/assets/img/icons/edit-red.svg" alt="">
+                                    <!-- <img src="/assets/img/icons/edit-red.svg" alt=""> -->
                                 </div>
                             </div>
             
@@ -311,7 +287,7 @@
                             <div>
                                  <div class="d-flex justify-content-between">
                                      <p><b>Amount</b></p>
-                                     <img src="/assets/img/icons/edit-red.svg" alt="">
+                                     <img src="/assets/img/icons/edit-red.svg" alt="" style="cursor: pointer;" (click)="previousStep(stepper)">
                                  </div>
                                  <h3>
                                      5,000 <span style="font-size: small;">PKR</span>

@@ -2,22 +2,15 @@
   <div class="h4 p-0">{{ componentName}}</div>
 </div>
 
-
-
-
-
-
   <mat-stepper [linear]="isLinear" #stepper>
 
     <mat-step [stepControl]="firstFormGroup">
 
       <form [formGroup]="firstFormGroup">
 
-        
-
         <div class="row">
             <div class="col-12">
-              <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-3 " data-aos="fade-up"
                 data-aos-duration="1000">
           
                 <div>
@@ -30,7 +23,7 @@
                 </div>
           
                 <div class="mt-4">
-                  <mat-chip-listbox aria-label="Satement Selection">
+                  <mat-chip-listbox aria-label="Satement Selection" (change)="onChange($event)">
                     <div style="justify-content: space-between;">
                       <mat-chip-option selected color="warn">All</mat-chip-option>
                       <mat-chip-option color="warn">Electricity</mat-chip-option>
@@ -41,172 +34,79 @@
                     </div>
                   </mat-chip-listbox>
                 </div>
-          
-                <div class="mt-4">
-                  <h5>Recently payed</h5>
-                </div>
-          
-                <div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
+
+                <div class="col-12">
+
+                  <h5 class="m-2 mt-4">Recently Payed</h5>
+
+                   <div class="d-flex flex-wrap mt-3">
+            
+                    @for (item of allPayees; track $index) {
+                        <div  class="utilityBox h-100 w-50" (click)="nextStep(stepper);">
+                            <div class="col h-100 m-1 payeeBox">
+                                <div class="d-flex p-3">
+                                    <img src="/assets/img/icons/{{ item.logo }}" alt="">
+                
+                                    <div class="ps-2">
+                                        <p class="p-0 m-0"><b>{{ item.payeeName }}</b></p>
+                                        <!-- <p class="p-0 m-0 sub-text">{{ item.companyType }} | {{ item.accountNo }} </p> -->
+                                    </div>
+                
+                                    <div class="col text-end align-self-center align-item-center">
+                                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                                    </div>
+                                </div>
+                
                             </div>
-          
-                            <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper)">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
+                    }
+                    @empty {
+                        Empty list of users
+                    }
+                 
+                  
                   </div>
+
                 </div>
-          
-                <div class="mt-4">
-                  <h5>All companies</h5>
-                </div>
-          
-                <div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
+
+                <div class="col-12 pt-2">
+
+                  <h5 class="m-2 mt-4">All Companies</h5>
+
+                   <div class="d-flex flex-wrap mt-3">
+            
+                    @for (payee of myPayees; track $index) {
+                        <div  class="utilityBox h-100 w-50" (click)="nextStep(stepper);">
+                            <div class="col h-100 m-1 payeeBox">
+                                <div class="d-flex p-3">
+                                    <img src="/assets/img/icons/{{ payee.logo }}" alt="">
+                
+                                    <div class="ps-2">
+                                        <p class="p-0 m-0"><b>{{ payee.payeeName }}</b></p>
+                                        <!-- <p class="p-0 m-0 sub-text">{{ item.companyType }} | {{ item.accountNo }} </p> -->
+                                    </div>
+                
+                                    <div class="col text-end align-self-center align-item-center">
+                                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                                    </div>
+                                </div>
+                
                             </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                      <div class="h-100">
-                        <div class="col  m-1 payeeBox" style="padding: 12px;">
-                          <div class="d-flex p-2">
-                            <img src="/assets/img/icons/lesco.svg" alt="">
-          
-                            <div class="ps-3">
-                              <p class="p-0 m-0"><b>LESCO</b></p>
-                            </div>
-          
-                            <div class="col text-end align-self-center align-item-center">
-                              <img src="/assets/img/icons/caret-right.svg" alt="">
-                            </div>
-                          </div>
-          
-                        </div>
-                      </div>
-                    </div>
+                    }
+                    @empty {
+                        Empty list of users
+                    }
+                 
+                  
                   </div>
+
                 </div>
+
           
               </div>
             </div>
-          </div>
+        </div>
 
 
       </form>
@@ -218,8 +118,7 @@
 
         <div class="row">
             <div class="col-12">
-              <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
-                data-aos-duration="1000">
+              <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " >
           
           <div>
               <h5>Enter consumer number</h5>
@@ -240,9 +139,9 @@
                          
                       </div>
           
-                      <div class="col text-end align-self-center align-item-center">
+                      <div class="col text-end align-self-center align-item-center" style="cursor: pointer;" (click)="previousStep(stepper)" >
                           <img src="/assets/img/icons/edit-red.svg" alt="">
-                          <span class="primary-font-color p-1"  ><b>Edit</b></span>
+                          <span class="primary-font-color p-1" ><b>Edit</b></span>
                       </div>
                   </div>
               </div>
@@ -270,26 +169,27 @@
                           <mat-slide-toggle
                               class="example-margin"
                               [color]="color"
-                              [checked]="checked"
+                              [checked]="isChecked"
+                              (change)="onToggleChange($event)"
                               [disabled]="disabled"
-                              formControlName="acceptTerms"
                               
                               data-toggle="modal">
                           
                           </mat-slide-toggle>
+                          
                       </div>
                   </div>
           
               </div>
           </div>
           
-          <div class="mt-3">
+          <div class="mt-3" *ngIf="payeeInput">
               <label for=""><b>Payee nickname (optional)</b></label>
               <input type="text" name="" id="" class="form-control mt-1" placeholder="Please enter a payee nickname">
           </div>
           
           <div class="mt-4">
-              <button class="w-100 btn btn-lg btn-danger" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+              <button class="w-100 btn btn-lg btn-danger">Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
           </div>
           
               </div>

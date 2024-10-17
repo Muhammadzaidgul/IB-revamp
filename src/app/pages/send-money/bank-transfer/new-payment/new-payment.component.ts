@@ -8,11 +8,14 @@ import { ThemePalette } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AccountSelectionComponent } from '../../../../modals/account-selection/account-selection.component';
+        
 
 @Component({
   selector: 'app-new-payment',
   standalone: true,
-  imports: [MatStepperModule,ReactiveFormsModule,MatSlideToggleModule,MatSelectModule,RouterModule],
+  imports: [MatStepperModule,ReactiveFormsModule,MatSlideToggleModule,MatSelectModule,RouterModule,CommonModule],
   templateUrl: './new-payment.component.html',
   styleUrl: './new-payment.component.css'
 })
@@ -33,6 +36,7 @@ export class NewPaymentComponent {
   checked = false;
   checked2 = false;
   disabled = false;
+  payeeInput :  boolean = false;
 
 
   firstFormGroup = this._formBuilder.group({
@@ -64,6 +68,28 @@ export class NewPaymentComponent {
 
   nextStep(stepper:MatStepper){
     stepper.next();
+  }
+
+  previousStep(stepper:MatStepper){
+    stepper.previous();
+  }
+
+  selectAccount(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(AccountSelectionComponent, dialogConfig);
+  }
+
+  onToggleChange(event){
+    if(event.checked){
+
+      // this.isChecked = event.checked;
+      this.payeeInput = true;
+
+    }else{
+      this.payeeInput = false;
+    } 
   }
 
   updateStepper(step){

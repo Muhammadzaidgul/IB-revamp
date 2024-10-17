@@ -1,0 +1,436 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h4 p-0">RAAST transfer</div>
+</div>
+
+  <!-- stepper -->
+
+  <div class="horizontal-progress mt-3 d-flex flex-wrap">
+    <div class="progress-bar-item ps-1 pe-1 ">
+      <div class="frame" [style.background-color]="step1"><div class="text-wrapper">1</div></div>
+      <div class="title ps-1">Recipient</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 ">
+      <div class="element-wrapper" [style.background-color]="step2" ><div class="element">2</div></div>
+      <div class="div ps-1">Amount</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+      <div class="element-wrapper" [style.background-color]="step3" ><div class="element">3</div></div>
+      <div class="div ps-1">Confirm details</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+      <div class="element-wrapper" [style.background-color]="step4" ><div class="element">4</div></div>
+      <div class="div ps-1">Verification</div>
+    </div>
+</div>
+
+<!-- stepper -->
+
+<div class="row">
+    <div class="col-12">
+      <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up" data-aos-duration="1000">
+
+        <mat-stepper [linear]="isLinear" #stepper>
+            
+            <mat-step [stepControl]="firstFormGroup">
+            
+                <form [formGroup]="firstFormGroup">
+
+                    <div class="d-flex">
+                        <div class="col">
+                            <h4 class="p-0 m-0">Your payees</h4>
+                            <p class="p-0 m-0">Choose a payee from the list or make a new transfer</p>
+                        </div>
+                        <div class="col">
+                            <div class="d-flex justify-content-end justify-item-center">
+                                <button class="btn btn-danger" (click)="newPayee(stepper)" ><img src="/assets/img/icons/plus-icon.svg" alt="">  New Transfer</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="d-block mt-4">
+                        <input type="text" class="form-control" style="border-radius: 20px;" placeholder="Search Payees">
+                    </div>
+            
+            
+                    
+                    <div class="d-flex flex-wrap mt-3">
+            
+                        @for (item of myPayees; track $index) {
+                            <div style="min-width: 200px; cursor: pointer;" class="h-100 w-50" (click)="nextStep(stepper)" >
+                                <div class="col h-25 m-1 payeeBox">
+                                    <div class="d-flex p-2">
+                                        <img src="/assets/img/icons/{{ item.logo }}.svg" alt="">
+                    
+                                        <div class="ps-2">
+                                            <p class="p-0 m-0"><b> {{ item.payeeName }}</b></p>
+                                            <p class="p-0 m-0">Account | {{ item.accountNo }}</p>
+                                        </div>
+                    
+                                        <div class="col text-end align-self-center align-item-center">
+                                            <img src="/assets/img/icons/caret-right.svg" alt="">
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                            
+                        }
+                        @empty {
+                            Empty list of users
+                        }
+                        
+                    </div>
+
+                </form>
+
+            </mat-step>
+
+            @if(isNewTransfer){
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+                        
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">New bank transfer</h4>
+                                <p class="p-0 m-0">Please enter the Account no. or IBAN of the payee you want to transfer to</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row d-flex">
+
+                            <div class="col-md-4 col-lg-4 col-sm-12  ms-0 " > 
+                
+                                <div class="payeeBox p-3 mt-2" style="height: 80px;">
+                                    
+                                    <div class="d-flex justify-content-start">
+                                        <input type="radio" (change)="checkIDType($event,1)" name="IDType" id="raast-id" style="width: 14px; height: 14px;" >
+                                    </div>
+                
+                                    <div class="d-block mt-3">
+                                        <div class="text-wrapper">Raast ID</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                    
+                            <div class="col-md-4 col-lg-4 col-sm-12  ms-0 sm-mt-1" > 
+                
+                                <div class="payeeBox p-3 mt-2" style="height: 80px;">
+                                    
+                                    <div class="d-flex justify-content-between">
+                                      
+                                        <input type="radio" (change)="checkIDType($event,2)" name="IDType" id="IBAN" style="width: 14px; height: 14px;" >
+                                    </div>
+                
+                                    <div class="d-block mt-3">
+                                        <div class="text-wrapper">IBAN/Account No.</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                    
+                         
+                
+                        </div>
+   
+                        <div class="col d-block mt-3">
+                            <label for="Payee raast ID"><b>{{ payeeLabel }}</b></label>
+                            <input type="text" name="" placeholder="{{placeHolderText }}" (keyup)="onKeyUp($event)" id="" class="form-control">
+                            <span style="font-size: small;">11 digit numeric Raast ID</span>
+                        </div>
+
+                        <div class="col mt-3" *ngIf="showBanks">
+                            <label for="Payee raast ID"><b>Bank</b></label>
+                            <mat-form-field class="w-100">
+                                <mat-label>Select Bank</mat-label>
+                                <mat-select >
+                                  <mat-option value="option1">Bank Alfalah</mat-option>
+                                  <mat-option value="option2">Meezan Bank</mat-option>
+                                  <mat-option value="option3">Bank Al-Habib</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
+
+
+                        <div class="col mt-3">
+                            <label><b>Purpose of transfer</b></label>
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Other</option>
+                                <option value="">Other 1</option>
+                                <option value="">Other 2</option>
+                                <option value="">Other 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col mt-3 d-flex payeeBox p-2">
+                            <img src="/assets/img/icons/user-icon.svg" alt="">
+                            
+                            <p class="pt-3 ps-2"><b>Add as Payee</b></p>
+    
+                            <div class="pt-3 flex-grow-1 text-end "> 
+                                <mat-slide-toggle
+                                            class="example-margin"
+                                            [color]="color"
+                                            [checked]="checked"
+                                            [disabled]="disabled"
+                                            formControlName="acceptTerms"
+                                            (change)="onToggleChange($event)">
+                                       
+                                        </mat-slide-toggle>
+                            </div>
+                        </div>
+
+                        <div class="mt-3" *ngIf="payeeInput">
+                            <label for="Send to"><b>Payee nickname (optional)</b></label>
+                            <input type="text" name="" placeholder="Please enter a payee nickname" id="" class="form-control">
+                          
+                        </div>
+
+                        <div class="mt-4">
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(1)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                        </div>
+    
+                    </form>
+    
+                </mat-step>
+
+            }
+            @else{
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+                        
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">RAAST transfer</h4>
+                                <p class="p-0 m-0">Please review the payee details before moving on</p>
+                            </div>
+                            
+                        </div>
+    
+                        <div class="d-block mt-4">
+                            <label for="Send to"><b>Send to</b></label>
+                            <div class="h-100 w-100 payeeBox mt-2" style="border-top-right-radius: 8px; border-top-left-radius: 8px; border-top: #DB3127 8px solid;" >
+                                <div class="col h-25 m-1 ">
+                                    <div class="d-flex p-2">
+                                        <img src="/assets/img/icons/alfa-logo.svg" alt="">
+                    
+                                        <div class="ps-2">
+                                            <p class="p-0 m-0"><b>Muhammad Ibrahim</b></p>
+                                            <p class="p-0 m-0">Bank Alfalah | 57431231663731</p>
+                                        </div>
+                    
+                                        <!-- <div class="col text-end align-self-center align-item-center">
+                                            <img src="/assets/img/icons/caret-right.svg" alt="">
+                                        </div> -->
+                                    </div>
+                    
+                                    <div class="d-flex justify-content-between m-1 pt-2 ps-3 pe-3" style="border-top: 1px solid #E1E1E1;">
+                                        <p>Last transfer: PKR 12,500</p>
+                                        <p>Sep 20th, 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label><b>Purpose of transfer</b></label>
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Other</option>
+                                <option value="">Other 1</option>
+                                <option value="">Other 2</option>
+                                <option value="">Other 3</option>
+                            </select>
+                        </div>
+    
+                        <div class="mt-4">
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(1)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                        </div>
+    
+                    </form>
+    
+                </mat-step>
+
+            }
+
+            <mat-step [stepControl]="thirdFormGroup">
+
+                <form [formGroup]="thirdFormGroup">
+                    
+                    <div class="d-flex">
+                        <div class="col">
+                            <h4 class="p-0 m-0">Enter an amount</h4>
+                            <p class="p-0 m-0">Please enter the amount you want to transfer</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="d-block mt-4">
+                        <mat-form-field class="w-100">
+                        <mat-label>Account </mat-label>
+                            <mat-select >
+                                <mat-option value="option1">Current Account - 57431231663731</mat-option>
+                                <mat-option value="option2">Saving Account - 57431231663731</mat-option>
+                                
+                            </mat-select>
+                        </mat-form-field>
+                       
+                    </div>
+
+                    <div class="mt-1">
+                        <label for="Send to"><b>Amount</b></label>
+                        <input type="text" name="" placeholder="PKR XXXXX" id="" class="form-control">
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div class="w-50 p-2 ps-0">
+                            <span style="font-size: small;">Balance: PKR <b>400,000</b></span>
+                        </div>
+                        
+                        <p class="primary-font-color pt-2" routerLink="/settings/limit-managment" style="cursor: pointer;" ><b>View Limits</b></p>
+                    </div>
+                    
+
+                    <div class="mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(2)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                    </div>
+
+                </form>
+
+            </mat-step>
+
+            <mat-step [stepControl]="fourthFormGroup">
+                <form [formGroup]="fourthFormGroup">
+                    <div class="d-flex">
+                        <div class="col">
+                            <h4 class="p-0 m-0">Confirm details</h4>
+                            <p class="p-0 m-0">Please confirm the transfer details below before you complete the transfer</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="h-100 w-100 payeeBox mt-2" style="border-top-right-radius: 8px; border-top-left-radius: 8px; border-top: #DB3127 8px solid;" >
+                        <div class="col h-25 m-1 ">
+                            <div class="d-flex p-2 pt-3">
+                                <img src="/assets/img/icons/alfa-logo.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Muhammad Ibrahim</b></p>
+                                    <p class="p-0 m-0">57431231663731</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center" style="cursor: pointer;" (click)="selectAccount()">
+                                    <img src="/assets/img/icons/edit-red.svg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
+
+                        <div class="d-flex p-3 pt-0 pb-0">
+                            <img src="/assets/img/icons/payee-separator.svg" alt="" class="w-100">
+                        </div>
+
+                        <div class="col h-25 m-1">
+                            <div class="d-flex p-2 pt-0">
+                                <img src="/assets/img/icons/alfa-logo.svg" alt="">
+            
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b>Muhammad Ali Ashraf</b></p>
+                                    <p class="p-0 m-0">37214222653212</p>
+                                </div>
+            
+                                <div class="col text-end align-self-center align-item-center">
+                                    <!-- <img src="/assets/img/icons/edit-red.svg" alt=""> -->
+                                </div>
+                            </div>
+            
+                        </div>
+                        
+                        <div class="d-flex pb-3">
+                            
+                            <div class="col p-2 ps-3">
+                                <p class="p-0 m-0"><b>Nickname</b></p>
+                                <p class="p-0 m-0">Ali Ahmed</p>
+                            </div>
+                            
+                            <div class="col p-2 ps-3" style="border-left:1px solid #E1E1E1;">
+                                <p class="p-0 m-0"><b>Purpose</b></p>
+                                <p class="p-0 m-0">Family support</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-100 w-100 payeeBox mt-2 p-3">
+                        <div class="d-flex justify-content-between" style="cursor: pointer;" (click)="previousStep(stepper)">
+                            <p><b>Amount</b></p>
+                            <img src="/assets/img/icons/edit-red.svg" alt="">
+                        </div>
+                        <h3 >
+                            5,000 <span style="font-size: small;">PKR</span>
+                        </h3>
+                    </div>
+
+                    <div class="h-100 w-100 payeeBox mt-2">
+
+                        <div class="d-flex bd-highlight p-2 pb-0">
+                            <div class="p-1 bd-highlight"><img src="/assets/img/icons/clock-black.svg" alt=""></div>
+                            <div class="p-1 bd-highlight"> <p><b>Transfer frequency</b></p></div>
+                            <div class="ms-auto p-1 bd-highlight cursor-pointer" style="cursor: pointer;" (click)="frequencyModal()"> <p>Just now</p></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-start align-self-center p-2 mt-2" style="color: #008042; background-color: #f8f8f8; border-left: 2px solid #008042;">
+
+                        <img src="/assets/img/icons/info-green.svg" alt=""  style="color: #008042;">
+                        <p class="p-0 m-0 ps-1">All transactions via Raast are free of cost</p>
+
+                    </div>
+
+
+                    <div class="mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                    </div>
+
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="fifthFormGroup">
+                <form [formGroup]="fourthFormGroup">
+                    <div class="text-center">
+                        <img src="/assets/img/icons/otp-phone.svg" alt="">
+                    </div>
+
+                    <h3>
+                        Verify OTP
+                    </h3>
+                    <p>
+                        Please enter the code we’ve sent to your mobile number *********83 below
+                    </p>
+
+                    <div class="col-12 mt-3">
+                        <label for="">OTP</label>
+                        <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                    </div>
+
+                    <p style="color: #5D5D5D;" class="text-center mt-2">
+                        Resend OTP in 00:40
+                    </p>    
+                </form>
+            </mat-step>
+
+        </mat-stepper>
+
+      </div>
+    </div>
+</div>
