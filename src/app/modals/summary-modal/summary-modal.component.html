@@ -1,0 +1,40 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal">
+  <div class="modal-dialog p-3 modal-md" role="document" >
+
+    <div class="modal-content" style="width: 500px;" data-aos="zoom-in" data-aos-duration="1500">
+      <div class="modal-body">
+        <div class="row mt-2 justify-content-center text-center">
+
+          <div class="d-flex justify-content-between ps-1 pe-2">
+            <h4>Permission required </h4>
+
+            <div class="d-flex justify-content-end">
+              <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;"
+                (click)="closeModal()"></i>
+            </div>
+
+          </div>
+
+
+      
+
+        </div>
+
+        <p class="mt-2 sub-text">I hereby agree and provide my consent that information related to my investment
+            account(s) with Alfalah GHP Investment Management Limited can be displayed and accessed by me through online
+            access provided by Bank Alfalah Limited</p>
+
+        <div class="col-12 mt-4 d-flex justify-content-center">
+            <div class="pe-3">
+                <button class="btn-white " routerLink="home" (click)="closeModal()"><b>Deny</b></button>
+            </div>
+
+            <div class="ps-3">
+
+                <button class="btn-red " routerLink="/save-and-invest/summary" (click)="closeModal()" > <b>Accept</b></button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

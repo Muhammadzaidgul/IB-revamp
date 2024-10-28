@@ -247,15 +247,15 @@ export class UtilityComponent {
 
   onChange($event: any) {
 
-    if($event.value == 'Electricity'){
-      
+    if ($event.value == 'Electricity') {
+
       this.myPayees = [...payeesList.filter((payee) => payee.companyType == "Electricity")];
 
-    }else if($event.value == 'Internet'){
-      
+    } else if ($event.value == 'Internet') {
+
       this.myPayees = [...payeesList.filter((payee) => payee.companyType == "Internet")];
 
-    }else{
+    } else {
       this.myPayees = [...payeesList];
     }
   }
@@ -275,7 +275,7 @@ export class UtilityComponent {
   }
 
 
-  frequencyModal(){
+  frequencyModal() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = "ConfirmModal";
     dialogConfig.panelClass = 'custom-dialog-container';

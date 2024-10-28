@@ -93,7 +93,8 @@
                               <p class="p-0 m-0"><b>Edhi</b></p>
                             </div>
 
-                            <div class="col text-end align-self-center align-item-center" (click)="nextStep(stepper);updateStepper(1)">
+                            <div class="col text-end align-self-center align-item-center"
+                              (click)="nextStep(stepper);updateStepper(1)">
                               <img src="/assets/img/icons/caret-right.svg" alt="">
                             </div>
                           </div>
@@ -271,8 +272,8 @@
                 </div>
 
                 <div class="mt-4">
-                  <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(2)">Continue <img
-                      src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                  <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(2)">Continue
+                    <img src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
                 </div>
 
 
@@ -326,7 +327,8 @@
 
                 <div class="mt-1">
                   <label for="Send to"><b>Amount</b></label>
-                  <div class="pt-1"> <input type="text" name="" placeholder="PKR XXXXX" id="" class="form-control"></div>
+                  <div class="pt-1"> <input type="text" name="" placeholder="PKR XXXXX" id="" class="form-control">
+                  </div>
                 </div>
 
                 <div class="w-50  p-2 ps-0">
@@ -348,8 +350,8 @@
                 </div>
 
                 <div class="mt-4">
-                  <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(3)">Continue <img
-                      src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                  <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(3)">Continue
+                    <img src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
                 </div>
 
 
@@ -478,8 +480,8 @@
 
 
                   <div class="mt-4">
-                    <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Continue <img
-                        src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                    <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Continue
+                      <img src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
                   </div>
 
                 </form>
@@ -500,36 +502,37 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
               data-aos-duration="1000">
 
-        
 
 
 
-                <div class="text-center">
-                    <img src="/assets/img/icons/otp-phone.svg" alt="">
-                  </div>
-        
-                  <h3>
-                    Verify OTP
-                  </h3>
-                  <p>
-                    Please enter the code we’ve sent to your mobile number *********83 below
-                  </p>
-        
-                  <div class="col-12 mt-3">
-                    <label for="">OTP</label>
-                    <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
-                  </div>
-        
-                  <div class="col-12 mt-4">
-                    <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal(); ; updateStepper(5)">Donate PKR 2350/- <img
-                        src="/assets/img/icons/check-small.svg" alt=""></button>
-                  </div>
-        
-                  <p style="color: #5D5D5D;" class="text-center mt-2">
-                    Resend OTP in 00:40
-                  </p>
-           
-       
+
+              <div class="text-center">
+                <img src="/assets/img/icons/otp-phone.svg" alt="">
+              </div>
+
+              <h3>
+                Verify OTP
+              </h3>
+
+              <p>
+                Please enter the code we’ve sent to your mobile number *********83 below
+              </p>
+
+              <div class="col-12 mt-3">
+                <label for="">OTP</label>
+                <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
+              </div>
+
+              <div class="col-12 mt-4">
+                <button class="w-100 btn btn-lg btn-danger" (click)="receiptModal(); ; updateStepper(5)">Donate PKR
+                  2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+              </div>
+
+              <p style="color: #5D5D5D;" class="text-center mt-2">
+                Resend OTP in 00:40
+              </p>
+
+
 
             </div>
           </div>

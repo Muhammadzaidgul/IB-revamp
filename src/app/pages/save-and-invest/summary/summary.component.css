@@ -1,0 +1,15 @@
+.sub-text{
+    color: #5D5D5D;
+}
+
+
+.detail-box {
+    border-radius: 8px;               /* Rounded corners */
+    border: 1px solid #E1E1E1;       /* Light gray border */
+    background: #FFF;                /* White background */
+    padding: 32px;
+}
+
+.link{
+    color: #EA5148;
+}
