@@ -36,6 +36,9 @@ const payeesList : Payees[] = [
   styleUrls: ['./credit-card-payments.component.css'] // Corrected from 'styleUrl' to 'styleUrls'
 })
 export class CreditCardPaymentsComponent {
+skipStep(_t36: MatStepper) {
+throw new Error('Method not implemented.');
+}
   componentName = 'Credit card';
 
   step1: string = '#EA5148';
