@@ -58,6 +58,7 @@ import { TopPerformingFundsComponent } from '../pages/save-and-invest/top-perfor
 import { ProfitCalculatorComponent } from '../pages/save-and-invest/alfa-term-deposit/profit-calculator/profit-calculator.component';
 import { BookATermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/book-a-term-deposit/book-a-term-deposit.component';
 import { YourTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/your-term-deposit/your-term-deposit.component';
+import { RaastComponent } from '../pages/send-money/raast/raast.component';
 
 UtilityComponent
 
