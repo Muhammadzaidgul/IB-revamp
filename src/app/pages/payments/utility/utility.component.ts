@@ -284,8 +284,6 @@ export class UtilityComponent {
 
   newPayment(stepper:MatStepper){
 
-    console.log(this.isNewPayment);
-
     stepper.next();
     this.isNewPayment = true;
 
