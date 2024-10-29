@@ -1,0 +1,538 @@
+<div class="row customerInfo p-3">
+    <div style="display: flex; justify-content: space-between;">
+        <div class="h4">Manage existing loans</div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="assets/img/icons/cancel.svg">
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+
+    <div class="col-12">
+
+        <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+
+
+
+
+            <!-- stepper -->
+
+
+
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Your loans</h4>
+                                <p class="p-0 m-0">Please choose a loan from the list below or link a new loan account
+                                </p>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex justify-content-end justify-item-center">
+                                    <button class="btn btn-danger" routerLink="#" (click)="linkModal();"><img src="/assets/img/icons/plus-icon.svg" alt=""> Link new loan</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-block mt-4">
+                            <input type="text" class="form-control" style="border-radius: 20px;" placeholder="Search">
+                        </div>
+
+                        <div class="d-block mt-1 mb-3 pt-1">
+
+                            <div class="col-12">
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex flex-wrap mt-3">
+
+                            <div style="min-width: 200px;cursor: pointer;" class="h-100 w-100"
+                                (click)="nextStep(stepper)">
+
+                                <div class="col h-25 m-1 payeeBox">
+                                    <div class="d-flex p-2">
+                                        <img src="/assets/img/icons/car-loan.svg" alt="">
+
+                                        <div class="ps-2">
+                                            <p class="p-0 m-0"><b> Car Loan</b></p>
+                                            <p class="p-0 m-0">11223344556677</p>
+                                        </div>
+
+                                        <div class="col text-end align-self-center align-item-center">
+                                            <img src="/assets/img/icons/caret-right.svg" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="mt-4"></div>
+                                <div class="col h-25 m-1 payeeBox">
+                                    <div class="d-flex p-2">
+                                        <img src="/assets/img/icons/house-loan.svg" alt="">
+
+                                        <div class="ps-2">
+                                            <p class="p-0 m-0"><b> House Loan</b></p>
+                                            <p class="p-0 m-0">11223344556677</p>
+                                        </div>
+
+                                        <div class="col text-end align-self-center align-item-center">
+                                            <img src="/assets/img/icons/caret-right.svg" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+                        <div class="mt-4">
+                            <h4>
+                                Loan details
+                            </h4>
+                            <div class="bill-header d-flex justify-content-between"></div>
+                            <div class="bill-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Facility type</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>UMI Home Musharaka</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Tenure</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>144 months</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Facility ID</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>MG190078901</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Remaining payments</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>08</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Disbursement date</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>28th Feb 2019</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Maturity date</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>05th Mar 2031</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Disbursement amount</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>PKR 35,000,000</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>NCA balance</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>PKR 0</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Buy out price</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>PKR 24,548,620</b></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="d-flex justify-content-center text-center mt-3">
+
+                                <div class="circle-box" (click)="nextStep(stepper)">
+                                    <img src="/assets/img/icons/plus-icon-red.svg" alt="">
+
+                                </div>
+                                <div class="p-3">
+
+                                </div>
+                                <div class="circle-box" (click)="nextStep(stepper)">
+                                    <img src="/assets/img/icons/schedule-clock-red.svg" alt="">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+
+                    <form [formGroup]="thirdFormGroup">
+
+                        @if(isNewPayment==false){
+
+                        <div class="mt-4">
+                            <h4>
+                                Payment schedule
+                            </h4>
+                            <p class="p-0 m-0">Below is the payment schedule for MS190078901
+                            </p>
+                            <div class="mt-3">
+                                <mat-chip-listbox aria-label="Satement Selection">
+                                    <div style="justify-content: space-between;">
+                                        <mat-chip-option selected color="warn">All</mat-chip-option>
+                                        <mat-chip-option color="warn">Remaining</mat-chip-option>
+                                        <mat-chip-option color="warn">Paid</mat-chip-option>
+                                    </div>
+
+                                </mat-chip-listbox>
+                            </div>
+
+                            <div class="bill-header mt-3" style="padding-left: 20px; padding-right: 20px;">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p><b class="header-text">Sr no</b></p>
+                                    </div>
+                                    <div>
+                                        <p><b class="header-text">Date</b></p>
+                                    </div>
+                                    <div>
+                                        <p><b class="header-text">Amount</b></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bill-body">
+
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>01</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>05-Mar-2022</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="sub-heading"><b>483,636</b></p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        }
+                        @else{
+
+                        <div class="mt-4">
+
+                            <div class="d-flex">
+                                <div class="col">
+                                    <h4 class="p-0 m-0">Loan payment</h4>
+                                    <p class="p-0 m-0 sub-text">Below are the payment options for MS190078901
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-3">
+                                <label for="Send to"><b>Select payment</b></label>
+
+                                @if(isBAFLCard){
+
+                                <!-- First Account -->
+                                <div class="frame mt-1 p-3">
+                                    <div class="content d-flex align-items-center">
+                                        <div class="ps-2 d-flex align-items-center">
+
+                                            <input type='radio' name='account'
+                                                style='width: 20px; height: 20px; margin-right: 10px;'>
+                                        </div>
+                                        <div>
+                                            <div><b>Pay due amount</b></div>
+                                            <div>Amount due to be paid by 05 October</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="d-flex align-items-center sub-text">PKR 400,000</div>
+
+                                    </div>
+                                </div>
+
+
+                                }
+                                <!-- Fourth Account -->
+                                <div class="frame mt-3 p-3">
+                                    <div class="content d-flex align-items-center">
+
+                                        <div class="ps-2 d-flex align-items-center">
+
+                                            <input type='radio' name='account'
+                                                style='width: 20px; height: 20px; margin-right: 10px;'>
+                                        </div>
+
+                                        <div>
+                                            <div><b>Pay custom amount</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+
+                                        @if(inputText1==false){
+                                        <div class="d-flex align-items-center sub-text">PKR</div>
+                                        }
+
+
+                                    </div>
+
+
+                                    @if(inputText1){
+
+                                    <div class="d-flex justify-content-end  mt-2 ">
+                                        <label for="pkr"
+                                            class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                                        <input type="text" name="" id="" class="form-control w-50">
+                                    </div>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                            <div class="mt-4">
+                                <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper)">Continue <img
+                                        src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                            </div>
+
+
+                        </div>
+                        }
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+                        <div class="mt-4">
+                            <h4>
+                                Confirm details
+                            </h4>
+
+                            <p class="sub-text">
+                                Please review the payment details below before you pay
+                            </p>
+
+                            <div class="col-12 generalBox p-3">
+                                <div class="d-flex justify-content-between">
+                                    <p class="p-0 m-0">From</p> <img style="cursor: pointer;"
+                                        src="/assets/img/icons/edit-red.svg" alt="">
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <p class="p-0 m-0"><b>Account</b></p>
+                                    <p class="p-0 m-0">57431231663731</p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 generalBox p-3 mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="p-0 m-0">To</p>
+                                </div>
+                                <div class="d-flex p-1 justify-content-between">
+                                    <p class="pe-1"><b>MG190078901</b></p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 generalBox p-3 mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="p-0 m-0">Amount</p>
+                                </div>
+
+                                <div class="d-flex">
+                                    <h3>400,000</h3>
+                                    <p class="p-0 m-0 d-flex align-items-center">PKR</p>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <a routerLink="/home" style="color: white;"> <button class="w-100 btn btn-lg btn-danger"
+                                        (click)="receiptModal();">Pay now <img src="/assets/img/icons/done.svg"
+                                            alt=""></button>
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="fifthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+
+
+                    </form>
+                </mat-step>
+
+            </mat-stepper>
+
+
+
+        </div>
+
+    </div>
+
+</div>

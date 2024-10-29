@@ -1,0 +1,17 @@
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text {
+    background-color: #f1f1f1; /* Light background */
+    border: 1px solid #ced4da; /* Border similar to input */
+    border-top-left-radius: 0.375rem; /* Border radius for styling */
+    border-bottom-left-radius: 0.375rem; /* Border radius for styling */
+}
+
+.flag-icon {
+    width: 20px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between flag and code */
+}

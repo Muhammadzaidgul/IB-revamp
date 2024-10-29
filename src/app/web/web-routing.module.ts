@@ -59,6 +59,9 @@ import { ProfitCalculatorComponent } from '../pages/save-and-invest/alfa-term-de
 import { BookATermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/book-a-term-deposit/book-a-term-deposit.component';
 import { YourTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/your-term-deposit/your-term-deposit.component';
 import { RaastComponent } from '../pages/send-money/raast/raast.component';
+import { ApplyNewLoanComponent } from '../pages/loans/apply-new-loan/apply-new-loan.component';
+import { SuccessComponent } from '../pages/loans/apply-new-loan/success/success.component';
+import { ManageLoansComponent } from '../pages/loans/manage-loans/manage-loans.component';
 
 UtilityComponent
 
@@ -295,8 +298,25 @@ const routes: Routes = [
     path:'alfa-hub/shophive',
     component:ShophiveComponent
   }
+  ,
+  {
+    path:'loans/apply-new-loan',
+    component:ApplyNewLoanComponent
+  }
+  ,
+  {
+    path:'loans/apply-new-loan/success',
+    component: SuccessComponent
+  }
+  ,
+  {
+    path:'loans/manage-loans',
+    component: ManageLoansComponent
+  }
 
 
+
+ 
 
 ];
 
