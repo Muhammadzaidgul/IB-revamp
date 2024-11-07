@@ -1,0 +1,376 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Alfa Hub
+
+        <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+        Banker’s cheque
+    </div>
+</div>
+
+
+<!-- stepper -->
+
+<div class="horizontal-progress mt-3 d-flex flex-wrap">
+    <div class="progress-bar-item ps-1 pe-1 ">
+        <div class="frame" [style.background-color]="step1">
+            <div class="text-wrapper">1</div>
+        </div>
+        <div class="title ps-1">Beneficiary details</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 ">
+        <div class="element-wrapper" [style.background-color]="step2">
+            <div class="element">2</div>
+        </div>
+        <div class="div ps-1">Branch details</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 ">
+        <div class="element-wrapper" [style.background-color]="step3">
+            <div class="element">3</div>
+        </div>
+        <div class="div ps-1">Cheque details</div>
+    </div>
+    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+    <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+        <div class="element-wrapper" [style.background-color]="step4">
+            <div class="element">4</div>
+        </div>
+        <div class="div ps-1">Verification</div>
+    </div>
+</div>
+
+<!-- stepper -->
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+
+
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Banker’s cheque request</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Beneficiary name</b></label>
+                                <p class="sub-text">10/35</p>
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Continuation beneficiary name</b></label>
+                                <p class="sub-text">10/35</p>
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Continuation beneficiary name</b></label>
+                                <p class="sub-text">10/35</p>
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="message-box">Please type the beneficiary name carefully - the same name will be
+                                printed on the banker’s cheque</div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Beneficiary mobile number</b></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+
+
+                                <input type="text" name="" placeholder="" id="" class="form-control"
+                                    style="border-right: none;">
+                                <span class="input-group-text" style="height: 42px; border-left: none;">
+                                    <img src="/assets/img/icons/contact-book.svg">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Beneficiary address</b></label>
+
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>Beneficiary ID type</b></label>
+
+                            </div>
+                            <mat-chip-listbox aria-label="Satement Selection">
+                                <div style="justify-content: space-between;">
+                                    <mat-chip-option selected color="warn">CNIC</mat-chip-option>
+                                    <mat-chip-option color="warn">Passport</mat-chip-option>
+                                </div>
+                            </mat-chip-listbox>
+
+                        </div>
+
+
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Beneficiary CNIC</b></label>
+
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger"
+                                (click)="nextStep(stepper); updateStepper(1);">Continue <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+
+
+
+
+
+
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Branch details</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Branch</b></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+
+
+                                <input type="text" name="" placeholder="" id="" class="form-control"
+                                    style="border-right: none;">
+                                <span class="input-group-text" style="height: 42px; border-left: none;">
+                                    <img src="/assets/img/icons/gps.svg">
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>Authorized representative</b></label>
+                            </div>
+                            <mat-form-field class="w-100" style="border-radius: 4px;">
+                                <mat-label>Others</mat-label>
+                                <mat-select>
+                                    <mat-option value="option1">Harry</mat-option>
+                                    <mat-option value="option2">John</mat-option>
+                                    <mat-option value="option3">Martin</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Authorized representative CNIC</b></label>
+
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="message-box">Please carry your CNIC copy as evidence of authorized
+                                representation when picking up another account holder’s banker’s cheque</div>
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger"
+                                (click)="nextStep(stepper); updateStepper(2);">Continue <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+
+                    <form [formGroup]="thirdFormGroup">
+
+
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Cheque details</h4>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+
+                            <label for="Send to"><b>Select account</b></label>
+
+                            <div class="h-100 w-100">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Select Account</mat-label>
+                                    <mat-select>
+                                        <mat-option value="option1">Account 57431231663731</mat-option>
+                                        <mat-option value="option2">Account 57431231663731</mat-option>
+                                        <mat-option value="option3">Wallet 57431231663731</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Enter amount</b></label>
+
+                            </div>
+
+                            <input type="text" name="" placeholder="" id="" class="form-control">
+                            <p class="sub-text">Please enter the amount in PKR</p>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>Select city</b></label>
+                            </div>
+                            <mat-form-field class="w-100" style="border-radius: 4px;">
+                                <mat-label>Peshawar</mat-label>
+                                <mat-select>
+                                    <mat-option value="option1">Karachi</mat-option>
+                                    <mat-option value="option2">Lahore</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>Purpose of requesting cheque</b></label>
+                            </div>
+                            <mat-form-field class="w-100" style="border-radius: 4px;">
+                                <mat-label>Travel</mat-label>
+                                <mat-select>
+                                    <mat-option value="option1">Family Support</mat-option>
+                                    <mat-option value="option2">Education</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger"
+                                (click)="nextStep(stepper); updateStepper(3);">Request cheque <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+  
+
+                                    <div class="text-center">
+                                        <img src="/assets/img/icons/otp-phone.svg" alt="">
+                                    </div>
+                
+                                    <h3>
+                                        Verify OTP
+                                    </h3>
+                                    <p>
+                                        Please enter the code we’ve sent to your mobile number *********83 below
+                                    </p>
+                
+                                    <div class="col-12 mt-3">
+                                        <label for="">OTP</label>
+                                        <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+                                    </div>
+                
+                                    <div class="col-12 mt-4">
+                                        <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                                    </div>
+                
+                                    <p style="color: #5D5D5D;" class="text-center mt-2">
+                                        Resend OTP in 00:40
+                                    </p>    
+
+
+
+           
+
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="fifthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+
+
+                    </form>
+                </mat-step>
+
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>
