@@ -1,80 +1,80 @@
 <div>
     <ul class="sidebar-menu mt-2 pt-1">
         <li routerLinkActive="active">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">
+            <a class="nav-link" data-toggle="sidebar" routerLink="/home" routerLinkActive="active">
                 <i class="sidebar-icon icon-menu-home" ></i> <span>Home</span></a>   
         </li>
 
-        <li ><a  class="nav-link" routerLink="/overview" ><i class="sidebar-icon icon-menu-overview" ></i> <span>Overview</span></a></li>
+        <li routerLinkActive="active"><a  class="nav-link" data-toggle="sidebar" routerLink="/overview" routerLinkActive="active"><i class="sidebar-icon icon-menu-overview" ></i> <span>Overview</span></a></li>
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-send-money" ></i><span>Send Money</span></a>
             <ul class="dropdown-menu">
-                <li > <a class="nav-link" routerLink="/send-money/bank-transfer">Bank Account</a></li>
-                <li ><a class="nav-link" routerLink="/send-money/raast">RAAST</a></li>
-                <li ><a class="nav-link" routerLink="/manage-accounts">Manage Accounts</a></li>
+                <li routerLinkActive="active"> <a class="nav-link" data-toggle="sidebar" routerLink="/send-money/bank-transfer" routerLinkActive="active">Bank Account</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLink="/send-money/raast" routerLinkActive="active">RAAST</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLink="/manage-accounts" routerLinkActive="active">Manage Accounts</a></li>
             </ul>
         </li>
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-mobile-topup" ></i><span>Mobile top up</span></a>
             <ul class="dropdown-menu">
-                <li ><a class="nav-link" routerLink="/mobile-topup">Prepaid top-up</a></li>
-                <li ><a class="nav-link" routerLink="/mobile-topup/post-paid">Postpaid top-up</a></li>
-                <li ><a class="nav-link" routerLink="/mobile-topup/packages">Packages</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLink="/prepaid-top-up" routerLinkActive="active">Prepaid top-up</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLink="/mobile-topup/post-paid" routerLinkActive="active">Postpaid top-up</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLink="/mobile-topup/packages" routerLinkActive="active">Packages</a></li>
             </ul>
         </li>
 
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-payments" ></i><span>Payments</span></a>
             <ul class="dropdown-menu">
-                <li ><a class="nav-link" routerLink="/payments/utility">Utility and bills</a></li>
-                <li ><a class="nav-link" routerLink="/payments/credit-cards">Credit cards</a></li>
-                <li > <a class="nav-link" routerLink="/overview">Summary</a></li>
-                <li ><a class="nav-link" routerLink="/statement">Account statement</a></li>
-                <li ><a class="nav-link" routerLink="/manage-accounts">Manage Accounts</a></li>
-                <li ><a class="nav-link" routerLink="/payments/more-payments">More</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/payments/utility">Utility and bills</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/payments/credit-cards">Credit cards</a></li>
+                
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/statement">Account statement</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/manage-accounts">Manage Accounts</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/payments/more-payments">More</a></li>
                 
             </ul>
         </li>
 
-        <li >
-            <a class="nav-link" routerLink="/payee-management" >
+        <li routerLinkActive="active">
+            <a class="nav-link" routerLink="/payee-management" routerLinkActive="active">
                 <i class="sidebar-icon icon-menu-payees" ></i> <span>Payees</span></a>   
         </li>
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-cards" ></i><span>Cards</span></a>
             <ul class="dropdown-menu">
-                <li > <a class="nav-link"  data-toggle="sidebar" routerLink="/debit-card">Debit Card</a></li>
-                <li ><a class="nav-link" data-toggle="sidebar" routerLink="/credit-card">Credit Card</a></li>
+                <li routerLinkActive="active"> <a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/debit-card">Debit Card</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/credit-card">Credit Card</a></li>
                 
                 
             </ul>
         </li>
 
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-save-invest" ></i><span>Save and Invest</span></a>
             <ul class="dropdown-menu">
-                <li > <a class="nav-link"  routerLink="/save-and-invest/summary" (click)="summaryModal()">Summary</a></li>
-                <li ><a class="nav-link"   routerLink="/save-and-invest/top-performing-funds">Top performing funds</a></li>
-                <li ><a class="nav-link"   routerLink="/save-and-invest/net-asset-value">Net Asset Value (NAV)</a></li>
-                <li ><a class="nav-link"   routerLink="/save-and-invest/ips">IPS</a></li>
-                <li ><a class="nav-link"   routerLink="/save-and-invest/stock-market">Stock market</a></li>
-                <li ><a class="nav-link"   routerLink="/save-and-invest/alfa-term-deposit">Alfa term deposit</a></li>
+                <li routerLinkActive="active"> <a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/summary" (click)="summaryModal()">Summary</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/top-performing-funds">Top performing funds</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/net-asset-value">Net Asset Value (NAV)</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/ips">IPS</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/stock-market">Stock market</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/save-and-invest/alfa-term-deposit">Alfa term deposit</a></li>
                 
                 
             </ul>
         </li>
 
-        <li class="dropdown" >
+        <li class="dropdown" routerLinkActive="active">
             <a class="nav-link has-dropdown"><i class="sidebar-icon icon-menu-loans" ></i><span>Loans</span></a>
             <ul class="dropdown-menu">
-                <li > <a class="nav-link" routerLink="/overview">Summary</a></li>
-                <li ><a class="nav-link" routerLink="/statement">Account statement</a></li>
-                <li ><a class="nav-link" routerLink="/manage-accounts">Manage Accounts</a></li>
+                <!-- <li routerLinkActive="active"> <a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/overview">Summary</a></li> -->
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/statement">Account statement</a></li>
+                <li routerLinkActive="active"><a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/manage-accounts">Manage Accounts</a></li>
                 
             </ul>
         </li>
@@ -84,8 +84,8 @@
                 <i class="sidebar-icon icon-menu-alfa-hub" ></i> <span>Alfa Hub</span></a>   
         </li>
 
-        <li>
-            <a class="nav-link" routerLink="/settings" >
+        <li routerLinkActive="active">
+            <a class="nav-link" data-toggle="sidebar" routerLinkActive="active" routerLink="/settings" >
                 <i class="sidebar-icon icon-menu-alfa-hub" ></i> <span>Settings</span></a>   
         </li>
 

@@ -59,6 +59,7 @@ import { ProfitCalculatorComponent } from '../pages/save-and-invest/alfa-term-de
 import { BookATermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/book-a-term-deposit/book-a-term-deposit.component';
 import { YourTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/your-term-deposit/your-term-deposit.component';
 import { RaastComponent } from '../pages/send-money/raast/raast.component';
+import { PrepaidComponent } from '../pages/mobile-top-up/prepaid/prepaid.component';
 
 UtilityComponent
 
@@ -108,8 +109,8 @@ const routes: Routes = [
     component:DealsDiscountComponent
   },
   {
-    path:'mobile-topup',
-    component:MobileTopUpComponent 
+    path:'prepaid-top-up',
+    component:PrepaidComponent
   },
   {
     path:'mobile-topup/post-paid',

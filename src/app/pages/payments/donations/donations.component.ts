@@ -10,6 +10,7 @@ import { AlertComponent } from '../../../shared/alert/alert.component';
 import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PaymentFrequencyComponent } from '../../../modals/payment-frequency/payment-frequency.component';
 
 interface Pokemon {
   value: string;
@@ -30,27 +31,7 @@ interface PokemonGroup {
 })
 export class DonationsComponent {
   componentName = 'Donations';
-
-
   isFCYAccount = true;
-
-  pokemonControl = new FormControl('');
-  pokemonGroups: PokemonGroup[] = [
-    {
-      name: 'Account',
-      pokemon: [
-        {value: '57431231663731', viewValue: '57431231663731'},
-        {value: '57131231663731', viewValue: '57401231663731'},
-      ],
-    },
-    {
-      name: 'Wallet',
-      pokemon: [
-        {value: 'wallet-1', viewValue: 'wallet-1'},
-        {value: 'wallet-2', viewValue: 'wallet-2'}
-      ],
-    }
-  ];
   
   step1 : string = '#EA5148';
   step2 : string = '';
@@ -118,6 +99,10 @@ export class DonationsComponent {
    
   }
 
+  previousStep(stepper:MatStepper){
+    stepper.previous();
+  }
+
   
   updateStepper(step){
     if(step == 1){
@@ -166,6 +151,21 @@ export class DonationsComponent {
     dialogConfig.panelClass = 'custom-dialog-container';
     const modalDialog = this.matDialog.open(PaymentReceiptPaidComponent, dialogConfig);
   }
+
+  recurringPaymentModal(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "RecurringPayment";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(PaymentFrequencyComponent, dialogConfig);
+  }
+
+  myPayees = [
+    { id:1, logo: 'edhi', bankName: 'UNFPA'},
+    { id:2, logo: 'wpf', bankName: 'World Food Programme'},
+    { id:3, logo: 'edhi', bankName: 'Edhi'},
+    { id:4, logo: 'edhi', bankName: 'Saylani Welfare'},
+    { id:5, logo: 'edhi', bankName: 'JDC'}
+  ];
 
 
 }

@@ -9,6 +9,7 @@ import { MyCardsComponent } from '../../modals/my-cards/my-cards.component';
 import { OrbitStatementComponent } from "../../pages/orbit-statement/orbit-statement.component";
 import { OrbitsSummaryComponent } from '../../modals/orbits-summary/orbits-summary.component';
 import { OverviewInsightsComponent } from '../../modals/overview-insights/overview-insights.component';
+import { AlfaQrComponent } from '../../modals/alfa-qr/alfa-qr.component';
 
 @Component({
     selector: 'app-overview',
@@ -118,6 +119,13 @@ export class OverviewComponent {
     dialogConfig4.id = "ConfirmModal";
     dialogConfig4.panelClass = 'custom-dialog-container';
     const modalDialog = this.matDialog.open(OverviewInsightsComponent, dialogConfig4);
+  }
+
+  alfaQR(){
+    const dialogConfig4 = new MatDialogConfig();
+    dialogConfig4.id = "ConfirmModal";
+    dialogConfig4.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(AlfaQrComponent, dialogConfig4);
   }
 
 

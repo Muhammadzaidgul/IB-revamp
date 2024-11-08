@@ -8,9 +8,9 @@
 </div>
 
 
-<div class="row">
-  <div class="col-12">
-    <div class="col-lg-10 col-md-8 col-sm-12 col-xs-12  p-0 p-md-0 mt-5" data-aos="fade-up" data-aos-duration="1000">
+<div class="row d-flex justify-content-center">
+  <div class="col-10">
+    <div class="col-lg-12 col-md-8 col-sm-12 col-xs-12  p-0 p-md-0 mt-5" data-aos="fade-up" data-aos-duration="1000">
 
 
       <div class="col">
@@ -38,7 +38,7 @@
 
       <div class="col" style="margin-top: 24px;">
         <div class="col">
-          <mat-chip-listbox aria-label="Satement Selection">
+          <mat-chip-listbox aria-label="Satement Selection" (change)="onChange($event)">
             <mat-chip-option selected color="warn">All</mat-chip-option>
             <mat-chip-option color="warn">Account management</mat-chip-option>
             <mat-chip-option color="warn">Transactions</mat-chip-option>
@@ -90,11 +90,8 @@
                 </div>
               </cdk-accordion-item>
             }
-          </cdk-accordion>
-          
-          
-
-
+        </cdk-accordion>
+        
       </div>
 
       <div class="col" style="margin-top: 24px;">
