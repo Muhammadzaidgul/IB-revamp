@@ -1,0 +1,9 @@
+.selected-card {
+    border: 1px solid #EA5148;
+    background-color: #F8F8F8;
+  }
+  
+  .default-card {
+    border: 1px solid #e1e1e1;
+  }
+  

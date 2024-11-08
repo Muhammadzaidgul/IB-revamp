@@ -62,6 +62,9 @@ import { RaastComponent } from '../pages/send-money/raast/raast.component';
 import { ApplyNewLoanComponent } from '../pages/loans/apply-new-loan/apply-new-loan.component';
 import { SuccessComponent } from '../pages/loans/apply-new-loan/success/success.component';
 import { ManageLoansComponent } from '../pages/loans/manage-loans/manage-loans.component';
+import { TaxManagementComponent } from '../pages/alfa-hub/digital-services/tax-management/tax-management.component';
+import { BankersChequeComponent } from '../pages/alfa-hub/digital-services/bankers-cheque/bankers-cheque.component';
+import { ApplyChequeBookPageComponent } from '../pages/alfa-hub/digital-services/cheque-management/apply-cheque-book-page/apply-cheque-book-page.component';
 
 UtilityComponent
 
@@ -296,7 +299,22 @@ const routes: Routes = [
   },
   {
     path:'alfa-hub/shophive',
-    component:ShophiveComponent
+    component:ShophiveComponent 
+  }
+  ,
+  {
+    path:'alfa-hub/tax-management',
+    component:TaxManagementComponent  
+  }
+  ,
+  {
+    path:'alfa-hub/bankerscheque',
+    component:BankersChequeComponent  
+  }
+  ,
+  {
+    path:'alfa-hub/apply-cheque-book',
+    component: ApplyChequeBookPageComponent
   }
   ,
   {
