@@ -1,23 +1,34 @@
 import { Component } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonModule, Location } from '@angular/common';
 import { MatStepper, MatStepperModule } from '@angular/material/stepper';
-import { ThemePalette } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
-  selector: 'app-update-cnic',
+  selector: 'app-stop-cheque',
   standalone: true,
-  imports: [MatStepperModule,FormsModule, ReactiveFormsModule,RouterModule],
-  templateUrl: './update-cnic.component.html',
-  styleUrl: './update-cnic.component.css'
+  imports: [CommonModule,MatStepperModule,MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, RouterModule, MatSlideToggleModule, MatChipsModule],
+  templateUrl: './stop-cheque.component.html',
+  styleUrl: './stop-cheque.component.css'
 })
-export class UpdateCnicComponent {
+export class StopChequeComponent {
 
-  constructor(private location: Location,private _formBuilder: FormBuilder){
+
+  constructor(private location: Location,public matDialog: MatDialog,private _formBuilder: FormBuilder){
 
   }
 
+  back():void{
+    this.location.back();
+  }
+
+  
   
   step1 : string = '#EA5148';
   step2 : string = '';
@@ -84,10 +95,4 @@ export class UpdateCnicComponent {
   nextStep(stepper:MatStepper){
     stepper.next();
   }
-
-
-  back():void{
-    this.location.back();
-  }
-  
 }

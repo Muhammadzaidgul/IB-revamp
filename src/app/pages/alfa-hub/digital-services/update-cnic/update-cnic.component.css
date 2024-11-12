@@ -1,0 +1,21 @@
+:host ::ng-deep .mat-horizontal-stepper-header-container {  
+    display: none; 
+}
+
+
+.box{
+    border: 1px solid #E1E1E1; 
+    border-radius: 4px; 
+    padding: 16px;
+}
+
+
+.image-container {
+    width: 100%;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}

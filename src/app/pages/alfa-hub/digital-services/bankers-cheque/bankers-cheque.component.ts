@@ -11,7 +11,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { PaymentReceiptComponent } from '../../../../modals/payment-receipt/payment-receipt.component';
 import { PaymentReceiptPaidComponent } from '../../../../modals/payment-receipt-paid/payment-receipt-paid.component';
-import { ApplyChequeBookComponent } from '../../../../modals/apply-cheque-book/apply-cheque-book.component';
 
 @Component({
   selector: 'app-bankers-cheque',
@@ -100,7 +99,7 @@ export class BankersChequeComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = "ConfirmModal";
     dialogConfig.panelClass = 'custom-dialog-container';
-    const modalDialog = this.matDialog.open(ApplyChequeBookComponent, dialogConfig);
+    const modalDialog = this.matDialog.open(PaymentReceiptPaidComponent, dialogConfig);
   }
 
 

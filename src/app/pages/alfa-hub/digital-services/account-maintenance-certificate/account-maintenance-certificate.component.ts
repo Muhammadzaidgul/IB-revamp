@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { ThemePalette } from '@angular/material/core';
+import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-  selector: 'app-update-cnic',
+  selector: 'app-account-maintenance-certificate',
   standalone: true,
-  imports: [MatStepperModule,FormsModule, ReactiveFormsModule,RouterModule],
-  templateUrl: './update-cnic.component.html',
-  styleUrl: './update-cnic.component.css'
+  imports: [MatStepperModule,FormsModule, ReactiveFormsModule,RouterModule,MatFormFieldModule,MatSelectModule],
+  templateUrl: './account-maintenance-certificate.component.html',
+  styleUrl: './account-maintenance-certificate.component.css'
 })
-export class UpdateCnicComponent {
+export class AccountMaintenanceCertificateComponent {
 
   constructor(private location: Location,private _formBuilder: FormBuilder){
 
   }
 
+  back():void{
+    this.location.back();
+  }
   
   step1 : string = '#EA5148';
   step2 : string = '';
@@ -86,8 +91,5 @@ export class UpdateCnicComponent {
   }
 
 
-  back():void{
-    this.location.back();
-  }
-  
+
 }
