@@ -1,0 +1,153 @@
+:host ::ng-deep .mat-horizontal-stepper-header-container {  
+    display: none; 
+}
+
+.horizontal-progress {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 1px; */
+    position: relative;
+}
+
+.horizontal-progress .progress-bar-item {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 1px; */
+    position: relative;
+    flex: 0 0 auto;
+
+}
+
+.horizontal-progress .frame, .frame-done {
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    position: relative;
+    /* background-color: #EA5148; */
+    border-radius: 32px;
+    color: #fff;
+}
+
+.frame-done {
+    background-color: #18B368;
+}
+
+.horizontal-progress .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -7px;
+    margin-bottom: -5px;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    white-space: nowrap;
+}
+
+.horizontal-progress .title {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+}
+
+.horizontal-progress .tabler-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+}
+
+.horizontal-progress .element-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    position: relative;
+    border-radius: 32px;
+    border: 1px solid;
+}
+
+.horizontal-progress .element {
+    position: relative;
+    width: fit-content;
+    margin-top: -7px;
+    margin-bottom: -5px;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    white-space: nowrap;
+}
+
+.horizontal-progress .div {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+}
+
+.payeeBox{
+    border: 1px solid #E1E1E1; border-radius: 5px;
+}
+
+.frame{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #e1e1e1;
+}
+
+.frame .content{
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .tabler-icon{
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.frame .div{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .text-wrapper{
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-2{
+    position: relative;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.frame .div-2{
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}

@@ -47,7 +47,7 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
+    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
       data-aos-duration="1000">
 
       <mat-stepper [linear]="isLinear" #stepper>
@@ -62,364 +62,137 @@
           </div>
 
 
-          <div class="d-flex flex-wrap  mt-3 justify-content-start">
+          <div class="d-flex flex-wrap  mt-3 justify-content-between">
+            
+            @for (item of companies; track $index) {
 
-
-
-              <!-- First Card -->
-              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)=" nextStep(stepper)">
-                <div class="col m-1 payeeBox">
+              <div style="width: 130px;" class="h-100 pe-2 pointer-cursor" (click)="getPackages(item.id);">
+                <div class="col m-md-0 m-1 payeeBox">
                   <div class="d-flex p-2" style="min-height: 59px;">
-                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
+                    <img src="/assets/img/icons/{{ item.icon }}" alt="">
                     <div class="ps-2 d-flex align-items-center">
-                      <p class="p-0 m-0"><b>Jazz</b></p>
+                      <p class="p-0 m-0"><b>{{ item.company }}</b></p>
                     </div>
 
                   </div>
                 </div>
               </div>
 
-              <!-- Second Card -->
-              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
-                <div class="col m-1 payeeBox">
-                  <div class="d-flex p-2" style="min-height: 59px;">
-                    <img src="/assets/img/icons/zong-logo.svg" alt="">
-                    <div class="ps-2 d-flex align-items-center">
-                      <p class="p-0 m-0"><b>Zong</b></p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Third Card -->
-              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
-                <div class="col m-1 payeeBox">
-                  <div class="d-flex p-2" style="min-height: 59px;">
-                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
-                    <div class="ps-2 d-flex align-items-center">
-                      <p class="p-0 m-0"><b>Jazz</b></p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Fourth Card -->
-              <div style="max-width: 140px;" class="h-100 w-50 pe-2" (click)="nextStep(stepper)">
-                <div class="col m-1 payeeBox">
-                  <div class="d-flex p-2 " style="min-height: 59px;">
-                    <img src="/assets/img/icons/zong-logo.svg" alt="">
-                    <div class="ps-2 d-flex align-items-center">
-                      <p class="p-0 m-0"><b>Zong</b></p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
+            }
 
           </div>
 
-          <div class="mt-3">
-            <mat-chip-listbox aria-label="Satement Selection">
-              <div style="justify-content: space-between;">
-                <mat-chip-option selected color="warn">All</mat-chip-option>
-                <mat-chip-option color="warn">Data</mat-chip-option>
-                <mat-chip-option color="warn">SMS</mat-chip-option>
-                <mat-chip-option color="warn">Calls</mat-chip-option>
-                <mat-chip-option color="warn">Easy card</mat-chip-option>
-                <mat-chip-option color="warn">Hybrid</mat-chip-option>
-              </div>
-            </mat-chip-listbox>
-          </div>
+          <!-- SelectedCompany Packages -->
 
+          @if(showPackages) {
 
-          <div class="d-block mt-3">
-            <div class="input-icons mt-4">
-              <i class="fa fa-search icon"></i>
-              <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
+            <div class="mt-3">
+              <mat-chip-listbox aria-label="Satement Selection"  (change)="onChange($event)">
+                <div style="justify-content: space-between;">
+                  <mat-chip-option selected color="warn">All</mat-chip-option>
+                    <mat-chip-option color="warn">Data</mat-chip-option>
+                    <mat-chip-option color="warn">SMS</mat-chip-option>
+                    <mat-chip-option color="warn">Calls</mat-chip-option>
+                    <mat-chip-option color="warn">Easy Card</mat-chip-option>
+                    <mat-chip-option color="warn">Hybrid</mat-chip-option>
+                </div>
+              </mat-chip-listbox>
             </div>
-          </div>
-
-          <div class="d-flex flex-wrap mt-3 justify-content-start">
-
-
-
-            <div class="card-container">
-                <div class="header_mobile"></div>
-                <div class="body_mobile m-0">
-                    <div class="header m-0" >
-                        <div class="title">Social Plus Offer</div>
-                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
-                      </div>
-      
-                      <div class="details pt-2 pb-2">
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                            
-                          </div>
-                          <div class="detail-info ">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">on-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">100</div>
-                            <div class="detail-label">off-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/chat.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">all-net SMS</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/data.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">15</div>
-                            <div class="detail-label">GBs data</div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="divider"></div>
-      
-                      <div class="footer pt-2">
-                        <div class="price-info">
-                          <div class="price">PKR 299</div>
-                          <div class="validity">Validity: 30 days</div>
-                        </div>
-                        <button class="subscribe-button" (click)="updateStepper(1); nextStep(stepper)">Subscribe</button>
-                      </div>
-      
-                </div>
-              
+  
+  
+            <div class="d-block mt-3">
+              <div class="input-icons mt-4">
+                <i class="fa fa-search icon"></i>
+                <input type="text" class="form-control ps-5" style="border-radius: 20px;" placeholder="Search">
               </div>
+            </div>
+  
+            <div class="d-flex flex-wrap mt-3 justify-content-start">
+  
 
-              <div class="card-container">
-                <div class="header_mobile"></div>
-                <div class="body_mobile m-0">
-                    <div class="header m-0" >
-                        <div class="title">Social Plus Offer</div>
-                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
-                      </div>
-      
-                      <div class="details pt-2 pb-2">
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                            
+              @for (pkgs of packages; track $index) {
+
+
+                <div class="card-container w-50">
+                  <div class="header_mobile"></div>
+                  <div class="body_mobile m-0">
+                      <div class="header m-0" >
+                          <div class="title"> {{ pkgs.packageName }} </div>
+                          <div class="subtitle">{{ pkgs.packageDescription }}</div>
+                        </div>
+        
+                        <div class="details pt-2 pb-2">
+                          <div class="detail-item">
+                            <div class="icon-container">
+                                <img src="/assets/img/icons/phone.svg" alt="">
+                              
+                            </div>
+                            <div class="detail-info ">
+                              <div class="detail-value">500</div>
+                              <div class="detail-label">on-net minutes</div>
+                            </div>
                           </div>
-                          <div class="detail-info ">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">on-net minutes</div>
+                          <div class="detail-item">
+                            <div class="icon-container">
+                                <img src="/assets/img/icons/phone.svg" alt="">
+                            </div>
+                            <div class="detail-info">
+                              <div class="detail-value">100</div>
+                              <div class="detail-label">off-net minutes</div>
+                            </div>
+                          </div>
+                          <div class="detail-item">
+                            <div class="icon-container">
+                                <img src="/assets/img/icons/chat.svg" alt="">
+                            </div>
+                            <div class="detail-info">
+                              <div class="detail-value">500</div>
+                              <div class="detail-label">all-net SMS</div>
+                            </div>
+                          </div>
+                          <div class="detail-item">
+                            <div class="icon-container">
+                                <img src="/assets/img/icons/data.svg" alt="">
+                            </div>
+                            <div class="detail-info">
+                              <div class="detail-value">15</div>
+                              <div class="detail-label">GBs data</div>
+                            </div>
                           </div>
                         </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
+        
+                        <div class="divider"></div>
+        
+                        <div class="footer pt-2">
+                          <div class="price-info">
+                            <div class="price">PKR {{ pkgs.packagePrice }}</div>
+                            <div class="validity">Validity: {{ pkgs.validity }}</div>
                           </div>
-                          <div class="detail-info">
-                            <div class="detail-value">100</div>
-                            <div class="detail-label">off-net minutes</div>
-                          </div>
+                          <button class="subscribe-button" (click)="updateStepper(1); nextStep(stepper)">Subscribe</button>
                         </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/chat.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">all-net SMS</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/data.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">15</div>
-                            <div class="detail-label">GBs data</div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="divider"></div>
-      
-                      <div class="footer pt-2">
-                        <div class="price-info">
-                          <div class="price">PKR 299</div>
-                          <div class="validity">Validity: 30 days</div>
-                        </div>
-                        <button class="subscribe-button" (click)="updateStepper(1); nextStep(stepper)">Subscribe</button>
-                      </div>
-      
+        
+                  </div>
+                
                 </div>
-              
-              </div>
-
-              <div class="card-container">
-                <div class="header_mobile"></div>
-                <div class="body_mobile m-0">
-                    <div class="header m-0" >
-                        <div class="title">Social Plus Offer</div>
-                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
-                      </div>
-      
-                      <div class="details pt-2 pb-2">
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                            
-                          </div>
-                          <div class="detail-info ">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">on-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">100</div>
-                            <div class="detail-label">off-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/chat.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">all-net SMS</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/data.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">15</div>
-                            <div class="detail-label">GBs data</div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="divider"></div>
-      
-                      <div class="footer pt-2">
-                        <div class="price-info">
-                          <div class="price">PKR 299</div>
-                          <div class="validity">Validity: 30 days</div>
-                        </div>
-                        <button class="subscribe-button">Subscribe</button>
-                      </div>
-      
-                </div>
-              
-              </div>
-
-              <div class="card-container">
-                <div class="header_mobile"></div>
-                <div class="body_mobile m-0">
-                    <div class="header m-0" >
-                        <div class="title">Social Plus Offer</div>
-                        <div class="subtitle">For FB, WA, Youtube, Instagram, Snapchat & Threads</div>
-                      </div>
-      
-                      <div class="details pt-2 pb-2">
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                            
-                          </div>
-                          <div class="detail-info ">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">on-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/phone.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">100</div>
-                            <div class="detail-label">off-net minutes</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/chat.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">500</div>
-                            <div class="detail-label">all-net SMS</div>
-                          </div>
-                        </div>
-                        <div class="detail-item">
-                          <div class="icon-container">
-                              <img src="/assets/img/icons/data.svg" alt="">
-                          </div>
-                          <div class="detail-info">
-                            <div class="detail-value">15</div>
-                            <div class="detail-label">GBs data</div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="divider"></div>
-      
-                      <div class="footer pt-2">
-                        <div class="price-info">
-                          <div class="price">PKR 299</div>
-                          <div class="validity">Validity: 30 days</div>
-                        </div>
-                        <button class="subscribe-button">Subscribe</button>
-                      </div>
-      
-                </div>
-              
-              </div>
-              
 
 
 
+              }@empty {
+                <p>No package available</p>
+              }
+            
+            </div>
 
-
-
-          </div>
-
-
-
-
-
-
-
+          }
+          
+        
+          <!-- End -->
 
         </mat-step>
 
         <mat-step [stepControl]="secondFormGroup">
 
-          <form [formGroup]="firstFormGroup">
+          <form [formGroup]="secondFormGroup">
 
             <div class="d-flex">
               <div class="col">
@@ -450,118 +223,30 @@
             </div>
 
             <div class="d-flex flex-wrap mt-3">
+              
+              @for (myPayee of payees; track $index) {
 
-
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
-
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ali</b></p>
-                      <p class="p-0 m-0">03211172135</p>
+                <div style="min-width: 200px;" class="h-100 w-50 pointer-cursor" (click)="updateStepper(2); nextStep(stepper)">
+                  <div class="col h-25 m-1 payeeBox">
+                    <div class="d-flex p-2">
+                      <img src="/assets/img/icons/jazz-logo.svg" alt="">
+  
+                      <div class="ps-2">
+                        <p class="p-0 m-0"><b> {{ myPayee.payeeName }}</b></p>
+                        <p class="p-0 m-0">{{ myPayee.phoneNumber }}</p>
+                      </div>
+  
+                      <div class="col text-end align-self-center align-item-center">
+                        <img src="/assets/img/icons/caret-right.svg" alt="">
+                      </div>
                     </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
+  
                   </div>
-
                 </div>
-              </div>
 
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/zong-logo.svg" alt="">
+              }@empty {
 
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ibrahim</b></p>
-                      <p class="p-0 m-0">03141232734</p>
-                    </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
-
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ali</b></p>
-                      <p class="p-0 m-0">03211172135</p>
-                    </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div style="min-width: 200px;" class="h-100 w-50" (click)="updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/zong-logo.svg" alt="">
-
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ibrahim</b></p>
-                      <p class="p-0 m-0">03141232734</p>
-                    </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div style="min-width: 200px;" class="h-100 w-50" (click)=" updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
-
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ali</b></p>
-                      <p class="p-0 m-0">03211172135</p>
-                    </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div style="min-width: 200px;" class="h-100 w-50" (click)=" updateStepper(2); nextStep(stepper)">
-                <div class="col h-25 m-1 payeeBox">
-                  <div class="d-flex p-2">
-                    <img src="/assets/img/icons/zong-logo.svg" alt="">
-
-                    <div class="ps-2">
-                      <p class="p-0 m-0"><b> Ibrahim</b></p>
-                      <p class="p-0 m-0">03141232734</p>
-                    </div>
-
-                    <div class="col text-end align-self-center align-item-center">
-                      <img src="/assets/img/icons/caret-right.svg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-
+              }
 
             </div>
 
@@ -569,552 +254,317 @@
 
         </mat-step>
 
-        <mat-step [stepControl]="thirdFormGroup">
+        @if(new_payment){
 
-          <form [formGroup]="secondFormGroup">
-
-
-
-
-            @if(new_payment){
-
-
-
-            <h3>
-              Enter the mobile number
-            </h3>
-            <p>
-              Please enter the mobile number you want to top up
-            </p>
-
-            <div class="col-12 mt-3">
-              <label for=""><b>Mobile number</b></label>
-              <input type="text" name="" id="" class="form-control mt-1" placeholder="03XXXXXXXXX">
-            </div>
-
-            <div class="col-12">
-              <div class="col h-25 mt-3 payeeBox">
-                <div class="d-flex p-3">
-                  <img src="/assets/img/icons/jazz-logo.svg" alt="">
-
-                  <div class="ps-2 align-self-center align-item-center">
-                    <p class="p-0 m-0"><b>Mobilink Jazz</b></p>
-
-                  </div>
-
-                  <div class="col text-end align-self-center align-item-center">
-                    <img src="/assets/img/icons/edit-red.svg" alt="">
-                    <span class="primary-font-color p-1" data-toggle="modal"
-                      (click)="networkModal();"><b>Edit</b></span>
+          <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+              <h3>
+                Enter the mobile number
+              </h3>
+              <p>
+                Please enter the mobile number you want to top up
+              </p>
+  
+              <div class="col-12 mt-3">
+                <label for=""><b>Mobile number</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="03XXXXXXXXX">
+              </div>
+  
+              <div class="col-12">
+                <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                    <img src="/assets/img/icons/jazz-logo.svg" alt="">
+  
+                    <div class="ps-2 align-self-center align-item-center">
+                      <p class="p-0 m-0"><b>Mobilink Jazz</b></p>
+  
+                    </div>
+  
+                    <div class="col text-end align-self-center align-item-center">
+                      <img src="/assets/img/icons/edit-red.svg" alt="">
+                      <span class="primary-font-color p-1" data-toggle="modal"
+                        (click)="networkModal();"><b>Edit</b></span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-12">
-              <div class="col h-25 mt-3 payeeBox">
-                <div class="d-flex p-3">
-                  <img src="/assets/img/icons/user-icon.svg" alt="">
-
-                  <div class="ps-2 align-self-center align-item-center">
-                    <p class="p-0 m-0"><b>Add as payee</b></p>
-
+  
+              <div class="col-12">
+                <div class="col h-25 mt-3 payeeBox">
+                  <div class="d-flex p-3">
+                    <img src="/assets/img/icons/user-icon.svg" alt="">
+  
+                    <div class="ps-2 align-self-center align-item-center">
+                      <p class="p-0 m-0"><b>Add as payee</b></p>
+  
+                    </div>
+  
+                    <div class="col text-end align-self-center align-item-center">
+                      <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
+                        formControlName="acceptTerms" data-toggle="modal">
+  
+                      </mat-slide-toggle>
+                    </div>
                   </div>
-
-                  <div class="col text-end align-self-center align-item-center">
-                    <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
-                      formControlName="acceptTerms" data-toggle="modal">
-
-                    </mat-slide-toggle>
-                  </div>
+  
                 </div>
-
               </div>
-            </div>
-
-            <div class="col-12 mt-3">
-              <label for=""><b>Payee name</b></label>
-              <input type="text" name="" id="" class="form-control mt-1" placeholder="Ali">
-            </div>
-
-            <div class="col-12 mt-3">
-              <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(2); skipToStep(stepper);">Continue <img
-                  src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-
-              <!-- Error Mobile Network modal -->
-              <!-- <button class="w-100 btn btn-lg btn-danger" data-toggle="modal" (click)="networkErrorModal()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button> -->
-            </div>
-
-
-
-            }
-
-            @else{
-
-                <form [formGroup]="thirdFormGroup">
-
-                    <h3>
-                      Payment source
-                    </h3>
-                    <p>
-                      {{isSplitPayment ? 'Please choose at least 2 payment sources from the options available below' : 'Please choose a payment source from the options available below'}}
-                    </p>
-      
-                    @if(isAlertActive){
-                    <app-alert [alertType]="warning" [alertMsg]="msg" [alertIcon]="icon" />
-                    }
-      
-      
-                    <div class="col-12">
-                      <p class="p-0 m-0">
-                        <b>Accounts</b>
-                      </p>
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          @if(isSplitPayment){
-                          <input type='checkbox' (change)="showInput($event,1)" name='' id=''
-                            style='width: 20px; height: 20px;'>
-                          }
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 400,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-      
-                      @if(inputText1){
-      
-                      <div class="d-flex justify-content-end  mt-2 ">
-                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
-                        <input type="text" name="" id="" class="form-control w-25">
-                      </div>
-                      }
-      
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 400,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 400,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-      
-                    </div>
-      
-                    <div class="col-12">
-                      <p class="mt-3">
-                        <b>Credit Cards</b>
-                      </p>
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          @if(isSplitPayment){
-                          <input type='checkbox' (change)="showInput($event,2)" name='' id=''
-                            style='width: 20px; height: 20px;'>
-                          }
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Optimus</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 400,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-                      @if(inputText2){
-      
-                      <div class="d-flex justify-content-end  mt-2 ">
-                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
-                        <input type="text" name="" id="" class="form-control w-25">
-                      </div>
-                      }
-      
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Platinum</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 400,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-      
-                    </div>
-      
-                    <div class="col-12">
-                      <p class="mt-3">
-                        <b>Wallets</b>
-                      </p>
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-      
-                          <div class="div">
-                            <div class="text-wrapper"><b>Wallet</b></div>
-                            <div class="text-wrapper-2">57431231663731</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 120,000
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-                    </div>
-      
-                    <div class="col-12">
-                      <p class="mt-3">
-                        <b>Orbit</b>
-                      </p>
-      
-                      <div class="frame mt-3">
-                        <div class="content">
-                          <div class="div">
-                            <div class="text-wrapper"><b>Orbit</b></div>
-                            <div class="text-wrapper-2">Points: 2300</div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="text-wrapper">
-                            PKR 2300
-                          </div>
-                          <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                        </div>
-                      </div>
-                    </div>
-      
-                    <div class="mt-4">
-      
-                      <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(3);  nextStep(stepper);">Continue <img
-                          src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-                    </div>
-                  </form>
-
-            }
-
-
-          </form>
-
-        </mat-step>
+  
+              <div class="col-12 mt-3">
+                <label for=""><b>Payee name</b></label>
+                <input type="text" name="" id="" class="form-control mt-1" placeholder="Ali">
+              </div>
+  
+              <div class="col-12 mt-3">
+                <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(2); nextStep(stepper);">Continue <img
+                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+  
+                <!-- Error Mobile Network modal -->
+                <!-- <button class="w-100 btn btn-lg btn-danger" data-toggle="modal" (click)="networkErrorModal()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button> -->
+              </div>
+            </form>
+          </mat-step>
+          
+        }
 
         <mat-step [stepControl]="fourthFormGroup">
 
-          <form [formGroup]="thirdFormGroup">
-
-            @if(new_payment){
-
-
-           
-
-            }
-
-            @else{
-
-                <app-confirm-details />
-
-                <div class="mt-4">
-    
-                  <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
-                      src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
-                </div>
-
-            }
-
-          </form>
-
-        </mat-step>
-
-        <mat-step [stepControl]="fifthFormGroup">
           <form [formGroup]="fourthFormGroup">
 
+            <h3>
+              Payment source
+            </h3>
+            
+
+            @if(isAlertActive){
+            <app-alert [alertType]="warning" [alertMsg]="msg" [alertIcon]="icon" />
+            }
 
 
-            @if(new_payment){
-
-            <form [formGroup]="thirdFormGroup">
-
-              <h3>
-                Payment source
-              </h3>
-              <p>
-                {{isSplitPayment ? 'Please choose at least 2 payment sources from the options available below' : 'Please choose a payment source from the options available below'}}
+            <div class="col-12">
+              <p class="p-0 m-0">
+                <b>Accounts</b>
               </p>
 
-              @if(isAlertActive){
-              <app-alert [alertType]="warning" [alertMsg]="msg" [alertIcon]="icon" />
-              }
+              <div class="frame mt-3">
+                <div class="content">
 
-
-              <div class="col-12">
-                <p class="p-0 m-0">
-                  <b>Accounts</b>
-                </p>
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    @if(isSplitPayment){
-                    <input type='checkbox' (change)="showInput($event,1)" name='' id=''
-                      style='width: 20px; height: 20px;'>
-                    }
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
                   </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 400,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+
+                  <div class="div">
+                    <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
+                    <div class="text-wrapper-2">57431231663731111</div>
                   </div>
                 </div>
-
-                @if(inputText1){
-
-                <div class="d-flex justify-content-end  mt-2 ">
-                  <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
-                  <input type="text" name="" id="" class="form-control w-25">
-                </div>
-                }
-
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 400,000
                   </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 400,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                  </div>
-                </div>
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
-                  </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 400,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-12">
-                <p class="mt-3">
-                  <b>Credit Cards</b>
-                </p>
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    @if(isSplitPayment){
-                    <input type='checkbox' (change)="showInput($event,2)" name='' id=''
-                      style='width: 20px; height: 20px;'>
-                    }
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Optimus</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
-                  </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 400,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                  </div>
-                </div>
-                @if(inputText2){
-
-                <div class="d-flex justify-content-end  mt-2 ">
-                  <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
-                  <input type="text" name="" id="" class="form-control w-25">
-                </div>
-                }
-
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Platinum</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
-                  </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 400,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-12">
-                <p class="mt-3">
-                  <b>Wallets</b>
-                </p>
-
-                <div class="frame mt-3">
-                  <div class="content">
-
-                    <div class="div">
-                      <div class="text-wrapper"><b>Wallet</b></div>
-                      <div class="text-wrapper-2">57431231663731</div>
-                    </div>
-                  </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 120,000
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
-                  </div>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
                 </div>
               </div>
 
-              <div class="col-12">
-                <p class="mt-3">
-                  <b>Orbit</b>
-                </p>
+              <div class="frame mt-3">
+                <div class="content">
 
-                <div class="frame mt-3">
-                  <div class="content">
-                    <div class="div">
-                      <div class="text-wrapper"><b>Orbit</b></div>
-                      <div class="text-wrapper-2">Points: 2300</div>
-                    </div>
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
                   </div>
-                  <div class="div-2">
-                    <div class="text-wrapper">
-                      PKR 2300
-                    </div>
-                    <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+
+                  <div class="div">
+                    <div class="text-wrapper"><b>Muhammad Ali Ashraf</b></div>
+                    <div class="text-wrapper-2">57431231663731</div>
                   </div>
+                </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 400,000
+                  </div>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
                 </div>
               </div>
 
-              <div class="mt-4">
+            </div>
 
-                <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(3)">Continue <img
-                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+            <div class="col-12">
+              <p class="mt-3">
+                <b>Credit Cards</b>
+              </p>
+
+              <div class="frame mt-3">
+                <div class="content">
+
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div class="div">
+                    <div class="text-wrapper"><b>Optimus</b></div>
+                    <div class="text-wrapper-2">57431231663731</div>
+                  </div>
+                </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 400,000
+                  </div>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+                </div>
               </div>
-            </form>
-            }
-
-            @else{
 
 
-                <div class="text-center">
-                    <img src="/assets/img/icons/otp-phone.svg" alt="">
+
+              <div class="frame mt-3">
+                <div class="content">
+
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
                   </div>
-      
-                  <h3>
-                    Verify OTP
-                  </h3>
-                  <p>
-                    Please enter the code we’ve sent to your mobile number *********83 below
-                  </p>
-      
-                  <div class="col-12 mt-3">
-                    <label for="">OTP</label>
-                    <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
+
+                  <div class="div">
+                    <div class="text-wrapper"><b>Platinum</b></div>
+                    <div class="text-wrapper-2">57431231663731</div>
                   </div>
-      
-                  <div class="col-12 mt-4">
-                    <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/-
-                      <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 400,000
                   </div>
-      
-                  <p style="color: #5D5D5D;" class="text-center mt-2">
-                    Resend OTP in 00:40
-                  </p>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+                </div>
+              </div>
 
+            </div>
 
-            }
+            <div class="col-12">
+              <p class="mt-3">
+                <b>Wallets</b>
+              </p>
 
+              <div class="frame mt-3">
+                <div class="content">
 
-          </form>
-        </mat-step>
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
 
-        <mat-step [stepControl]="sixthFormGroup">
-          <form [formGroup]="fourthFormGroup">
+                  <div class="div">
+                    <div class="text-wrapper"><b>Wallet</b></div>
+                    <div class="text-wrapper-2">57431231663731</div>
+                  </div>
+                </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 120,000
+                  </div>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+                </div>
+              </div>
+            </div>
 
-            @if(new_payment){
+            <div class="col-12">
+              <p class="mt-3">
+                <b>Orbit</b>
+              </p>
 
-            <app-confirm-details />
+              <div class="frame mt-3">
+                <div class="content">
+                  <div class="d-flex align-items-center">
+                    <input type='radio' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                  </div>
+
+                  <div class="div">
+                    <div class="text-wrapper"><b>Orbit</b></div>
+                    <div class="text-wrapper-2">Points: 2300</div>
+                  </div>
+                </div>
+                <div class="div-2">
+                  <div class="text-wrapper">
+                    PKR 2300
+                  </div>
+                  <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+                </div>
+              </div>
+            </div>
 
             <div class="mt-4">
 
-              <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)">Continue <img
+              <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(3);  nextStep(stepper);">Continue <img
                   src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
             </div>
-            }
+          </form>
 
-            @else{
+        </mat-step>
 
 
+        <mat-step [stepControl]="fifthFormGroup">
+
+          <form [formGroup]="fifthFormGroup">
+
+              <h3>
+                  Confirm details
+              </h3>
+              
+              <p class="sub-text">
+                  Please confirm the bill payment details below before you pay
+              </p>
+              
+              <div class="col-12 generalBox p-3">
+                  <p class="p-0 m-0">From</p>
+                  <div class="d-flex justify-content-between">
+                      <p class="p-0 m-0"><b>Account</b></p> <p class="p-0 m-0">57431231663731</p>
+                  </div>
+              </div>
+              
+              <div class="col-12 generalBox p-3 mt-2">
+                  <div class="d-flex justify-content-between">
+                      <p class="p-0 m-0">To</p> 
+                      <!-- <img src="/assets/img/icons/edit-red.svg" alt=""> -->
+                  </div>
+                  <p><b>Transworld Enterprise</b></p>
+        
+              </div>
+              
+              <div class="col-12 generalBox p-3 mt-2">
+                  <div class="d-flex justify-content-between">
+                      <p class="p-0 m-0">Amount</p> 
+                      <img src="/assets/img/icons/edit-red.svg" alt="" (click)="previousStep(stepper)" style="cursor: pointer;">
+                  </div>
+                  
+                  <div class="d-flex">
+                      <h3>2,350</h3>
+                      <p class="p-0 m-0">PKR</p>
+                  </div>
+                  
+              </div>
+  
+              <div class="mt-2">
+                  <div class="col h-25 mt-3 ">
+                      <div class="h-100 w-100 payeeBox mt-2">
+  
+                          <div class="d-flex bd-highlight p-2 pb-0">
+                              <div class="p-1 bd-highlight"><img src="/assets/img/icons/clock-black.svg" alt=""></div>
+                              <div class="p-1 bd-highlight"> <p><b>Transfer frequency</b></p></div>
+                              <div class="ms-auto p-1 bd-highlight cursor-pointer" style="cursor: pointer;" (click)="frequencyModal()"> <p>Just now</p></div>
+                          </div>
+                      </div>
+      
+                  </div>
+              </div>
+  
+            
+              <div class="mt-3">
+                  <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Pay now <img src="/assets/img/icons/check-small.svg" alt=""></button>
+         
+              </div>
+  
+            </form>
+
+      </mat-step>
+
+        <mat-step [stepControl]="sixthFormGroup">
+          <form [formGroup]="sixthFormGroup">
 
             <div class="text-center">
               <img src="/assets/img/icons/otp-phone.svg" alt="">
@@ -1141,52 +591,10 @@
               Resend OTP in 00:40
             </p>
 
-            }
 
           </form>
         </mat-step>
 
-        <mat-step [stepControl]="seventhFormGroup">
-
-
-          @if(new_payment){
-
-
-          <div class="text-center">
-            <img src="/assets/img/icons/otp-phone.svg" alt="">
-          </div>
-
-          <h3>
-            Verify OTP
-          </h3>
-          <p>
-            Please enter the code we’ve sent to your mobile number *********83 below
-          </p>
-
-          <div class="col-12 mt-3">
-            <label for="">OTP</label>
-            <input type="password" name="" id="" class="form-control mt-1" placeholder="****">
-          </div>
-
-          <div class="col-12 mt-4">
-            <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/-
-              <img src="/assets/img/icons/check-small.svg" alt=""></button>
-          </div>
-
-          <p style="color: #5D5D5D;" class="text-center mt-2">
-            Resend OTP in 00:40
-          </p>
-
-
-          }
-
-          @else{
-
-
-
-
-          }
-        </mat-step>
 
       </mat-stepper>
 

@@ -7,17 +7,17 @@ import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment
 import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
-import { NewPayeeComponent } from '../new-payee/new-payee.component';
+import { NewPayeeComponent } from '../../mobile-top-up/new-payee/new-payee.component';
 import { MobileTopupErrorComponent } from '../../../modals/mobile-topup-error/mobile-topup-error.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MobileNetworkComponent } from '../../../modals/mobile-network/mobile-network.component';
 import { AlertComponent } from "../../../shared/alert/alert.component";
-import { ConfirmDetailsComponent } from '../confirm-details/confirm-details.component';
+import { ConfirmDetailsComponent } from '../../mobile-top-up/confirm-details/confirm-details.component';
 
 @Component({
   selector: 'app-post-paid',
   standalone: true,
-  imports: [MatStepperModule, MatFormFieldModule, MatSelectModule, ConfirmDetailsComponent, AlertComponent, FormsModule, ReactiveFormsModule, NewPayeeComponent, MatSlideToggleModule],
+  imports: [MatStepperModule, MatFormFieldModule, MatSelectModule, ConfirmDetailsComponent, AlertComponent, FormsModule, ReactiveFormsModule, MatSlideToggleModule],
   templateUrl: './post-paid.component.html',
   styleUrl: './post-paid.component.css'
 })

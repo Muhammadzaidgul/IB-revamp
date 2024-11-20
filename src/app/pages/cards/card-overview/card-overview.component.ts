@@ -38,7 +38,7 @@ export class CardOverviewComponent implements OnInit{
   max = 200000;
   activeCard : boolean = false;
   showDetails : boolean = true;
-  isCardLocked : boolean = true;
+  isCardLocked : boolean = false;
   disableColor = '';
   starIcon = '/assets/img/icons/setting-icon-red.svg';
   disableCardColor = '';

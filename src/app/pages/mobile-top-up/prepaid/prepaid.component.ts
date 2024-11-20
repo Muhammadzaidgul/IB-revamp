@@ -43,6 +43,7 @@ export class PrepaidComponent {
   isAlertActive : boolean = false;
   currentSelection : any;
   totalAmount = 5000;
+  selectedindex =0;
   // Alert
   warning = 'warning';
   msg = 'PKR 350/500 entered';
@@ -107,6 +108,7 @@ export class PrepaidComponent {
   }
 
   nextStep(stepper: MatStepper) {
+    
     stepper.next();
   }
 
