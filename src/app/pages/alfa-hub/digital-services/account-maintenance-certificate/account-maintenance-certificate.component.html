@@ -1,0 +1,121 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Alfa Hub
+
+        <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+        Account maintenance certificate
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Account maintenance certificate</h4>
+                                <p style="color: #5D5D5D;">Generate your account maintenance certificate</p>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+
+                            <label for="Send to"><b>Select account</b></label>
+
+                            <div class="h-100 w-100">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Select Account</mat-label>
+                                    <mat-select>
+                                        <mat-option value="option1">Account 57431231663731</mat-option>
+                                        <mat-option value="option2">Account 57431231663731</mat-option>
+                                        <mat-option value="option3">Wallet 57431231663731</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 box">
+                            <div>
+                                <label class="sub-text">Account title</label>
+                                <h6 class="mt-2">MUHAMMAD ALI ASHRAF</h6>
+                            </div>
+
+                            <div class="mt-2">
+                                <label class="sub-text">Email address</label>
+                                <h6 class="mt-2">ali_ashrafgmail.com</h6>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="message-box">The certificate will be shared on your registered email address</div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="frame mt-3" style="border: none;">
+                                <div class="content" style="display: flex;">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='checkbox'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div d-flex align-items-center">
+                                        <div class="text-wrapper me-1">I have read and agree to the  </div> <div style="color: #B40C02; text-decoration: underline;"> Terms and conditions</div> 
+                                    </div>
+                                </div>
+                               
+                            </div>
+  
+                        </div>
+
+
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper);">Generate <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+                        <div class="mt-4">
+                            <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
+                                <img src="/assets/img/icons/thumbs-up.svg" alt="">
+
+                            </div>
+                            <br>
+                            <h4 style="text-align: center;">Your maintenance certificate has been generated!</h4>
+                            <p style="text-align: center; color: #5D5D5D;">Please check your registered email address to
+                                view your certificate</p>
+                            <br>
+                            <button class="w-100 btn btn-lg btn-danger" routerLink="/alfa-hub/digital-activity">Done
+                                <img src="/assets/img/icons/check-small.svg" alt=""></button>
+
+
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+
+
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>

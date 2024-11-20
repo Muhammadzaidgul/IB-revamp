@@ -1,0 +1,237 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Cheque management
+
+        <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+        Apply for a cheque book
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Apply for a cheque book</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+
+                            <label for="Send to"><b>Select account</b></label>
+
+                            <div class="h-100 w-100">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Select Account</mat-label>
+                                    <mat-select>
+                                        <mat-option value="option1">Account 57431231663731</mat-option>
+                                        <mat-option value="option2">Account 57431231663731</mat-option>
+                                        <mat-option value="option3">Wallet 57431231663731</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="mt-1">
+                            <div class="bill-body">
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Account title</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>MUHAMMAD ALI ASHRAF</b></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Branch</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>Clifton, Karachi</b></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Email address</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>ali_ashrafgmail.com</b></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="sub-heading"><b>Mobile number</b></p>
+                                    </div>
+                                    <div>
+                                        <p class="p16"><b>03209077512</b></p>
+                                    </div>
+                                </div>
+                               
+                                
+                              
+                            </div>
+                        </div>
+
+                        <div class="mt-1">
+                            <div class="frame mt-3">
+                                <div class="content">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='radio'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div">
+                                        <div class="text-wrapper"><b>25 pages</b></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="frame mt-3">
+                                <div class="content">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='radio'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div">
+                                        <div class="text-wrapper"><b>50 pages</b></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="frame mt-3">
+                                <div class="content">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='radio'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div">
+                                        <div class="text-wrapper"><b>100 pages</b></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                        <div class="mt-3 message-box">
+                            Charges may apply as per the bank’s schedule of charges
+                        </div>
+
+                        <div class="mt-1">
+                            <div class="frame mt-3" style="border: none;">
+                                <div class="content" style="display: flex;">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='checkbox'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div d-flex align-items-center">
+                                        <div class="text-wrapper me-1">I have read and agree to the  </div> <div style="color: #B40C02; text-decoration: underline;"> Terms and conditions</div> 
+                                    </div>
+                                </div>
+                               
+                            </div>
+  
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger"
+                                (click)="nextStep(stepper); updateStepper(1);">Continue <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+                        <div class="mt-4">
+                            <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
+                                <img src="/assets/img/icons/thumbs-up.svg" alt="">
+                               
+                            </div>
+                            <br>
+                            <h4 style="text-align: center;">Your application for cheque book has been submitted!</h4>
+                            <br>
+                            <button class="w-100 btn btn-lg btn-danger" routerLink="/alfa-hub/digital-activity" >Done <img src="/assets/img/icons/check-small.svg"
+                                alt=""></button>
+    
+    
+                        </div>
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+
+                    <form [formGroup]="thirdFormGroup">
+
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+  
+
+
+
+           
+
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="fifthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+
+
+
+                    </form>
+                </mat-step>
+
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>

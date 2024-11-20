@@ -1,0 +1,117 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Alfa Hub
+
+        <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+        Update CNIC expiry
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Update CNIC expiry</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3 d-flex justify-content-between box" >
+                            <div style="color: #5D5D5D;">
+                                Your CNIC
+                            </div>
+                            <div><b>61101-6184512-8</b></div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="image-container">
+                                
+                                <img src="/assets/img/icons/cnic-dummy.png">
+                      
+
+                            </div>
+                       </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label><b>Enter your new CNIC issuance date</b></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+
+
+                                <input type="text" name="" placeholder="" id="" class="form-control"
+                                    style="border-right: none;">
+                                <span class="input-group-text" style="height: 42px; border-left: none;">
+                                    <img src="/assets/img/icons/calender.svg">
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-1">
+                            <div class="frame mt-3" style="border: none;">
+                                <div class="content" style="display: flex;">
+                                    
+
+
+                                    <div class="d-flex align-items-center">
+                                        <input type='checkbox'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                    </div>
+                                    
+                                    <div class="div d-flex align-items-center">
+                                        <div class="text-wrapper me-1">I have read and agree to the  </div> <div style="color: #B40C02; text-decoration: underline;"> Terms and conditions</div> 
+                                    </div>
+                                </div>
+                               
+                            </div>
+  
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger"
+                                (click)="nextStep(stepper);">Submit <img
+                                    src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+
+                        </div>
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+                        <div class="mt-4">
+                            <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
+                                <img src="/assets/img/icons/thumbs-up.svg" alt="">
+                               
+                            </div>
+                            <br>
+                            <h4 style="text-align: center;">Your request for updating CNIC has been submitted!</h4>
+                            <br>
+                            <button class="w-100 btn btn-lg btn-danger" routerLink="/alfa-hub/digital-activity" >Done <img src="/assets/img/icons/check-small.svg"
+                                alt=""></button>
+    
+    
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+
+
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>

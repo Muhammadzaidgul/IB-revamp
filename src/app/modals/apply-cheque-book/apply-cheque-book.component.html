@@ -1,0 +1,53 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal">
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 700px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-0 pt-0">
+                    <div class="d-flex justify-content-between align-items-center align-content-center">
+                        <div>
+                            <h4 style="margin-bottom: 0px;">Cheque management</h4>
+                            <p class="sub-text">Please select the action that you would like to proceed with</p>
+                           
+                        </div>
+                       <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;"
+                            (click)="closeModal()"></i>
+                    </div>
+
+                </div>
+
+                <div class="row p-3">
+                    <div class="col-12">
+                        <div class="frame" [routerLink]="['/alfa-hub/apply-cheque-book']" (click)="closeModal()">
+                            <div class="div d-flex" style="display: flex; flex-direction: row; align-items: center;">
+                                <div class="pe-2"><img src="/assets/img/icons/apply-cheque-book.svg"></div>
+                                <div style="display: flex; align-items: center;">
+                                    <h6 style="margin-bottom: 0px;">Apply for a cheque book</h6>
+                                </div>
+                            </div>
+                            <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-2">
+                        <div class="frame" [routerLink]="['/alfa-hub/stop-cheque']" (click)="closeModal()">
+                            <div class="div d-flex" style="display: flex; flex-direction: row; align-items: center;">
+                                <div class="pe-2"><img src="/assets/img/icons/stop-cheque.svg"></div>
+                                <div style="display: flex; align-items: center;">
+                                    <h6 style="margin-bottom: 0px;">Stop cheque</h6>
+                                </div>
+                            </div>
+                            <img class="tabler-icon" src="/assets/img/icons/go-to-next-right.svg" />
+                        </div>
+                    </div>
+
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -33,7 +33,9 @@
 
     <div class="d-flex flex-wrap">
         @for (action of serviceslist; track action.id) {
-            
+
+
+
             <a routerLink="{{ action.url}}" title="{{ action.actionName }}">
                 <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;">
                     <div class="row d-block text-center p-3">
@@ -51,6 +53,29 @@
         @empty {
             Empty list of users
         }
+
+          <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;" (click)="chequeBookModal()">
+                <div class="row d-block text-center p-3">
+                    
+                    <img src="/assets/img/icons/lifestyle/Cheque management.svg" alt="" class="w-50">
+    
+                    <div class="pt-3">
+                        <p class="text-small">Cheque management</p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="m-1 mt-2" style="border-radius: 5px; border: 1px solid #e1e1e1; height: 112px; width: 155px;" (click)="taxModal()">
+                <div class="row d-block text-center p-3">
+                    
+                    <img src="/assets/img/icons/lifestyle/Tax management.svg" alt="" class="w-50">
+    
+                    <div class="pt-3">
+                        <p class="text-small">Tax management</p>
+                    </div>
+                </div>  
+            </div>
+      
 
 
     </div>
@@ -83,6 +108,7 @@
             Empty list of users
         }
 
+ 
 
     </div>
 </div>
