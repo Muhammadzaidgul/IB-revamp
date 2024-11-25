@@ -17,7 +17,7 @@
 
                 <div class="row m-3">
                     <h4>Link relationship</h4>
-                    <p> {{ msg }}</p>
+                    <p> You are about to register your Account *********2349 with Raast ID 0320805123</p>
 
                     @if(isRaast){
                         <div class="raastAlert">
@@ -28,7 +28,9 @@
                 </div>
 
                 <div class="row pt-3 m-3">
-                    <button class="btn btn-lg w-100 btn-danger">Link</button>
+                 
+
+                    <button class="btn btn-lg w-100 btn-danger" routerLink="/settings/relationship-link-success" (click)="closeModal()" >Link</button>
 
                     <button class="btn btn-lg w-100 btn-outline-dark mt-1" (click)="closeModal()">Cancel</button>
                 </div>
