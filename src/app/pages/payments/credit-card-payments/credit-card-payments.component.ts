@@ -41,11 +41,17 @@ throw new Error('Method not implemented.');
 }
   componentName = 'Credit card';
 
-  step1: string = '#EA5148';
+  step1: string = '#EA5148'; //red
   step2: string = '';
   step3: string = '';
   step4: string = '';
   step5: string = '';
+  stepperfontColor : string = '#000';
+  activeStepColor : string = '#EA5148';
+  pendingStepfontColor : string = '#000';
+  isStepActive : boolean;
+  noBorder = "0px solid #fff";
+  activeStep = 0;
   inputText1: boolean = false;
   inputText2: boolean = false;
   isLinear = false;
@@ -96,8 +102,10 @@ throw new Error('Method not implemented.');
   // Update step colors
   updateStepper(step: number) {
     if (step == 1) {
-      this.step1 = '#18B368';
-      this.step2 = '#EA5148';
+      this.step1 = '#18B368'; //green
+      this.step2 = '#EA5148'; //red
+      this.stepperfontColor = '#fff';
+      this.activeStep = 2;
     } else if (step == 2) {
       this.step3 = this.step2;
       this.step2 = this.step1;

@@ -74,6 +74,11 @@
     border: 1px solid;
 }
 
+.activeStepper{
+    color: var(--primarycolor);
+    border: 0px !important;
+}
+
 .horizontal-progress .element {
     position: relative;
     width: fit-content;
