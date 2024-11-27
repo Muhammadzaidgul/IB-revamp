@@ -1,0 +1,11 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Tabler Icon" clip-path="url(#clip0_2025_23845)">
+<path id="Vector" d="M19 9.49322L13.667 5.34522C13.199 4.98112 12.623 4.78345 12.03 4.78345C11.4371 4.78345 10.861 4.98112 10.393 5.34522L5.05903 9.49322C4.73847 9.7425 4.47912 10.0617 4.30078 10.4266C4.12245 10.7914 4.02984 11.1921 4.03003 11.5982V18.7982C4.03003 19.3286 4.24074 19.8374 4.61582 20.2124C4.99089 20.5875 5.4996 20.7982 6.03003 20.7982H18.03C18.5605 20.7982 19.0692 20.5875 19.4442 20.2124C19.8193 19.8374 20.03 19.3286 20.03 18.7982V11.5982C20.03 10.7752 19.65 9.99822 19 9.49322Z" stroke="#EA5148" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M16 15.7832C13.79 17.1162 10.208 17.1162 8 15.7832" stroke="#EA5148" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_2025_23845">
+<rect width="24" height="24" fill="white" transform="translate(0 0.783203)"/>
+</clipPath>
+</defs>
+</svg>

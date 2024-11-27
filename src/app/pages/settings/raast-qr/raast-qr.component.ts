@@ -5,6 +5,7 @@ import { ThemePalette } from '@angular/material/core';
 import { MatDialogConfig,MatDialog } from '@angular/material/dialog';
 import { UnlinkRelationshipComponent } from '../../../modals/unlink-relationship/unlink-relationship.component';
 import { LinkRelationshipComponent } from '../../../modals/link-relationship/link-relationship.component';
+import { RegisterRelationshipComponent } from '../../../modals/register-relationship/register-relationship.component';
 
 @Component({
   selector: 'app-raast-qr',
@@ -20,6 +21,17 @@ export class RaastQrComponent {
   checked = true;
   checked2 = false;
   disabled = false;
+
+  onToggleChange(event: any) {
+    if (event.checked) {
+      // Toggle is ON, call linkRelation()
+      this.linkRelation();
+    } else {
+      // Toggle is OFF, call unlinkRelation()
+      this.unlinkRelation();
+    }
+  }
+  
 
   unlinkRelation(){
 
@@ -54,6 +66,23 @@ export class RaastQrComponent {
 
   }
 
+  onToggleOn(event: any) {
+    if (event.checked) {
+      // Toggle is ON, call registerRelationship()
+      this.registerRelationship();
+    }
+  }
+  
+
+  registerRelationship(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "RaastID";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(RegisterRelationshipComponent, dialogConfig);
+  }
+  
+
+ 
 
   back():void{
     this.location.back();

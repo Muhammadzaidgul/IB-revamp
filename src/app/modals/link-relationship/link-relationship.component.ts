@@ -1,10 +1,11 @@
 import { Component,Inject } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-link-relationship',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './link-relationship.component.html',
   styleUrl: './link-relationship.component.css'
 })

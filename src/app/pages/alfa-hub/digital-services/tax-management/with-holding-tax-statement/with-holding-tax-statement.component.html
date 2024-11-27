@@ -1,0 +1,325 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">
+        Withholding tax statement
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up"
+            data-aos-duration="1000">
+
+
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <form [formGroup]="firstFormGroup">
+
+
+
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Withholding tax statemeent</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>Select relation</b></label>
+                            </div>
+                            <mat-form-field class="w-100" style="border-radius: 4px;">
+                                <mat-label>Account</mat-label>
+                                <mat-select>
+                                    <mat-option value="option1">57431231663731</mat-option>
+                                    <mat-option value="option2">57431231663731</mat-option>
+                                    <mat-option value="option3">57431231663731</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label><b>WHT type</b></label>
+
+                            </div>
+                            <mat-chip-listbox aria-label="Satement Selection">
+                                <div style="justify-content: space-between;">
+                                    <mat-chip-option selected color="warn">Profit</mat-chip-option>
+                                    <mat-chip-option color="warn">Foreign transaction</mat-chip-option>
+                                    <mat-chip-option color="warn">Withdrawal</mat-chip-option>
+                                </div>
+                            </mat-chip-listbox>
+
+                        </div>
+
+
+                        <div class="mt-3">
+                            <mat-tab-group>
+                                <mat-tab label="30 day">
+
+                                    <div class="col-12 mt-3" style="border: 1px solid #767676; border-radius: 4px;">
+
+                                        <table
+                                            style="width: 100%; border-collapse: collapse; margin: 20px 0; font-family: Arial, sans-serif;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Date</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Amount</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        WHT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        3,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.69</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        10,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">20
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        100,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">28
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        1,000,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        50.59</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        5,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.16</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </mat-tab>
+                                <mat-tab label="60 days">
+
+                                    <div class="col-12 mt-3" style="border: 1px solid #767676; border-radius: 4px;">
+                                        <table
+                                            style="width: 100%; border-collapse: collapse; margin: 20px 0; font-family: Arial, sans-serif;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Date</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Amount</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        WHT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        3,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.69</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        10,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">20
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        100,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">28
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        1,000,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        50.59</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        5,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.16</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </mat-tab>
+                                <mat-tab label="90 days">
+
+                                    <div class="col-12 mt-3" style="border: 1px solid #767676; border-radius: 4px;">
+                                        <table
+                                            style="width: 100%; border-collapse: collapse; margin: 20px 0; font-family: Arial, sans-serif;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Date</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        Amount</th>
+                                                    <th style="padding: 10px; text-align: center; font-weight: bold;">
+                                                        WHT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        3,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.69</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        10,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">20
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        100,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">28
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        1,000,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        50.59</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">08
+                                                        Oct 2023</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        5,000</td>
+                                                    <td style="padding: 10px; text-align: center;" class="sub-text">
+                                                        14.16</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </mat-tab>
+                            </mat-tab-group>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+
+                    <form [formGroup]="secondFormGroup">
+
+
+                        <div class="d-flex">
+                            <div class="col">
+                                <h4 class="p-0 m-0">Withholding tax certificate</h4>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="mt-3 h-50">
+                            <iframe [src]="" width="100%" height="500px" frameborder="0"></iframe>
+
+                        </div>
+
+
+
+
+                        <div class="mt-3">
+                            <div class="row d-flex justify-content-center text-center m-3">
+                                <div class="col justify-content-center m-2 generalBox pt-3 w-25">
+                                    <img src="/assets/img/icons/download-red.svg" alt="">
+                                    <p><b>Download PDF</b></p>
+                                </div>
+                                <div class="col justify-content-center m-2 generalBox pt-3 w-25">
+                                    <img src="/assets/img/icons/home-red.svg" alt="">
+                                    <p><b>Go to Home</b></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+
+
+
+                </mat-step>
+
+
+
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>

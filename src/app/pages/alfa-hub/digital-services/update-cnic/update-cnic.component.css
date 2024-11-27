@@ -19,3 +19,20 @@
     width: 100%;
     height: auto;
 }
+
+.invalid{
+    border: 1px solid #CC0000;
+}
+
+.invalid-text{
+    color: #CC0000;
+}
+
+
+.alreadyexist{
+    border: 1px solid #069952;
+}
+
+.alreadyexist-text{
+    color: #069952;
+}

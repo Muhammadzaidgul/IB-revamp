@@ -50,21 +50,58 @@
                             </div>
                             <mat-chip-listbox aria-label="Satement Selection">
                                 <div style="justify-content: space-between;">
-                                    <mat-chip-option selected color="warn">Single cheque</mat-chip-option>
-                                    <mat-chip-option color="warn">Series of cheque</mat-chip-option>
+                                    <mat-chip-option selected color="warn" (click)="checkIDType(1)">Single
+                                        cheque</mat-chip-option>
+                                    <mat-chip-option color="warn" (click)="checkIDType(2)">Series of
+                                        cheque</mat-chip-option>
                                 </div>
                             </mat-chip-listbox>
 
                         </div>
 
+                        @if(isSingleCheque == true)
+                        {
                         <div class="mt-3">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><b>Enter cheque number</b></label>
-                           
+
                             </div>
 
                             <input type="number" name="" placeholder="" id="" class="form-control">
                         </div>
+
+                        }
+
+                        @if(isSingleCheque == false)
+                        {
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label><b>First cheque number</b></label>
+
+                                    </div>
+
+                                    <input type="number" name="" placeholder="" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label><b>Last cheque number</b></label>
+
+                                    </div>
+
+                                    <input type="number" name="" placeholder="" id="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        }
+
+
 
 
                         <div class="mt-3">
@@ -82,33 +119,36 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        
+
 
 
 
 
 
                         <div class="mt-3 message-box">
-                            Charges may apply as per the bank’s schedule of charges                        
+                            Charges may apply as per the bank’s schedule of charges
                         </div>
 
                         <div class="mt-1">
                             <div class="frame mt-3" style="border: none;">
                                 <div class="content" style="display: flex;">
-                                    
+
 
 
                                     <div class="d-flex align-items-center">
-                                        <input type='checkbox'  id='' name='account' style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
+                                        <input type='checkbox' id='' name='account'
+                                            style='width: 20px; height: 20px; margin-right: 10px; border-radius: 20px;'>
                                     </div>
-                                    
+
                                     <div class="div d-flex align-items-center">
-                                        <div class="text-wrapper me-1">I have read and agree to the  </div> <div style="color: #B40C02; text-decoration: underline;"> Terms and conditions</div> 
+                                        <div class="text-wrapper me-1">I have read and agree to the </div>
+                                        <div style="color: #B40C02; text-decoration: underline;"> Terms and conditions
+                                        </div>
                                     </div>
                                 </div>
-                               
+
                             </div>
-  
+
                         </div>
 
                         <div class="mt-3">
@@ -133,15 +173,15 @@
                         <div class="mt-4">
                             <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
                                 <img src="/assets/img/icons/thumbs-up.svg" alt="">
-                               
+
                             </div>
                             <br>
                             <h4 style="text-align: center;">Your request for stopping cheque has been submitted!</h4>
                             <br>
-                            <button class="w-100 btn btn-lg btn-danger" routerLink="/alfa-hub/digital-activity" >Done <img src="/assets/img/icons/check-small.svg"
-                                alt=""></button>
-    
-    
+                            <button class="w-100 btn btn-lg btn-danger" routerLink="/alfa-hub/digital-activity">Done
+                                <img src="/assets/img/icons/check-small.svg" alt=""></button>
+
+
                         </div>
 
 

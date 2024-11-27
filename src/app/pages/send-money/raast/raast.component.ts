@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { AccountSelectionComponent } from '../../../modals/account-selection/account-selection.component';
 
 
+
 @Component({
   selector: 'app-raast',
   standalone: true,
@@ -39,6 +40,8 @@ export class RaastComponent {
   isIBAN = false;
   placeHolderText = 'Please enter the Raast ID';
   payeeLabel = "Payee’s Raast ID";
+
+  showBanker : boolean =false;
 
   myPayees = [
     { id:1, logo: 'alfa-logo', payeeName: 'Abdullah Ammar', accountNo: '01017898223833', accountType:'AccountNo'},
@@ -134,13 +137,15 @@ export class RaastComponent {
    if(event.target.checked && index == 2){
 
       this.isIBAN = true;
-      this.placeHolderText = "Enter IBAN/Account Number";
-      this.payeeLabel = "IBAN/Account Number"
+      this.placeHolderText = "Please enter account no./IBAN";
+      this.payeeLabel = "Account Number/IBAN";
+      this.showBanker=true;
 
     }else if(event.target.checked && index == 1){
       this.isIBAN = false;
       this.placeHolderText = "Please enter the Raast ID";
-      this.payeeLabel = "RAAST ID"
+      this.payeeLabel = "RAAST ID";
+      this.showBanker=false;
     }
    
   }
@@ -167,5 +172,9 @@ export class RaastComponent {
   previousStep(stepper:MatStepper){
     stepper.previous();
   }
+
+
+
+  
 
 }

@@ -2,16 +2,13 @@
     display: none; 
 }
 
-
-.box{
-    border: 1px solid #E1E1E1; 
-    border-radius: 4px; 
-    padding: 16px;
+.horizontal-progress {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 1px; */
+    position: relative;
 }
 
-.sub-text{
-    color: #5D5D5D;
-}
 
 .message-box{
     display: flex;
@@ -22,3 +19,8 @@ align-self: stretch;
 border-left: 3px solid var(--Interface-Background-bg-brand, #EA5148);
 background: var(--Interface-Background-bg-light, #F8F8F8);
 }
+
+.sub-text{
+    color: #767676;
+}
+
