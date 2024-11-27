@@ -10,7 +10,7 @@ body {
 
 .btn{
     border-radius: 4px;
-    text-transform: capitalize !important;
+    text-transform: none !important;
 }
 
 .btn:focus,

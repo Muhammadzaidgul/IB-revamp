@@ -191,12 +191,12 @@ color: #FFFFFF;
 
 
 .card-container {
-    width: 300px;
+    /* width: 300px; */
     background: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 20px;
+    padding: 8px;
  
   }
 

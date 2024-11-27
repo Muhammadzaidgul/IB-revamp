@@ -1,0 +1,53 @@
+<div role="dialog" id="RecurringPayment" class="confirm_modal" >
+    <div class="modal-dialog p-3 modal-md" role="document" data-aos="zoom-in" data-aos-duration="1000">
+
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-body" style="border: 0px;">
+                <div class="row p-3 pb-2 pt-0">
+                    <div class="d-flex justify-content-between align-items-center align-content-center">
+                        <h3>Payment frequency</h3>
+                        
+                        <i class="fa fa-close fa-lg pt" data-bs-dismiss="modal" style="cursor: pointer;" (click)="closeModal()"></i>
+                    </div>
+                    <div class="d-flex">
+                        <p>Please choose the payment frequency for your payment</p>
+                    </div>
+
+                    <div class="d-block">
+                        
+                        <mat-form-field class="w-100">
+                            <mat-label>Number of payments</mat-label>
+                            <mat-select >
+                              <mat-option value="one-time">One Time</mat-option>
+                              <mat-option value="monthly">Monthly </mat-option>
+                              <mat-option value="quarterly">Quarterly</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+
+                    <div class="d-flex">
+                        
+                        <div class="m-1 w-100">
+                            <label for="">Starts on</label>
+                            <input type="text" class="form-control" placeholder="26-10-2023">
+                        </div>
+
+                        <div class="m-1 w-100">
+                            <label for="">Ends on</label>
+                            <input type="text" class="form-control" placeholder="26-10-2023">
+                        </div>
+                        
+                    </div>
+
+                    <div class="mt-4">
+                   
+                        <button class="w-100 btn btn-lg btn-danger" (click)="closeModal()" >Save <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+    
+                    </div>
+                </div>
+        
+                
+            </div>
+        </div>
+    </div>
+</div>

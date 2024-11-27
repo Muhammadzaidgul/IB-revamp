@@ -15,6 +15,23 @@ import { AlertComponent } from "../../../shared/alert/alert.component";
 import { ConfirmDetailsComponent } from '../confirm-details/confirm-details.component';
 import { MatChipsModule } from '@angular/material/chips';
 
+interface Packages{
+  id:number,
+  packageName:string,
+  packageDescription:string,
+  packagePrice:string,
+  validity:string,
+  packageType:string,
+}
+
+const packagesList : Packages[] = [
+  { id:1, packageName: 'Social Plus Offer', packageDescription: 'For FB, WA, Youtube, Instagram, Snapchat & Threads', packagePrice: '299', validity:'30 Days', packageType: 'Data'},
+  { id:2, packageName: 'Social Plus Offer', packageDescription: 'For FB, WA, Youtube, Instagram, Snapchat & Threads', packagePrice: '699', validity:'30 Days', packageType: 'Data'},
+  { id:3, packageName: 'Social Plus Offer', packageDescription: 'For FB, WA, Youtube, Instagram, Snapchat & Threads', packagePrice: '999', validity:'30 Days', packageType: 'SMS'},
+  { id:4, packageName: 'Social Plus Offer', packageDescription: 'For FB, WA, Youtube, Instagram, Snapchat & Threads', packagePrice: '1099', validity:'30 Days', packageType: 'Calls'},
+  { id:5, packageName: 'Social Plus Offer', packageDescription: 'For FB, WA, Youtube, Instagram, Snapchat & Threads', packagePrice: '750', validity:'30 Days', packageType: 'Easy card'},
+];
+
 @Component({
   selector: 'app-packages',
   standalone: true,
@@ -31,12 +48,14 @@ export class PackagesComponent {
   step4: string = '';
   step5: string = '';
   isFCYAccount = true;
+  showPackages = false;
   isLinear = false;
   inputText1: boolean = false;
   inputText2: boolean = false;
   isSplitPayment: boolean = false;
   new_payment: boolean = false;
   isAlertActive: boolean = false;
+  packages = [...packagesList];
 
   // Alert
   warning = 'warning';
@@ -100,6 +119,59 @@ export class PackagesComponent {
   skipToStep(stepper: MatStepper) {
     stepper.selectedIndex = stepper.selectedIndex +1; 
     stepper.next();
+  }
+
+  companies = [
+    {
+      id:'1', company: 'Jazz', icon: 'jazz-logo.svg'
+    },
+    {
+      id:'2', company: 'Zong', icon: 'zong-logo.svg'
+    },
+    {
+      id:'3', company: 'Ufone', icon: 'ufone-logo.svg'
+    },
+    {
+      id:'4', company: 'Telenor', icon: 'jazz-logo.svg'
+    },
+    {
+      id:'5', company: 'SCOM', icon: 'jazz-logo.svg'
+    },
+  ]
+
+  getPackages(companyID){
+
+    this.showPackages = true;
+
+  }
+
+  previousStep(stepper:MatStepper){
+    stepper.previous();
+  }
+
+  payees = [
+    { id:1, phoneNumber: '03211172135', payeeName: 'My Telenor Package'},
+    { id:2, phoneNumber: '03465556671', payeeName: 'Zong Package'},
+    { id:3, phoneNumber: '03118989977', payeeName: 'Family Package'},
+    
+  ];
+
+  onChange($event: any) {
+
+    if($event.value == 'Data'){
+      
+      this.packages = [...packagesList.filter((payee) => payee.packageType == "Data")];
+
+    }else if($event.value == 'SMS'){
+      
+      this.packages = [...packagesList.filter((payee) => payee.packageType == "SMS")];
+
+    }else if($event.value == 'All'){
+      this.packages = [...packagesList];
+    }
+    else{
+
+    }
   }
 
   receiptModal() {

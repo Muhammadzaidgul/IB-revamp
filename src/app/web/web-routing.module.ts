@@ -11,7 +11,7 @@ import { EmptyCardComponent } from '../pages/empty-state/empty-card/empty-card.c
 import { ActivateCardComponent } from '../pages/cards/activate-card/activate-card.component';
 import { CardTransactionHistoryComponent } from '../pages/card-transaction-history/card-transaction-history.component';
 import { DealsDiscountComponent } from '../pages/cards/deals-discount/deals-discount.component';
-import { MobileTopUpComponent } from '../pages/mobile-top-up/mobile-top-up.component';
+
 import { NewPayeeComponent } from '../pages/mobile-top-up/new-payee/new-payee.component';
 import { PayeeManagementComponent } from '../pages/payee-management/payee-management.component';
 import { MyPayeesComponent } from '../pages/payee-management/my-payees/my-payees.component';
@@ -65,6 +65,7 @@ import { ManageLoansComponent } from '../pages/loans/manage-loans/manage-loans.c
 import { TaxManagementComponent } from '../pages/alfa-hub/digital-services/tax-management/tax-management.component';
 import { BankersChequeComponent } from '../pages/alfa-hub/digital-services/bankers-cheque/bankers-cheque.component';
 import { ApplyChequeBookPageComponent } from '../pages/alfa-hub/digital-services/cheque-management/apply-cheque-book-page/apply-cheque-book-page.component';
+import { PrepaidComponent } from '../pages/mobile-top-up/prepaid/prepaid.component';
 
 UtilityComponent
 
@@ -114,8 +115,8 @@ const routes: Routes = [
     component:DealsDiscountComponent
   },
   {
-    path:'mobile-topup',
-    component:MobileTopUpComponent 
+    path:'prepaid-top-up',
+    component:PrepaidComponent
   },
   {
     path:'mobile-topup/post-paid',

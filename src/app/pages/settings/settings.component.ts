@@ -42,9 +42,9 @@ export class SettingsComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = "ConfirmModal";
     dialogConfig.panelClass = 'custom-dialog-container';
-    const modalDialog = this.matDialog.open(ErrorComponent, dialogConfig);
+    // const modalDialog = this.matDialog.open(ErrorComponent, dialogConfig);
     // const modalDialog = this.matDialog.open(SuccessComponent, dialogConfig); //success modal 
-    // const modalDialog = this.matDialog.open(SuccessComponent, dialogConfig); //success modal 
+    const modalDialog = this.matDialog.open(ContactUsComponent, dialogConfig); //success modal 
   }
 
 

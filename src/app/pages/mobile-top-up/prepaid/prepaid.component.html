@@ -1,0 +1,575 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()" > Prepaid Top-Up
+    </div>
+</div>
+
+<div>
+
+    @if(isShowStepper){
+        <!-- stepper -->
+        <div class="horizontal-progress mt-3 d-flex flex-wrap">
+            <div class="progress-bar-item ps-1 pe-1 ">
+            <div class="frame" [style.background-color]="step1"><div class="text-wrapper">1</div></div>
+            <div class="title ps-1">Recipient</div>
+            </div>
+            <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+            <div class="progress-bar-item  ps-1 pe-1 ">
+            <div class="element-wrapper" [style.background-color]="step2" ><div class="element">2</div></div>
+            <div class="div ps-1">Amount</div>
+            </div>
+            <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+            <div class="progress-bar-item  ps-1 pe-1 ">
+            <div class="element-wrapper" [style.background-color]="step3" ><div class="element">3</div></div>
+            <div class="div ps-1">Payment Source</div>
+            </div>
+            <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+            <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+            <div class="element-wrapper" [style.background-color]="step4" ><div class="element">4</div></div>
+            <div class="div ps-1">Confirm details</div>
+            </div>
+            <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+            <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
+            <div class="element-wrapper" [style.background-color]="step5" ><div class="element">5</div></div>
+            <div class="div ps-1">Verification</div>
+            </div>
+        </div>
+        <!-- stepper -->
+    }
+
+    <div class="row">
+        <div class="col-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5 " data-aos="fade-up" data-aos-duration="1000">
+
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <mat-step [stepControl]="firstFormGroup">
+
+                    <div class="row">
+
+                        <div class="col-8">
+                          <h5>Your Payees</h5>
+                          <p class="sub-text">Choose a payee from the list or add a new payee</p>
+                        </div>
+          
+                        <div class="col-4 d-flex align-item-center justify-content-end h-25">
+                          <button class="btn btn-danger" (click)="newPayment(stepper); "><img
+                              src="/assets/img/icons/plus-icon.svg" alt="">New payment</button>
+                        </div>
+          
+                    </div>
+
+                    <form [formGroup]="firstFormGroup">
+                        <div class="d-block mt-4">
+                            <input type="text" class="form-control" style="border-radius: 20px;" placeholder="Search Payees">
+                        </div>
+    
+                        <div class="d-flex flex-wrap mt-3">
+          
+                            @for (item of payees; track $index) {
+                    
+                    
+                            <div style="min-width: 200px;" class="h-100 w-50 pointer-cursor" (click)="showStepper(); nextStep(stepper);">
+                              <div class="col h-25 m-1 payeeBox">
+                                <div class="d-flex p-2">
+                                  <img src="/assets/img/icons/jazz-logo.svg" alt="">
+                    
+                                  <div class="ps-2">
+                                    <p class="p-0 m-0"><b> Ali</b></p>
+                                    <p class="p-0 m-0">03211172135</p>
+                                  </div>
+                    
+                                  <div class="col text-end align-self-center align-item-center">
+                                    <img src="/assets/img/icons/caret-right.svg" alt="">
+                                  </div>
+                                </div>
+                    
+                              </div>
+                            </div>
+                    
+                         
+                    
+                            }
+                            @empty {
+                            Empty list of users
+                            }
+                    
+                          </div>
+                    </form>
+                   
+
+                </mat-step>
+
+                @if(isNewPayment){
+                     <!-- If new payment button pressed -->
+                    <mat-step [stepControl]="secondFormGroup">
+                        <form [formGroup]="secondFormGroup">
+                                
+                            <h3>
+                                Enter the mobile number
+                            </h3>
+                            <p>
+                                Please enter the mobile number you want to top up
+                            </p>
+                
+                            <div class="col-12 mt-3">
+                                <label for=""><b>Mobile number</b></label>
+                                <input type="text" name="" id="" class="form-control mt-1" placeholder="03XXXXXXXXX">
+                            </div>
+                
+                            <div class="col-12">
+                                <div class="col h-25 mt-3 payeeBox">
+                                    <div class="d-flex p-3">
+                                        <img src="/assets/img/icons/jazz-logo.svg" alt="">
+                    
+                                        <div class="ps-2 align-self-center align-item-center">
+                                            <p class="p-0 m-0"><b>Mobilink Jazz</b></p>
+                                        
+                                        </div>
+                    
+                                        <div class="col text-end align-self-center align-item-center">
+                                            <img src="/assets/img/icons/edit-red.svg" alt="">
+                                            <span class="primary-font-color p-1"  data-toggle="modal" (click)="networkModal();" ><b>Edit</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="col h-25 mt-3 payeeBox">
+                                    <div class="d-flex p-3">
+                                        <img src="/assets/img/icons/user-icon.svg" alt="">
+                    
+                                        <div class="ps-2 align-self-center align-item-center">
+                                            <p class="p-0 m-0"><b>Add as payee</b></p>
+                                        
+                                        </div>
+                    
+                                        <div class="col text-end align-self-center align-item-center">
+                                            <mat-slide-toggle
+                                                class="example-margin"
+                                                [color]="color"
+                                                [checked]="checked"
+                                                [disabled]="disabled"
+                                                formControlName="acceptTerms"
+                                                
+                                                data-toggle="modal">
+                                            
+                                            </mat-slide-toggle>
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <label for=""><b>Payee name</b></label>
+                                <input type="text" name="" id="" class="form-control mt-1" placeholder="Ali">
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <button class="w-100 btn btn-lg btn-danger"  (click)="updateStepper(1);  nextStep(stepper); showStepper()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+
+                                <!-- Error Mobile Network modal -->
+                                <button class="w-100 btn btn-lg btn-danger" data-toggle="modal" (click)="networkErrorModal()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                            </div>
+                        
+                        </form>
+                    </mat-step>
+                }
+
+                <mat-step [stepControl]="thirdFormGroup">
+                    <form [formGroup]="thirdFormGroup">              
+                        <h3>
+                            Choose an amount
+                        </h3>
+                        <p>
+                            Please enter an amount from PKR 100 - 10,000
+                        </p>
+
+                        <div class="col-12">
+                            <input type="text" class="form-control" placeholder="PKR 0">
+                        </div>
+
+                        <div class="col-12 mt-2">
+                            <mat-chip-listbox aria-label="Satement Selection" >
+                                <mat-chip-option color="warn">100</mat-chip-option>
+                                <mat-chip-option color="warn">250</mat-chip-option>
+                                <mat-chip-option color="warn">500</mat-chip-option>
+                                <mat-chip-option color="warn">1000</mat-chip-option>
+                            </mat-chip-listbox>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="col h-25 mt-3 generalBox">
+                                <div class="d-flex p-3">
+                                    <img src="/assets/img/icons/split-icon.svg" alt="">
+                
+                                    <div class="ps-2 align-self-center align-item-center">
+                                        <p class="p-0 m-0"><b>Split PKR 500</b></p>
+                                       
+                                    </div>
+                
+                                    <div class="col text-end align-self-center align-item-center">
+                                        <mat-slide-toggle
+                                            class="example-margin"
+                                            [color]="color"
+                                            [checked]="checked"
+                                            [disabled]="disabled"
+                                            formControlName="acceptTerms"
+                                            (change)="splitPayment()"
+                                            data-toggle="modal">
+                                        
+                                        </mat-slide-toggle>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <!-- <img src="/assets/img/icons/cross-circle-red.svg" alt="" class="me-2"> <span>Not repeating numbers like 1111 etc.</span> -->
+
+                            <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(2);" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                        </div>
+
+                    </form>
+                </mat-step>
+       
+
+                <mat-step [stepControl]="fourthFormGroup">
+
+                    <form [formGroup]="fourthFormGroup">
+                    
+                        <h3>
+                            Payment source
+                        </h3>
+                        <p>
+                            {{isSplitPayment ? 'Please choose at least 2 payment sources from the options available below' : 'Please choose a payment source from the options available below'}}    
+                        </p>
+                    
+                        @if(isAlertActive){
+                            <app-alert [alertType]="warning" [alertMsg]="msg" [alertIcon]="icon" />
+                        }
+                        
+        
+                        <div class="col-12">
+                            <p class="p-0 m-0">
+                                <b>Accounts</b>
+                             </p>
+        
+                             @for (item of allAccounts; track $index) {
+                                @if (item.type == 'account') {
+        
+                                    <div class="frame mt-3">
+                                        <div class="content">
+                                            
+                                            @if(isSplitPayment){
+                                                <div class="d-flex align-items-center">
+                                                    <input type='checkbox' (change)="showAccountInput($event,1,item.id)" id='{{ item.id }}' name='account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }@else {
+                                                <div class="d-flex align-items-center">
+                                                    <input type='radio' id='{{ item.id }}' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }
+                                            
+                                            <div class="div">
+                                                <div class="text-wrapper"><b>{{ item.title }}</b></div>
+                                                <div class="text-wrapper-2">{{ item.number }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-2">
+                                            <div class="text-wrapper">
+                                                PKR {{ totalAmount }}
+                                            </div>
+                                            <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                                        </div>
+                                    </div>
+                                    @if(inputText1 && currentSelection == item.id){
+            
+                                        <div class="d-flex justify-content-end  mt-2 " [formGroup]="myGroup">
+                                            <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                                            <input type="text" name=""  id="" class="form-control w-25"  formControlName="accountInput">
+                                        </div>
+                                    }
+        
+                                }
+                             }
+        
+                        </div>
+        
+                        <div class="col-12">
+                            <p class="mt-3">
+                                <b>Credit Cards</b>
+                             </p>
+        
+                             @for (card of allAccounts; track $index) {
+                                @if (card.type == 'card') {
+        
+                                    <div class="frame mt-3">
+                                        <div class="content">
+            
+                                            @if(isSplitPayment){
+                                                <div class="d-flex align-items-center">
+                                                    <input type='checkbox' (change)="showCCInput($event,2,card.id)" id='{{ card.id }}' name='card' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }@else {
+                                                <div class="d-flex align-items-center">
+                                                    <input type='radio' id='{{ card.id }}' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }
+            
+                                
+                                            <div class="div">
+                                                <div class="text-wrapper"><b>{{ card.title }}</b></div>
+                                                <div class="text-wrapper-2">{{ card.number }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-2">
+                                            <div class="text-wrapper">
+                                                PKR {{ totalAmount }}
+                                            </div>
+                                            <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                                        </div>
+                                    </div>
+            
+                                    @if(inputText2 && currentSelection == card.id){
+            
+                                        <div class="d-flex justify-content-end  mt-2 ">
+                                            <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                                            <input type="text" name=""  id="" class="form-control w-25">
+                                        </div>
+                                    }
+        
+                                }
+        
+                             }
+                            
+                        </div>
+        
+                        <div class="col-12">
+                            <p class="mt-3">
+                                <b>Wallets</b>
+                             </p>
+        
+                             @for (wallet of allAccounts; track $index) {
+        
+                                @if (wallet.type == 'wallet') {
+        
+                                    <div class="frame mt-3">
+                                        <div class="content">
+            
+                                            @if(isSplitPayment){
+                                                <div class="d-flex align-items-center">
+                                                    <input type='checkbox' (change)="showWalletInput($event,3,wallet.id)" id='{{ wallet.id }}' name='wallet' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }@else {
+                                                <div class="d-flex align-items-center">
+                                                    <input type='radio' id='{{ wallet.id }}' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }
+                                            
+            
+                                            <div class="div">
+                                                <div class="text-wrapper"><b> {{ wallet.title }} </b></div>
+                                                <div class="text-wrapper-2">{{ wallet.number }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-2">
+                                            <div class="text-wrapper">
+                                                PKR {{ totalAmount }}
+                                            </div>
+                                            <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                                        </div>
+                                    </div>
+            
+                                    @if(inputText3 && currentSelection == wallet.id){
+            
+                                        <div class="d-flex justify-content-end  mt-2 ">
+                                            <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                                            <input type="text" name=""  id="" class="form-control w-25">
+                                        </div>
+                                    }
+                                }
+                              
+                             }                
+                             
+                        </div>
+        
+                        <div class="col-12">
+                            <p class="mt-3">
+                                <b>Orbit</b>
+                             </p>
+        
+                             @for (orbit of allAccounts; track $index) {
+        
+                                @if (orbit.type == 'orbit') {
+                                    <div class="frame mt-3">
+                                        <div class="content">
+            
+                                            @if(isSplitPayment){
+                                                <div class="d-flex align-items-center">
+                                                    <input type='checkbox' (change)="showOrbitInput($event,4,orbit.id)" id='{{ orbit.id }}' name='orbit' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }@else {
+                                                <div class="d-flex align-items-center">
+                                                    <input type='radio' id='{{ orbit.id }}' name='from_account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                                                </div>
+                                            }
+            
+                                            <div class="div">
+                                                <div class="text-wrapper"><b> {{ orbit.title }} </b></div>
+                                                <div class="text-wrapper-2">Points: {{ orbit.number }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-2">
+                                            <div class="text-wrapper">
+                                                PKR {{ orbit.balance }}
+                                            </div>
+                                            <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                                        </div>
+                                    </div>
+        
+                                    @if(inputText4 && currentSelection == orbit.id){
+            
+                                        <div class="d-flex justify-content-end  mt-2 ">
+                                            <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                                            <input type="text" name=""  id="" class="form-control w-25">
+                                        </div>
+                                    }
+            
+                                }
+                               
+                             }
+                            
+                           
+                        </div>
+        
+                        <div class="mt-4">
+                            
+                            <button class="w-100 btn btn-lg btn-danger"  (click)="nextStep(stepper); updateStepper(3)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                        </div>
+                    </form>
+                   
+                </mat-step>
+
+                <mat-step [stepControl]="fifthFormGroup">
+
+                    <form [formGroup]="fifthFormGroup">
+
+                        <h3>
+                            Confirm details
+                        </h3>
+                        
+                        <p class="sub-text">
+                            Please confirm the bill payment details below before you pay
+                        </p>
+                        
+                        <div class="col-12 generalBox p-3">
+                            <p class="p-0 m-0">From</p>
+                            <div class="d-flex justify-content-between">
+                                <p class="p-0 m-0"><b>Account</b></p> <p class="p-0 m-0">57431231663731</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 generalBox p-3 mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="p-0 m-0">To</p> 
+                                <!-- <img src="/assets/img/icons/edit-red.svg" alt=""> -->
+                            </div>
+                            <p><b>Transworld Enterprise</b></p>
+                  
+                        </div>
+                        
+                        <div class="col-12 generalBox p-3 mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="p-0 m-0">Amount</p> 
+                                <img src="/assets/img/icons/edit-red.svg" alt="" (click)="previousStep(stepper)" style="cursor: pointer;">
+                            </div>
+                            
+                            @if(isSplitPayment){
+                                <div style="background-color: #F8F8F8;" class="p-2">
+                                    <p><b>Payment Sources</b></p>
+                                    
+                                    <p class="p-0 m-0"><b>Account</b></p>
+                        
+                                    <div class="d-flex justify-content-between">
+                                        <p class="p-0 m-0">57431231663731</p>
+                                        <p class="p-0 m-0">PKR 2000/5000</p>
+                                    </div>
+                        
+                                    <p class="p-0 m-0"><b>Credit Card</b></p>
+                        
+                                    <div class="d-flex justify-content-between">
+                                        <p class="p-0 m-0">66771288123987</p>
+                                        <p class="p-0 m-0">PKR 3000/5000</p>
+                                    </div>
+                        
+                                </div>
+                            }@else {
+                                <div class="d-flex">
+                                    <h3>2,350</h3>
+                                    <p class="p-0 m-0">PKR</p>
+                                </div>
+                            }
+                            
+                        </div>
+            
+                        <div class="mt-2">
+                            <div class="col h-25 mt-3 ">
+                                <div class="h-100 w-100 payeeBox mt-2">
+            
+                                    <div class="d-flex bd-highlight p-2 pb-0">
+                                        <div class="p-1 bd-highlight"><img src="/assets/img/icons/clock-black.svg" alt=""></div>
+                                        <div class="p-1 bd-highlight"> <p><b>Transfer frequency</b></p></div>
+                                        <div class="ms-auto p-1 bd-highlight cursor-pointer" style="cursor: pointer;" (click)="frequencyModal()"> <p>Just now</p></div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+            
+                      
+                        <div class="mt-3">
+                            <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Pay now <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                   
+                        </div>
+            
+                      </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="sixthFormGroup">
+
+                    <form [formGroup]="sixthFormGroup">
+                        <div class="text-center">
+                            <img src="/assets/img/icons/otp-phone.svg" alt="">
+                        </div>
+    
+                        <h3>
+                            Verify OTP
+                        </h3>
+                        <p>
+                            Please enter the code we’ve sent to your mobile number *********83 below
+                        </p>
+    
+                        <div class="col-12 mt-3">
+                            <label for="">OTP</label>
+                            <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+                        </div>
+    
+                        <div class="col-12 mt-4">
+                            <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(5); receiptModal();">Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                        </div>
+    
+                        <p style="color: #5D5D5D;" class="text-center mt-2">
+                            Resend OTP in 00:40
+                        </p>   
+                    </form>
+                    
+                </mat-step>
+            </mat-stepper>
+          </div>
+        </div>
+    </div>

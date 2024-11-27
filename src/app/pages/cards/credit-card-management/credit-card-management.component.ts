@@ -39,8 +39,8 @@ export class CreditCardManagementComponent {
   unlockCardColor = '#fff';
   dynamic = 156000;
   max = 200000;
-  activeCard : boolean = true;
-  showDetails : boolean = false;
+  activeCard : boolean = false;
+  showDetails : boolean = true;
   isCardLocked : boolean = false;
   disableColor = '';
   starIcon = '/assets/img/icons/setting-icon-red.svg';

@@ -43,6 +43,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-color: var(--primarycolor) !important;
 }
 
+.mat-mdc-tab-label-container {
+    border-bottom-width: 1px !important;
+    border-bottom-color: #e0e2ec !important;
+}
+
 .custom-dialog-container
   .mat-mdc-dialog-container
   .mdc-dialog__container
@@ -53,4 +58,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-overlay-dark-backdrop{
     background: rgba(0, 0, 0, 0.52) !important;
     backdrop-filter: blur(5px) !important;
+}
+
+.pointer-cursor{
+    cursor: pointer !important;
 }

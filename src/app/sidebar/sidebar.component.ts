@@ -110,12 +110,12 @@ export class SidebarComponent implements OnInit,AfterViewInit {
       
           update_sidebar_nicescroll();
           }else{
-              body.removeClass('search-show search-gone');
-              if(body.hasClass('sidebar-mini')) {
-                  toggle_sidebar_mini(false);
-              }else{
-                  toggle_sidebar_mini(true);
-              }
+            //   body.removeClass('search-show search-gone');
+            //   if(body.hasClass('sidebar-mini')) {
+            //       toggle_sidebar_mini(false);
+            //   }else{
+            //       toggle_sidebar_mini(true);
+            //   }
           }
       
           return false;

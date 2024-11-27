@@ -7,7 +7,7 @@
   <div class="horizontal-progress mt-3 d-flex flex-wrap">
     <div class="progress-bar-item ps-1 pe-1 ">
       <div class="frame" [style.background-color]="step1"><div class="text-wrapper">1</div></div>
-      <div class="title ps-1">Reciprocal</div>
+      <div class="title ps-1">Payees</div>
     </div>
     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
     <div class="progress-bar-item  ps-1 pe-1 ">
@@ -44,13 +44,13 @@
                 <form [formGroup]="firstFormGroup">
 
                     <div class="d-flex">
-                        <div class="col">
+                        <div class="col-8">
                             <h4 class="p-0 m-0">Your payees</h4>
-                            <p class="p-0 m-0">Choose a payee from the list or add a new payee</p>
+                            <p class="p-0 m-0">Please choose a payee from the list or add a new payee</p>
                         </div>
-                        <div class="col">
+                        <div class="col-4">
                             <div class="d-flex justify-content-end justify-item-center">
-                                <button class="btn btn-danger" routerLink="/send-money/bank-transfer/new-payment"><img src="/assets/img/icons/plus-icon.svg" alt="">  New Transfer</button>
+                                <button class="btn btn-danger" routerLink="/send-money/bank-transfer/new-payment"><img src="/assets/img/icons/plus-icon.svg" alt="">  New transfer</button>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             <mat-chip-listbox aria-label="Satement Selection" (change)="onChange($event)">
                                 <mat-chip-option selected color="warn">All</mat-chip-option>
                                 <mat-chip-option color="warn">Bank Alfalah</mat-chip-option>
-                                <mat-chip-option color="warn">Other Banks</mat-chip-option>
+                                <mat-chip-option color="warn">Other Bank</mat-chip-option>
                                 <mat-chip-option color="warn">My Accounts</mat-chip-option>
                                 
                             </mat-chip-listbox>
@@ -113,7 +113,7 @@
                     
                     <div class="d-flex">
                         <div class="col">
-                            <h4 class="p-0 m-0">Bank Transfer</h4>
+                            <h4 class="p-0 m-0">Bank transfer</h4>
                             <p class="p-0 m-0">Please review the payee details before moving on</p>
                         </div>
                         
@@ -202,7 +202,7 @@
                     <div class="mt-2 p-3" style="background-color: #F8F8F8; border-radius: 8px;">
                         <p style="color: #5D5D5D;"><b>Transfer limits</b></p>
                         
-                        <p>The following transfer limits apply to your current transaction</p>
+                        <p>The following transfer limits apply to your current transaction in progress</p>
                         
                         <div style="border: 1px solid #C3C3C3; border-radius: 4px;" class="d-flex justify-content-around align-self-center pt-2">
                             <p  style="color: #5D5D5D;"><b>Per transaction</b></p>
@@ -357,7 +357,7 @@
                     </div>
 
                     <div class="col-12 mt-4">
-                        <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                        <button class="w-100 btn btn-lg btn-danger" (click)="updateStepper(4); receiptModal();">Send PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
                     </div>
 
                     <p style="color: #5D5D5D;" class="text-center mt-2">
