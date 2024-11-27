@@ -20,10 +20,10 @@ export class AlfaHubComponent {
 
 
   serviceslist = [
-    { id: 1, actionName: 'Account maintenance certificate', icon : 'Account maintenance certificate.svg', url:'/settings/login-security'},
+    { id: 1, actionName: 'Account maintenance certificate', icon : 'Account maintenance certificate.svg', url:'/alfa-hub/account-maintenance-certificate'},
     { id: 3, actionName: 'Banker’s cheque', icon : 'Banker’s cheque.svg', url:'/alfa-hub/bankerscheque'},
-    { id: 4, actionName: 'Update CNIC expiry', icon : 'Update CNIC expiry.svg', url:'/settings/scheduled-payments'},
-    { id: 5, actionName: 'Multi-pay', icon : 'Multi-pay.svg', url:'/settings/appearance'}
+    { id: 4, actionName: 'Update CNIC expiry', icon : 'Update CNIC expiry.svg', url:'/alfa-hub/update-cnic'},
+    // { id: 5, actionName: 'Multi-pay', icon : 'Multi-pay.svg', url:'/settings/appearance'}
   ];
 
   lifestyleList = [

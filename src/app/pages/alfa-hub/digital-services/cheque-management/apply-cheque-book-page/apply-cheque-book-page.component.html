@@ -177,6 +177,43 @@
 
                     <form [formGroup]="secondFormGroup">
 
+
+
+                        <div class="text-center">
+                            <img src="/assets/img/icons/otp-phone.svg" alt="">
+                        </div>
+    
+                        <h3>
+                            Verify OTP
+                        </h3>
+                        <p>
+                            Please enter the code we’ve sent to your mobile number *********83 below
+                        </p>
+    
+                        <div class="col-12 mt-3">
+                            <label for="">OTP</label>
+                            <input type="password" name="" id="" class="form-control mt-1" placeholder="****" >
+                        </div>
+    
+                        <div class="col-12 mt-4">
+                            <button class="w-100 btn btn-lg btn-danger"   (click)="nextStep(stepper); updateStepper(1);" >Pay PKR 2350/- <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                        </div>
+    
+                        <p style="color: #5D5D5D;" class="text-center mt-2">
+                            Resend OTP in 00:40
+                        </p>  
+
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="thirdFormGroup">
+
+                    <form [formGroup]="thirdFormGroup">
+
+
+
                         <div class="mt-4">
                             <div style="vertical-align: middle; justify-content: center; display: flex;" class="m-2">
                                 <img src="/assets/img/icons/thumbs-up.svg" alt="">
@@ -190,20 +227,6 @@
     
     
                         </div>
-
-
-
-                    </form>
-
-                </mat-step>
-
-                <mat-step [stepControl]="thirdFormGroup">
-
-                    <form [formGroup]="thirdFormGroup">
-
-
-
-
 
 
                     </form>

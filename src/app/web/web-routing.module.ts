@@ -65,9 +65,15 @@ import { ManageLoansComponent } from '../pages/loans/manage-loans/manage-loans.c
 import { TaxManagementComponent } from '../pages/alfa-hub/digital-services/tax-management/tax-management.component';
 import { BankersChequeComponent } from '../pages/alfa-hub/digital-services/bankers-cheque/bankers-cheque.component';
 import { ApplyChequeBookPageComponent } from '../pages/alfa-hub/digital-services/cheque-management/apply-cheque-book-page/apply-cheque-book-page.component';
+import { UpdateCnicComponent } from '../pages/alfa-hub/digital-services/update-cnic/update-cnic.component';
+import { AccountMaintenanceCertificateComponent } from '../pages/alfa-hub/digital-services/account-maintenance-certificate/account-maintenance-certificate.component';
+import { StopChequeComponent } from '../pages/alfa-hub/digital-services/stop-cheque/stop-cheque.component';
+import { RegisterSuccessComponent } from '../pages/settings/relationship/register-success/register-success.component';
+import { RelationshipUnlinkSuccessComponent } from '../pages/settings/relationship/relationship-unlink-success/relationship-unlink-success.component';
+import { ChequeSubmitComponent } from '../pages/alfa-hub/digital-services/bankers-cheque/cheque-submit/cheque-submit.component';
+import { WithHoldingTaxCertificateComponent } from '../pages/alfa-hub/digital-services/tax-management/with-holding-tax-certificate/with-holding-tax-certificate.component';
+import { WithHoldingTaxStatementComponent } from '../pages/alfa-hub/digital-services/tax-management/with-holding-tax-statement/with-holding-tax-statement.component';
 import { PrepaidComponent } from '../pages/mobile-top-up/prepaid/prepaid.component';
-
-UtilityComponent
 
 const routes: Routes = [
   {
@@ -227,8 +233,16 @@ const routes: Routes = [
     component: LoginSecurityComponent
   },
   {
-    path:'settings/relationship-success',
+    path:'settings/relationship-link-success',
     component: RelationshipSuccessComponent
+  },
+  {
+    path:'settings/relationship-unlink-success',
+    component: RelationshipUnlinkSuccessComponent
+  },
+  {
+    path:'settings/relationship-register-success',
+    component: RegisterSuccessComponent
   },
   {
     path:'settings/account-relationship',
@@ -314,8 +328,28 @@ const routes: Routes = [
   }
   ,
   {
+    path:'alfa-hub/bankerscheque/submit-success',
+    component:ChequeSubmitComponent  
+  }
+  ,
+  {
     path:'alfa-hub/apply-cheque-book',
-    component: ApplyChequeBookPageComponent
+    component: ApplyChequeBookPageComponent  
+  }
+  ,
+  {
+    path:'alfa-hub/stop-cheque',
+    component: StopChequeComponent
+  }
+  ,
+  {
+    path:'alfa-hub/update-cnic',
+    component: UpdateCnicComponent 
+  }
+  ,
+  {
+    path:'alfa-hub/account-maintenance-certificate',
+    component: AccountMaintenanceCertificateComponent  
   }
   ,
   {
@@ -330,10 +364,18 @@ const routes: Routes = [
   ,
   {
     path:'loans/manage-loans',
-    component: ManageLoansComponent
+    component: ManageLoansComponent 
   }
-
-
+  ,
+  {
+    path:'tax-management/withholdingtax-certificate',
+    component: WithHoldingTaxCertificateComponent  
+  }
+  ,
+  {
+    path:'tax-management/withholdingtax-statement',
+    component: WithHoldingTaxStatementComponent  
+  }
 
  
 

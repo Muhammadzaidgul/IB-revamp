@@ -28,6 +28,8 @@ export class StopChequeComponent {
     this.location.back();
   }
 
+  isSingleCheque: boolean = true;
+
   
   
   step1 : string = '#EA5148';
@@ -95,4 +97,19 @@ export class StopChequeComponent {
   nextStep(stepper:MatStepper){
     stepper.next();
   }
+
+  selectedChip: number = 1; // Default selection
+  
+  checkIDType(index: number) {
+    this.selectedChip = index;
+
+    if (index === 1) {
+      this.isSingleCheque = true;
+
+    } else if (index === 2) {
+
+      this.isSingleCheque = false;
+    }
+  }
+
 }

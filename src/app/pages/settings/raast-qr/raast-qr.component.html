@@ -44,7 +44,7 @@
                                         [checked]="checked"
                                         [disabled]="disabled"
                                         formControlName="acceptTerms"
-                                        (click)="unlinkRelation()"
+                                        (change)="onToggleChange($event)"
                                         >
                                    
                                     </mat-slide-toggle>
@@ -71,7 +71,7 @@
                                         [checked]="checked2"
                                         [disabled]="disabled"
                                         formControlName="acceptTerms"
-                                        (click)="unlinkRelation()"
+                                        (change)="onToggleChange($event)"
                                         >
                                    
                                     </mat-slide-toggle>
@@ -94,7 +94,7 @@
                                         [checked]="checked2"
                                         [disabled]="disabled"
                                         formControlName="acceptTerms"
-                                        (click)="linkRelation()">
+                                        (change)="onToggleOn($event)">
                                        
                                     </mat-slide-toggle>
                                     </div>

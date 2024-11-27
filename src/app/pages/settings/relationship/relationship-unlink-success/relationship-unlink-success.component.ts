@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
+
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-relationship-success',
+  selector: 'app-relationship-unlink-success',
   standalone: true,
   imports: [],
-  templateUrl: './relationship-success.component.html',
-  styleUrl: './relationship-success.component.css'
+  templateUrl: './relationship-unlink-success.component.html',
+  styleUrl: './relationship-unlink-success.component.css'
 })
-export class RelationshipSuccessComponent {
-  
-
+export class RelationshipUnlinkSuccessComponent {
   constructor(private location: Location){
 
   }
@@ -18,6 +17,5 @@ export class RelationshipSuccessComponent {
   back():void{
     this.location.back();
   }
-
 
 }
