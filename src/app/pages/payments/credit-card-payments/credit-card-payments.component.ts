@@ -49,9 +49,9 @@ throw new Error('Method not implemented.');
   stepperfontColor : string = '#000';
   activeStepColor : string = '#EA5148';
   pendingStepfontColor : string = '#000';
-  isStepActive : boolean;
-  noBorder = "0px solid #fff";
+  noBorder = "1px solid #fff";
   activeStep = 0;
+  completedSteps = [];
   inputText1: boolean = false;
   inputText2: boolean = false;
   isLinear = false;
@@ -102,16 +102,26 @@ throw new Error('Method not implemented.');
   // Update step colors
   updateStepper(step: number) {
     if (step == 1) {
+
       this.step1 = '#18B368'; //green
       this.step2 = '#EA5148'; //red
       this.stepperfontColor = '#fff';
+      this.completedSteps.push(1);
       this.activeStep = 2;
+
     } else if (step == 2) {
+
       this.step3 = this.step2;
       this.step2 = this.step1;
+      this.stepperfontColor = '#fff';
+      this.completedSteps.push(2);
+      this.activeStep = 3;
+
     } else if (step == 3) {
       this.step4 = this.step3;
       this.step3 = this.step2;
+      this.stepperfontColor = '#fff';
+      this.activeStep = 4;
     } else if (step == 4) {
       this.step4 = this.step2;
       this.step3 = this.step2;

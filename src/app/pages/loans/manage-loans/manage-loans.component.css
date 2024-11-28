@@ -39,7 +39,7 @@ color: #FFFFFF;
 
 
 .circle-box{
-    border-radius: 44px;
+    border-radius: 50px;
 background: var(--Interface-Background-bg-primary, #FFF);
 
 /* Elevation Levels/1 */

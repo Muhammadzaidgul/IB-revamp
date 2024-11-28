@@ -11,22 +11,61 @@
     </div>
     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
     <div class="progress-bar-item  ps-1 pe-1 ">
-      <div class="element-wrapper" [style.background-color]="step2" ><div class="element">2</div></div>
+
+        @if(activeStep == 2 || completedSteps.includes(1)){
+        <div class="element-wrapper" [style.background-color]="step2" [style.border]="noBorder" >
+            <div class="element" [style.color]="stepperfontColor" >2</div>
+        </div>
+        }@else {
+        <div class="element-wrapper" [style.background-color]="step2">
+            <div class="element" [style.color]="pendingStepfontColor">2</div>
+        </div>
+        }
+
       <div class="div ps-1">Amount</div>
     </div>
     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
     <div class="progress-bar-item  ps-1 pe-1 ">
-      <div class="element-wrapper" [style.background-color]="step3" ><div class="element">3</div></div>
+
+        @if(activeStep == 3 || completedSteps.includes(2)){
+        <div class="element-wrapper" [style.background-color]="step3" [style.border]="noBorder" >
+            <div class="element" [style.color]="stepperfontColor" >3</div>
+        </div>
+        }@else {
+        <div class="element-wrapper" [style.background-color]="step3">
+            <div class="element" [style.color]="pendingStepfontColor">3</div>
+        </div>
+        }
+
       <div class="div ps-1">Payment Source</div>
     </div>
     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
     <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
-      <div class="element-wrapper" [style.background-color]="step4" ><div class="element">4</div></div>
+        @if(activeStep == 4 || completedSteps.includes(3)){
+        <div class="element-wrapper" [style.background-color]="step4" [style.border]="noBorder" >
+            <div class="element" [style.color]="stepperfontColor" >4</div>
+        </div>
+        }@else {
+        <div class="element-wrapper" [style.background-color]="step4">
+            <div class="element" [style.color]="pendingStepfontColor">4</div>
+        </div>
+        }
+      
       <div class="div ps-1">Confirm details</div>
     </div>
     <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
     <div class="progress-bar-item  ps-1 pe-1 mt-2 mt-sm-0">
-      <div class="element-wrapper" [style.background-color]="step5" ><div class="element">5</div></div>
+
+        @if(activeStep == 5 || completedSteps.includes(4)){
+        <div class="element-wrapper" [style.background-color]="step5" [style.border]="noBorder" >
+            <div class="element" [style.color]="stepperfontColor" >5</div>
+        </div>
+        }@else {
+        <div class="element-wrapper" [style.background-color]="step5">
+            <div class="element" [style.color]="pendingStepfontColor">5</div>
+        </div>
+        }
+        
       <div class="div ps-1">Verification</div>
     </div>
 </div>

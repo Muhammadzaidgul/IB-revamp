@@ -5,7 +5,7 @@
                 <div class="row p-3 pb-0 pt-0">
                     <div class="d-flex justify-content-between">
                         <h4>Link New Loan</h4>
-                        <img src="/assets/img/icons/cancel.svg"  (click)="closeModal()">
+                        <img class="pointer-cursor" src="/assets/img/icons/cancel.svg"  (click)="closeModal()">
                     </div>
                     <p>Please enter your non-checking account number that is on your repayment schedule.</p>
                     <div style="display: flex; justify-content: space-between;">
@@ -27,7 +27,8 @@
 
                 <div class="row p-3 mt-2">
                     <div class="col-12">
-                        <button class="btn btn-lg w-100 btn-danger" ><img src="/assets/img/icons/link.svg" alt=""> Link Account</button>
+                        <button class="btn btn-lg w-100 btn-danger" (click)="linkAccount()">
+                            <img src="/assets/img/icons/link.svg" alt=""> Link Account</button>
                     </div>
                 </div>
             </div>

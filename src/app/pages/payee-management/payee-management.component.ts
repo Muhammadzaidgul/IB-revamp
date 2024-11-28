@@ -17,11 +17,12 @@ export class PayeeManagementComponent {
     { id:'3', type:'Mobile Topup', icon:'payee-send-money.svg' },
     { id:'4', type:'Utility Bills', icon:'payee-utility-bills.svg'},
     { id:'5', type:'Fees', icon:'payee-fee.svg' },
-    { id:'6', type:'Credit Cards', icon:'payee-credit-card.svg' },
-    { id:'7', type:'Loans', icon:'payee-loan.svg' },
-    { id:'8', type:'1 Bill', icon:'payee-1-bill.svg' },
-    { id:'9', type:'Donations', icon:'payee-donation.svg' },
-    { id:'10', type:'Vendors', icon:'payee-vendor.svg' }
+    { id:'6', type:'Cards', icon:'payee-credit-card.svg' },
+    { id:'7', type:'Others', icon:'payee-credit-card.svg' },
+    
+    // { id:'8', type:'1 Bill', icon:'payee-1-bill.svg' },
+    // { id:'9', type:'Donations', icon:'payee-donation.svg' },
+    // { id:'10', type:'Vendors', icon:'payee-vendor.svg' }
 
   ]
 }

@@ -58,9 +58,15 @@ export class BankTransferComponent {
   step3 : string = '';
   step4 : string = '';
   step5 : string = '';
+  activeStep = 0;
+  completedStep = 0;
+  stepperfontColor : string = '#000';
+  pendingStepfontColor : string = '#000';
+  noBorder = "1px solid #fff";
   isFCYAccount = true;
   isLinear = false;
   myPayees = [...payeesList];
+  completedSteps = [];
 
   color: ThemePalette = 'warn';
   checked = false;
@@ -111,22 +117,33 @@ export class BankTransferComponent {
     if(step == 1){
       this.step1 = '#18B368';
       this.step2 = '#EA5148';
-      
+      this.stepperfontColor = '#fff';
+      this.activeStep = 2;
+      this.completedSteps.push(1);
     }
     else if(step == 2){
       this.step3 = this.step2;
       this.step2 = this.step1;
+      this.stepperfontColor = '#fff';
+      this.activeStep = 3;
+      this.completedSteps.push(2);
       
     }
     else if(step == 3){
       this.step4 = this.step3;
       this.step3 = this.step2;
+      this.stepperfontColor = '#fff';
+      this.activeStep = 4;
+      this.completedSteps.push(3);
       
     }
     else if(step == 4){
       this.step4 = this.step2;
       this.step3 = this.step2;
       this.step5 = this.step2;
+      this.stepperfontColor = '#fff';
+      this.activeStep = 5;
+      this.completedSteps.push(4);
       
     }
   }

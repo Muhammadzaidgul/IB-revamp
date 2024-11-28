@@ -1,8 +1,8 @@
-<div class="row customerInfo p-3">
+<div class="row customerInfo p-3 ps-1">
     <div style="display: flex; justify-content: space-between;">
         <div class="h4">Manage existing loans</div>
         <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="assets/img/icons/cancel.svg">
+            <!-- <img src="assets/img/icons/cancel.svg"> -->
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@
 
                         </div>
 
-                        <div class="d-flex flex-wrap mt-3">
+                        <div class="d-flex flex-wrap mt-1">
 
                             <div style="min-width: 200px;cursor: pointer;" class="h-100 w-100"
                                 (click)="nextStep(stepper)">
@@ -75,8 +75,8 @@
                                     </div>
 
                                 </div>
-                                <div class="mt-4"></div>
-                                <div class="col h-25 m-1 payeeBox">
+                                
+                                <div class="col h-25 m-1 mt-2 payeeBox">
                                     <div class="d-flex p-2">
                                         <img src="/assets/img/icons/house-loan.svg" alt="">
 
@@ -203,24 +203,19 @@
 
                         </div>
 
-                        <div>
-                            <div class="d-flex justify-content-center text-center mt-3">
+                        <div class="d-flex justify-content-center text-center mt-3">
 
-                                <div class="circle-box" (click)="nextStep(stepper)">
-                                    <img src="/assets/img/icons/plus-icon-red.svg" alt="">
-
-                                </div>
-                                <div class="p-3">
-
-                                </div>
-                                <div class="circle-box" (click)="nextStep(stepper)">
-                                    <img src="/assets/img/icons/schedule-clock-red.svg" alt="">
-
-                                </div>
-
+                            <div class="d-block m-2">
+                                <img src="/assets/img/icons/plus-icon-with-circle.svg" alt="" (click)="newPayment(1,stepper);">
+                                <p>New payment</p>
                             </div>
-                        </div>
 
+                            <div class="d-block m-2">
+                                <img src="/assets/img/icons/schedule-clock-red-with-circle.svg" alt="" (click)="newPayment(0,stepper);">
+                                <p>Schedule</p>
+                            </div>
+
+                        </div>
 
                     </form>
 
@@ -475,7 +470,7 @@
                             <div class="col-12 generalBox p-3">
                                 <div class="d-flex justify-content-between">
                                     <p class="p-0 m-0">From</p> <img style="cursor: pointer;"
-                                        src="/assets/img/icons/edit-red.svg" alt="">
+                                        src="/assets/img/icons/edit-red.svg" alt="" (click)="selectAccount()">
                                 </div>
 
                                 <div class="d-flex justify-content-between">
@@ -510,10 +505,7 @@
                                         (click)="receiptModal();">Pay now <img src="/assets/img/icons/done.svg"
                                             alt=""></button>
                                 </a>
-
                             </div>
-
-
                         </div>
 
                     </form>

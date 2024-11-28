@@ -60,7 +60,7 @@ import { BookATermDepositComponent } from '../pages/save-and-invest/alfa-term-de
 import { YourTermDepositComponent } from '../pages/save-and-invest/alfa-term-deposit/your-term-deposit/your-term-deposit.component';
 import { RaastComponent } from '../pages/send-money/raast/raast.component';
 import { ApplyNewLoanComponent } from '../pages/loans/apply-new-loan/apply-new-loan.component';
-import { SuccessComponent } from '../pages/loans/apply-new-loan/success/success.component';
+import { LoanSuccessComponent } from '../pages/loans/apply-new-loan/success/loan-success.component';
 import { ManageLoansComponent } from '../pages/loans/manage-loans/manage-loans.component';
 import { TaxManagementComponent } from '../pages/alfa-hub/digital-services/tax-management/tax-management.component';
 import { BankersChequeComponent } from '../pages/alfa-hub/digital-services/bankers-cheque/bankers-cheque.component';
@@ -74,6 +74,8 @@ import { ChequeSubmitComponent } from '../pages/alfa-hub/digital-services/banker
 import { WithHoldingTaxCertificateComponent } from '../pages/alfa-hub/digital-services/tax-management/with-holding-tax-certificate/with-holding-tax-certificate.component';
 import { WithHoldingTaxStatementComponent } from '../pages/alfa-hub/digital-services/tax-management/with-holding-tax-statement/with-holding-tax-statement.component';
 import { PrepaidComponent } from '../pages/mobile-top-up/prepaid/prepaid.component';
+import { SuccessComponent } from '../shared/success/success.component';
+
 
 const routes: Routes = [
   {
@@ -359,7 +361,7 @@ const routes: Routes = [
   ,
   {
     path:'loans/apply-new-loan/success',
-    component: SuccessComponent
+    component: LoanSuccessComponent
   }
   ,
   {
@@ -375,6 +377,10 @@ const routes: Routes = [
   {
     path:'tax-management/withholdingtax-statement',
     component: WithHoldingTaxStatementComponent  
+  },
+  {
+    path: 'success',
+    component: SuccessComponent
   }
 
  

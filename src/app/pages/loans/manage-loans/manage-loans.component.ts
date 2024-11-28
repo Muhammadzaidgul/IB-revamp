@@ -9,6 +9,7 @@ import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
 import { RouterModule } from '@angular/router';
 import { LinkNewLoanComponent } from '../../../modals/link-new-loan/link-new-loan.component';
+import { AccountSelectionComponent } from '../../../modals/account-selection/account-selection.component';
 
 interface Payees {
   id: number,
@@ -46,8 +47,7 @@ export class ManageLoansComponent {
   inputText1: boolean = true;
 
 
-  isNewPayment: boolean = true;
-
+  isNewPayment: boolean = false;
   step1: string = '#EA5148';
   step2: string = '';
   step3: string = '';
@@ -116,6 +116,23 @@ export class ManageLoansComponent {
     stepper.next();
   }
 
+  newPayment(val,stepper: MatStepper){
+
+    if(val == 0){
+      this.isNewPayment = false;
+    }else{
+      this.isNewPayment = true;
+    }
+    
+    stepper.next();
+  }
+
+  selectAccount(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.id = "ConfirmModal";
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const modalDialog = this.matDialog.open(AccountSelectionComponent, dialogConfig);
+  }
 
   // Open receipt modal
   receiptModal() {

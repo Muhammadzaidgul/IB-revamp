@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
   selector: 'app-success',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './success.component.html',
-  styleUrl: './success.component.css'
+  templateUrl: './loan-success.component.html',
+  styleUrl: './loan-success.component.css'
 })
-export class SuccessComponent {
+export class LoanSuccessComponent {
 
 }
