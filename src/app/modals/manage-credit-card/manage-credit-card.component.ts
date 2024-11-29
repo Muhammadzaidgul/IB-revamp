@@ -54,7 +54,7 @@ export class ManageCreditCardComponent {
   }
 
   creditCardFacility(){
-    this.router.navigate(['card/credit-card-facility']);
+    this.router.navigate(['/card/credit-card-facility']);
     this.dialogRef.close();
   }
 

@@ -1,0 +1,12 @@
+.sub-text{
+    color: var(--Interface-Text-text-medium, #5D5D5D);
+text-align: center;
+
+/* Body/Large/Regular */
+font-family: "Noto Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+letter-spacing: -0.25px;
+}

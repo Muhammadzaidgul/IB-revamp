@@ -1,0 +1,23 @@
+<div role="dialog" id="ConfirmModal" class="confirm_modal">
+    <div class="modal-dialog p-3 modal-md" role="document">
+
+        <div class="modal-content" style="width: 500px;" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="modal-body" >
+                
+                <div class="row mt-2 justify-content-center text-center" >
+                    <img src="/assets/img/icons/thumbs-up.svg" alt="" style="width: 140px; height: 140px;">
+
+                    <h4>{{modalBodyTitle}} </h4>
+
+                    <p class="sub-text mt-1">{{modalBodyText}}</p>
+                    
+                </div>
+                
+                <div class="col-12 mt-2">
+                    <button class="w-100 btn btn-lg btn-danger"  [routerLink]="['/card/credit-card-facility']" (click)="closeModal();">Done </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

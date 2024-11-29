@@ -1,0 +1,202 @@
+<div class="row customerInfo p-3 ps-1">
+    <div class="h5 p-0">
+        <img src="/assets/img/icons/arrow-left.svg" alt="" (click)="back()">Cards
+
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+        Credit card facilities
+
+        <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" />
+        SMS subscription
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 m-auto p-0 p-md-0 mt-5" data-aos="fade-up"
+            data-aos-duration="1000">
+
+
+            @if(newPayment==false){
+                <div class="row">
+
+                    <div class="col-8 d-flex align-items-center">
+                        <h5>SMS subscription</h5>
+                    </div>
+    
+                    <div class="col-4 d-flex align-item-center justify-content-end h-25" (click)="NewPayment()">
+                        <button class="btn btn-danger"><img src="/assets/img/icons/plus-icon.svg" alt="">New
+                            request</button>
+                    </div>
+    
+                </div>
+    
+    
+                <div class="d-flex flex-wrap mt-3">
+    
+    
+    
+                    <div style="min-width: 150px;" class="h-100 w-50 pointer-cursor">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+    
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b> Credit card *3731</b></p>
+                                    <div class="d-flex">
+                                        <p class="p-0 m-0" style="color: #DB3127;"><b style="color: #DB3127;">Cancel
+                                                subscription</b></p>
+                                        <img class="ps-2" src="/assets/img/icons/cancel-subscription.svg">
+                                    </div>
+    
+                                </div>
+    
+    
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div style="min-width: 150px;" class="h-100 w-50 pointer-cursor">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+    
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b> Credit card *3731</b></p>
+                                    <div class="d-flex">
+                                        <p class="p-0 m-0" style="color: #DB3127;"><b style="color: #DB3127;">Cancel
+                                                subscription</b></p>
+                                        <img class="ps-2" src="/assets/img/icons/cancel-subscription.svg">
+                                    </div>
+    
+                                </div>
+    
+    
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div style="min-width: 150px;" class="h-100 w-50 pointer-cursor">
+                        <div class="col h-25 m-1 payeeBox">
+                            <div class="d-flex p-2">
+    
+                                <div class="ps-2">
+                                    <p class="p-0 m-0"><b> Credit card *3731</b></p>
+                                    <div class="d-flex">
+                                        <p class="p-0 m-0" style="color: #DB3127;"><b style="color: #DB3127;">Cancel
+                                                subscription</b></p>
+                                        <img class="ps-2" src="/assets/img/icons/cancel-subscription.svg">
+                                    </div>
+    
+                                </div>
+    
+    
+                            </div>
+    
+                        </div>
+                    </div>
+    
+    
+    
+                </div>
+            }
+
+
+            @if(newPayment==true){
+                
+
+
+
+                <div class="d-flex">
+                    <div class="col">
+                        <h4 class="p-0 m-0">SMS subscription</h4>
+                    </div>
+        
+                </div>
+        
+                <div class="mt-3">
+        
+                    <label for="Send to"><b>Select credit card</b></label>
+        
+                    <div class="h-100 w-100">
+                        <mat-form-field class="w-100">
+                            <mat-label>Credit Card</mat-label>
+                            <mat-select>
+                                <mat-option value="option1">57431231663731</mat-option>
+                                <mat-option value="option2">57431231663731</mat-option>
+                                <mat-option value="option3">57431231663731</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+        
+                
+                <div class="mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <label><b>CNIC number</b></label>
+                 
+                    </div>
+        
+                    <input type="text" name="" placeholder="Please enter CNIC number
+                    " id="" class="form-control">
+                </div>
+        
+        
+                <div class="mt-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <label><b>Full name</b></label>
+                 
+                    </div>
+        
+                    <input type="text" name="" placeholder="Please enter your full name
+                    " id="" class="form-control">
+                </div>
+
+
+
+                <div class="mt-3">
+                    <label for="mobileNumber"><b>Mobile Number</b></label>
+    
+                  
+    
+                    <div class="input-group">
+    
+                        <div class="col-3">
+                            <select id="countryCode" class="form-control"
+                                style="border-top-right-radius:  0; border-bottom-right-radius: 0;">
+                                <option value="+92">+92 (Pakistan)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+91">+91 (India)</option>
+                                <!-- Add more country codes as needed -->
+                            </select>
+                        </div>
+    
+                        <div class="col-9">
+                            <input type="text" style="border-top-left-radius:  0; border-bottom-left-radius: 0;"
+                                id="mobileNumber" placeholder="333 4409234" class="form-control col-9">
+    
+                        </div>
+                    </div>
+    
+                    
+                </div>
+
+
+                <div class="mt-3 mb-1">
+                    <button class="w-100 btn btn-lg btn-danger" >Submit <img
+                        src="/assets/img/icons/arrow-right-white.svg" alt=""></button>
+                </div>
+
+            }
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

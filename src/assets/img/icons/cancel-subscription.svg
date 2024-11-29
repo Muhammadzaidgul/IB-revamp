@@ -1,0 +1,11 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Tabler Icon" clip-path="url(#clip0_5145_2630)">
+<path id="Vector" d="M6.00016 9.33333L3.3335 6.66667L6.00016 4" stroke="#DB3127" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M3.3335 6.66675H10.6668C11.3741 6.66675 12.0524 6.9477 12.5524 7.4478C13.0525 7.94789 13.3335 8.62617 13.3335 9.33341C13.3335 10.0407 13.0525 10.7189 12.5524 11.219C12.0524 11.7191 11.3741 12.0001 10.6668 12.0001H10.0002" stroke="#DB3127" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_5145_2630">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

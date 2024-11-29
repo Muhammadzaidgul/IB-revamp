@@ -75,6 +75,12 @@ import { WithHoldingTaxCertificateComponent } from '../pages/alfa-hub/digital-se
 import { WithHoldingTaxStatementComponent } from '../pages/alfa-hub/digital-services/tax-management/with-holding-tax-statement/with-holding-tax-statement.component';
 import { PrepaidComponent } from '../pages/mobile-top-up/prepaid/prepaid.component';
 import { SuccessComponent } from '../shared/success/success.component';
+import { ContactDetailsComponent } from '../pages/cards/credit-card-facility/contact-details/contact-details.component';
+import { RenewalComponent } from '../pages/cards/credit-card-facility/renewal/renewal.component';
+import { ReplacementComponent } from '../pages/cards/credit-card-facility/replacement/replacement.component';
+import { ReversalOfChargesComponent } from '../pages/cards/credit-card-facility/reversal-of-charges/reversal-of-charges.component';
+import { BillingCycleComponent } from '../pages/cards/credit-card-facility/billing-cycle/billing-cycle.component';
+import { SmsSubscriptionComponent } from '../pages/cards/credit-card-facility/sms-subscription/sms-subscription.component';
 
 
 const routes: Routes = [
@@ -300,7 +306,31 @@ const routes: Routes = [
   },
   {
     path:'card/credit-card-facility',
-    component:CreditCardFacilityComponent
+    component:CreditCardFacilityComponent 
+  },
+  {
+    path:'card/credit-card-facility/contact-details',
+    component:ContactDetailsComponent 
+  },
+  {
+    path:'card/credit-card-facility/renewal',
+    component:RenewalComponent 
+  },
+  {
+    path:'card/credit-card-facility/replacement',
+    component:ReplacementComponent 
+  },
+  {
+    path:'card/credit-card-facility/reversal-of-charges',
+    component:ReversalOfChargesComponent 
+  },
+  {
+    path:'card/credit-card-facility/billing-cycle',
+    component:BillingCycleComponent 
+  },
+  {
+    path:'card/credit-card-facility/sms-subscription',
+    component:SmsSubscriptionComponent 
   },
   {
     path:'card/change-pin',
