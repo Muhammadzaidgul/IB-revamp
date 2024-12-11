@@ -1632,7 +1632,6 @@ table tr:hover .table-links {
     border-top: none;
     border-radius: 0 0 20px 20px
 }
-
 .modal-content {
     max-width: 100%;
     border-radius: 20px;
@@ -1664,6 +1663,14 @@ table tr:hover .table-links {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 3px
+}
+
+.dashed-border{
+    border-top: 1px dashed #8E8E8E;
+}
+
+.subtext{
+    font-size: 12px;
 }
 
 .modal-content{

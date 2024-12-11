@@ -25,23 +25,26 @@ import { DataService } from '../../../web/services/data.service';
 })
 export class NewPayeeComponent {
 
+  dataFromA: string = '';
+  //@Input() dataFromComp1!: boolean;
+  dataFromComp1 = false;
+  valueFromChild = '';
 
-  @Input() dataFromComp1!: boolean;
+  crossOffItem(item: string) {
+    this.valueFromChild = item;
+    //console.warn(`Parent says: crossing off ${item}.`);
+  }
+
+  receiveData(data: string) {
+    this.dataFromA = data;
+  }
   
   skipToStep(stepper: MatStepper) {
     stepper.selectedIndex = stepper.selectedIndex +1; 
-    stepper.next();
-    
+    stepper.next(); 
   }
 
-
-
-
-
-  
-
-
-
+  currentItem = '1234567899';
   step1 : string = '#EA5148';
   step2 : string = '';
   step3 : string = '';

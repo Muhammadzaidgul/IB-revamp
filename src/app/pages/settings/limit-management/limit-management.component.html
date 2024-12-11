@@ -61,10 +61,11 @@
         <div class="row">
             <div class="col-12"> 
 
-                <div class="frame p-3">
+                <div class="frame p-3" (click)="selectRadio('10')" [ngClass]="{'border-red': selectedRadio === '10'}">
                     <div>
                         <div>
-                            <input type="radio" name="utility_bill" id="10" style="width: 18px; height: 18px;" >
+                            <input type="radio" name="utility_bill" id="10" style="width: 18px; height: 18px;" 
+                            [checked]="selectedRadio === '10'">
                         </div>
                     </div>
 
@@ -78,10 +79,10 @@
                     </div>
                 </div>
 
-                <div class="frame p-3 mt-2">
+                <div class="frame p-3 mt-2" (click)="selectRadio('15')" [ngClass]="{'border-red': selectedRadio === '15'}">
                     <div>
                         <div>
-                            <input type="radio" name="utility_bill" id="15" style="width: 18px; height: 18px;" >
+                            <input type="radio" name="utility_bill" id="15" style="width: 18px; height: 18px;" [checked]="selectedRadio === '15'">
                         </div>
                     </div>
 

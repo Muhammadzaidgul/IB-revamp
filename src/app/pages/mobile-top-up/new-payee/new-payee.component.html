@@ -439,11 +439,11 @@
                     @if(dataFromComp1==false){
                         <form [formGroup]="fourthFormGroup">
 
-                            <app-confirm-details/>
+                            <app-confirm-details [item]="currentItem" (sendRequest)="crossOffItem($event)"/>
                         
                             <div class="mt-4">
                                 
-                                <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+                                <button class="w-100 btn btn-lg btn-danger" matStepperNext (click)="updateStepper(4)" >Continue {{ valueFromChild }}  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
                             </div>
                         </form>
 

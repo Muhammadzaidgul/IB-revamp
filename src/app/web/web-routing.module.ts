@@ -81,6 +81,12 @@ import { ReplacementComponent } from '../pages/cards/credit-card-facility/replac
 import { ReversalOfChargesComponent } from '../pages/cards/credit-card-facility/reversal-of-charges/reversal-of-charges.component';
 import { BillingCycleComponent } from '../pages/cards/credit-card-facility/billing-cycle/billing-cycle.component';
 import { SmsSubscriptionComponent } from '../pages/cards/credit-card-facility/sms-subscription/sms-subscription.component';
+import { OneBillComponent } from '../pages/payments/more-payments/one-bill/one-bill.component';
+import { HaballComponent } from '../pages/payments/more-payments/haball/haball.component';
+import {PayproComponent } from '../pages/payments/more-payments/paypro/paypro.component';
+import {KuickpayComponent} from '../pages/payments/more-payments/kuickpay/kuickpay.component';
+import { GovermentComponent } from '../pages/payments/more-payments/goverment/goverment.component';
+import { InsuranceComponent } from '../pages/payments/more-payments/insurance/insurance.component';
 
 
 const routes: Routes = [
@@ -175,6 +181,30 @@ const routes: Routes = [
   {
     path:'payments/more-payments',
     component:MorePaymentsComponent
+  },
+  {
+    path:'payments/more-payments/one-bill',
+    component:OneBillComponent 
+  },
+  {
+    path:'payments/more-payments/haball',
+    component:HaballComponent
+  },
+  {
+    path:'payments/more-payments/pay-pro',
+    component:PayproComponent  
+  },
+  {
+    path:'payments/more-payments/kuickpay',
+    component:KuickpayComponent 
+  },
+  {
+    path:'payments/more-payments/goverment-and-taxes',
+    component: GovermentComponent 
+  },
+  {
+    path:'payments/more-payments/insurance',
+    component: InsuranceComponent
   },
   {
     path:'send-money/bank-transfer',

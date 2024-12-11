@@ -1,0 +1,186 @@
+
+<form [formGroup]="fourthFormGroup">
+    <h3>
+        Payment source
+    </h3>
+    <p>
+        Please choose at least 2 payment sources from the options available below
+    </p>
+
+    @if(isAlertActive){
+        <app-alert [alertType]="warning" [alertMsg]="msg" [alertIcon]="icon" />
+    }
+    
+    <div class="col-12">
+        <p class="p-0 m-0">
+            <b>Accounts</b>
+         </p>
+
+         @for (item of allAccounts; track $index) {
+            @if (item.type == 'account') {
+
+                <div class="frame mt-3">
+                    <div class="content">
+                        
+                        <div class="d-flex align-items-center">
+                            <input type='checkbox' (change)="showAccountInput($event,1,item.id)" id='{{ item.id }}' name='account' style='width: 20px; height: 20px; margin-right: 10px;'>
+                        </div>
+                        
+                        <div class="div">
+                            <div class="text-wrapper"><b>{{ item.title }}</b></div>
+                            <div class="text-wrapper-2">{{ item.number }}</div>
+                        </div>
+                    </div>
+                    <div class="div-2">
+                        <div class="text-wrapper">
+                            PKR {{ totalAmount }}
+                        </div>
+                        <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                    </div>
+                </div>
+                @if(inputText1 && currentSelection == item.id){
+
+                    <div class="d-flex justify-content-end  mt-2 " [formGroup]="myGroup">
+                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                        <input type="text" name=""  id="" class="form-control w-25"  formControlName="accountInput">
+                    </div>
+                }
+
+            }
+         }
+
+    </div>
+
+    <div class="col-12">
+        <p class="mt-3">
+            <b>Credit Cards</b>
+         </p>
+
+         @for (card of allAccounts; track $index) {
+            @if (card.type == 'card') {
+
+                <div class="frame mt-3">
+                    <div class="content">
+
+                        <div class="d-flex align-items-center">
+                            <input type='checkbox' (change)="showCCInput($event,2,card.id)" id='{{ card.id }}' name='card' style='width: 20px; height: 20px; margin-right: 10px;'>
+                        </div>
+
+            
+                        <div class="div">
+                            <div class="text-wrapper"><b>{{ card.title }}</b></div>
+                            <div class="text-wrapper-2">{{ card.number }}</div>
+                        </div>
+                    </div>
+                    <div class="div-2">
+                        <div class="text-wrapper">
+                            PKR {{ totalAmount }}
+                        </div>
+                        <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                    </div>
+                </div>
+
+                @if(inputText2 && currentSelection == card.id){
+
+                    <div class="d-flex justify-content-end  mt-2 ">
+                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                        <input type="text" name=""  id="" class="form-control w-25">
+                    </div>
+                }
+
+            }
+
+         }
+        
+    </div>
+
+    <div class="col-12">
+        <p class="mt-3">
+            <b>Wallets</b>
+         </p>
+
+         @for (wallet of allAccounts; track $index) {
+
+            @if (wallet.type == 'wallet') {
+
+                <div class="frame mt-3">
+                    <div class="content">
+
+                        <div class="d-flex align-items-center">
+                            <input type='checkbox' (change)="showWalletInput($event,3,wallet.id)" id='{{ wallet.id }}' name='wallet' style='width: 20px; height: 20px; margin-right: 10px;'>
+                        </div>
+
+                        <div class="div">
+                            <div class="text-wrapper"><b> {{ wallet.title }} </b></div>
+                            <div class="text-wrapper-2">{{ wallet.number }}</div>
+                        </div>
+                    </div>
+                    <div class="div-2">
+                        <div class="text-wrapper">
+                            PKR {{ totalAmount }}
+                        </div>
+                        <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                    </div>
+                </div>
+
+                @if(inputText3 && currentSelection == wallet.id){
+
+                    <div class="d-flex justify-content-end  mt-2 ">
+                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                        <input type="text" name=""  id="" class="form-control w-25">
+                    </div>
+                }
+            }
+          
+         }                
+         
+    </div>
+
+    <div class="col-12">
+        <p class="mt-3">
+            <b>Orbit</b>
+         </p>
+
+         @for (orbit of allAccounts; track $index) {
+
+            @if (orbit.type == 'orbit') {
+                <div class="frame mt-3">
+                    <div class="content">
+
+                        <div class="d-flex align-items-center">
+                            <input type='checkbox' (change)="showOrbitInput($event,4,orbit.id)" id='{{ orbit.id }}' name='orbit' style='width: 20px; height: 20px; margin-right: 10px;'>
+                        </div>
+
+                        <div class="div">
+                            <div class="text-wrapper"><b> {{ orbit.title }} </b></div>
+                            <div class="text-wrapper-2">Points: {{ orbit.number }}</div>
+                        </div>
+                    </div>
+                    <div class="div-2">
+                        <div class="text-wrapper">
+                            PKR {{ orbit.balance }}
+                        </div>
+                        <!-- <img class="tabler-icon" src="/assets/img/icons/caret-right.svg" /> -->
+                    </div>
+                </div>
+
+                @if(inputText4 && currentSelection == orbit.id){
+
+                    <div class="d-flex justify-content-end  mt-2 ">
+                        <label for="pkr" class="align-item-center align-content-center align-self-center p-1">PKR</label>
+                        <input type="text" name=""  id="" class="form-control w-25">
+                    </div>
+                }
+
+            }
+           
+         }
+        
+       
+    </div>
+
+    <div class="mt-4">
+        
+        <button class="w-100 btn btn-lg btn-danger"  (click)="sendData()" >Continue  <img src="/assets/img/icons/arrow-right-white.svg" alt="" ></button>
+    </div>
+</form>

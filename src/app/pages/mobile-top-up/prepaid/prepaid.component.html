@@ -240,6 +240,8 @@
                 <mat-step [stepControl]="fourthFormGroup">
 
                     <form [formGroup]="fourthFormGroup">
+
+                        <!-- get split payment source from separate component -->
                     
                         <h3>
                             Payment source
@@ -458,7 +460,7 @@
 
                     <form [formGroup]="fifthFormGroup">
 
-                        <h3>
+                        <!-- <h3>
                             Confirm details
                         </h3>
                         
@@ -476,7 +478,7 @@
                         <div class="col-12 generalBox p-3 mt-2">
                             <div class="d-flex justify-content-between">
                                 <p class="p-0 m-0">To</p> 
-                                <!-- <img src="/assets/img/icons/edit-red.svg" alt=""> -->
+                                
                             </div>
                             <p><b>Transworld Enterprise</b></p>
                   
@@ -528,11 +530,12 @@
                                 </div>
                 
                             </div>
-                        </div>
-            
+                        </div> -->
                       
+                        <app-confirm-details [item]="currentItem" (sendRequest)="crossOffItem($event)"/>
+
                         <div class="mt-3">
-                            <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Pay now <img src="/assets/img/icons/check-small.svg" alt=""></button>
+                            <button class="w-100 btn btn-lg btn-danger" (click)="nextStep(stepper); updateStepper(4)">Pay now {{ valueFromChild }} <img src="/assets/img/icons/check-small.svg" alt=""></button>
                    
                         </div>
             

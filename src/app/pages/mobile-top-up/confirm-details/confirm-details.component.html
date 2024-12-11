@@ -9,7 +9,7 @@
 <div class="col-12 generalBox p-3">
     <p class="p-0 m-0">From</p>
     <div class="d-flex justify-content-between">
-        <p class="p-0 m-0"><b>Account</b></p> <p class="p-0 m-0">57431231663731</p>
+        <p class="p-0 m-0"><b>Account</b></p> <p class="p-0 m-0">{{item}}</p>
     </div>
 </div>
 
@@ -72,3 +72,8 @@
     }
     
 </div>
+
+<!-- child to parent -->
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(childValue)">Add to parent's list</button>

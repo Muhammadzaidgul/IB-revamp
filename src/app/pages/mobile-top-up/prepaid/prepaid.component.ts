@@ -13,11 +13,12 @@ import { AlertComponent } from "../../../shared/alert/alert.component";
 import { TransferFrequenceyComponent } from '../../../modals/transfer-frequencey/transfer-frequencey.component';
 import { PaymentReceiptComponent } from '../../../modals/payment-receipt/payment-receipt.component';
 import { PaymentReceiptPaidComponent } from '../../../modals/payment-receipt-paid/payment-receipt-paid.component';
+import { ConfirmDetailsComponent } from "../confirm-details/confirm-details.component";
 
 @Component({
   selector: 'app-prepaid',
   standalone: true,
-  imports: [MatStepperModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,MatChipsModule,AlertComponent],
+  imports: [MatStepperModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,MatChipsModule,AlertComponent,ConfirmDetailsComponent],
   templateUrl: './prepaid.component.html',
   styleUrl: './prepaid.component.css'
 })
@@ -27,6 +28,7 @@ export class PrepaidComponent {
 
   }
 
+  currentItem = '123456789';
   isShowStepper : boolean = false;
   isNewPayment : boolean = false;
   step1 : string = '#18B368';
@@ -44,6 +46,7 @@ export class PrepaidComponent {
   currentSelection : any;
   totalAmount = 5000;
   selectedindex =0;
+  valueFromChild = "";
   // Alert
   warning = 'warning';
   msg = 'PKR 350/500 entered';
@@ -52,6 +55,18 @@ export class PrepaidComponent {
   color: ThemePalette = 'warn';
   checked = false;
   disabled = false;
+
+  items = ['item1', 'item2', 'item3', 'item4'];
+
+  crossOffItem(item: string) {
+    this.valueFromChild = item;
+    //console.warn(`Parent says: crossing off ${item}.`);
+  }
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
+
   formGroup = this._formBuilder.group({
     acceptTerms: ['', Validators.requiredTrue],
   });

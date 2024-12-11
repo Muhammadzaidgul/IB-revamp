@@ -74,3 +74,10 @@
     border: 1px solid;
    
   }
+
+  #date-input {
+    background-image: url('../../../assets/img/icons/calender.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 25px; /* adjust to fit your icon size */
+  }
